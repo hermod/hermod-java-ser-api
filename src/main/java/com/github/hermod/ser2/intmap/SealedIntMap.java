@@ -1,18 +1,17 @@
-package com.github.hermod.ser.intmap;
-
-
+package com.github.hermod.ser2.intmap;
 
 
 /**
- * IReadIntMap.
+ * SealedIntMap.
  * 
- * @author anavarro - Nov 11, 2011
+ * @author anavarro - Dec 15, 2012
  * @param <T>
  * 
  */
 @SuppressWarnings("rawtypes")
-public interface ReadIntMap<T extends ReadIntMap>
+public interface SealedIntMap<T extends SealedIntMap>
 {
+
     
     /**
      * containsKey.
@@ -104,7 +103,6 @@ public interface ReadIntMap<T extends ReadIntMap>
      */
     T getAsMap(final int aKey);
     
-    
     /**
      * getKeys.
      * 
@@ -118,7 +116,7 @@ public interface ReadIntMap<T extends ReadIntMap>
      * 
      * @return
      */
-    IntMapIterator<T> getIterator();
+ //   IntMapIterator<T> getIterator();
     
-
 }
+    
