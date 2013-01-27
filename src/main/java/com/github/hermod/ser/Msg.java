@@ -91,6 +91,16 @@ public interface Msg extends Serializable {
      * @return a {@link com.github.hermod.ser.Msg} object.
      */
     Msg getAsMsg(final int aKey);
+    
+
+
+    /**
+     * getAsArray.
+     *
+     * @param aKey
+     * @return
+     */
+    Object[] getAsArray(final int aKey);
 
     /**
      * <p>getKeys.</p>
@@ -176,6 +186,22 @@ public interface Msg extends Serializable {
      * @param aMsg a {@link com.github.hermod.ser.Msg} object.
      */
     void set(final int aKey, final Msg aMsg);
+    
+    /**
+     * <p>set.</p>
+     *
+     * @param aKey a int.
+     * @param anArray a Object[]
+     */
+    void set(final int aKey, final Object[] anArray);
+    
+    /**
+     * <p>set.</p>
+     *
+     * @param aKey
+     * @param anObject
+     */
+    void set(final int aKey, final Object anObject);
 
     /**
      * <p>setAll.</p>

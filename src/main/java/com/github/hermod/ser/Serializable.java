@@ -32,5 +32,12 @@ public interface Serializable {
      * @return a int.
      */
     int writeTo(byte[] bytes, final int offset);
+    
+    /**
+     * getSize.
+     *
+     * @return
+     */
+    int getSize();
 
 }
