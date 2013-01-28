@@ -93,9 +93,8 @@ public interface Msg extends Serializable {
     Msg getAsMsg(final int aKey);
     
 
-
     /**
-     * getAsArray.
+     * <p>getAsArray.</p>
      *
      * @param aKey
      * @return
@@ -108,6 +107,7 @@ public interface Msg extends Serializable {
      * @return an array of int.
      */
     int[] getKeys();
+    
 
     /**
      * <p>clear.</p>

@@ -34,9 +34,9 @@ public interface Serializable {
     int writeTo(byte[] bytes, final int offset);
     
     /**
-     * getSize.
+     * <p>getSize.</p>
      *
-     * @return
+     * @return the size of byte[] return by writeTo.
      */
     int getSize();
 
