@@ -6,8 +6,8 @@ package com.github.hermod.ser;
  * @author anavarro
  * @version $Id: $Id
  */
-
-public interface MsgFieldValue {
+@Deprecated
+public interface IMsgFieldValue {
 
     /**
      * <p>byteAt.</p>

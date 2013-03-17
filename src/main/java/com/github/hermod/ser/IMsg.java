@@ -8,7 +8,7 @@ package com.github.hermod.ser;
  * @author anavarro
  * @version $Id: $Id
  */
-public interface Msg extends Serializable {
+public interface IMsg extends ISerializable {
 
     // super instead of extends because of PECS (see Java Effective)
 
@@ -35,14 +35,14 @@ public interface Msg extends Serializable {
      * @return a byte.
      */
     byte getAsByte(final int aKey);
-
+    
     /**
-     * <p>getAsInt.</p>
+     * <p>getAsByte.</p>
      *
      * @param aKey a int.
-     * @return a int.
+     * @return a byte.
      */
-    int getAsInt(final int aKey);
+    byte getAsByte(final int aKey, final byte defaultValue);
 
     /**
      * <p>getAsShort.</p>
@@ -51,7 +51,49 @@ public interface Msg extends Serializable {
      * @return a short.
      */
     short getAsShort(final int aKey);
+    
+    
+    /**
+     * <p>getAsShort.</p>
+     *
+     * @param aKey a int.
+     * @param defaultValue
+     * @return a short.
+     */
+    short getAsShort(final int aKey, final short defaultValue);
+    
+    /**
+     * <p>getAsInt.</p>
+     *
+     * @param aKey a int.
+     * @param defaultValue
+     * @return a int.
+     */
+    int getAsInt(final int aKey);
+    
 
+    /**
+     * <p>getAsInt.</p>
+     *
+     * @param aKey a int.
+     * @param defaultValue
+     * @return a int.
+     */
+    int getAsInt(final int aKey, final int defaultValue);    
+
+    
+    
+
+    /**
+     * <p>getAsInteger.</p>
+     *
+     * @param aKey a int.
+     * @param defaultValue
+     * @return a int.
+     */
+    Integer getAsInteger(final int aKey, final int defaultValue);  
+    
+    
     /**
      * <p>getAsLong.</p>
      *
@@ -59,6 +101,16 @@ public interface Msg extends Serializable {
      * @return a long.
      */
     long getAsLong(final int aKey);
+    
+    
+    /**
+     * <p>getAsLong.</p>
+     *
+     * @param aKey a int.
+     * @return a long.
+     */
+    long getAsLong(final int aKey, final long defaultValue);
+    
 
     /**
      * <p>getAsFloat.</p>
@@ -67,6 +119,16 @@ public interface Msg extends Serializable {
      * @return a float.
      */
     float getAsFloat(final int aKey);
+    
+    /**
+     * <p>getAsFloat.</p>
+     *
+     * @param aKey a int.
+     * @return a float.
+     */
+    float getAsFloat(final int aKey, final float defaultValue);
+
+    
 
     /**
      * <p>getAsDouble.</p>
@@ -75,6 +137,15 @@ public interface Msg extends Serializable {
      * @return a double.
      */
     double getAsDouble(final int aKey);
+    
+    /**
+     * <p>getAsDouble.</p>
+     *
+     * @param aKey a int.
+     * @return a double.
+     */
+    double getAsDouble(final int aKey, final double defaultValue);
+
 
     /**
      * <p>getAsString.</p>
@@ -83,14 +154,41 @@ public interface Msg extends Serializable {
      * @return a {@link java.lang.String} object.
      */
     String getAsString(final int aKey);
+    
 
+    /**
+     * <p>getAsString.</p>
+     *
+     * @param aKey a int.
+     * @return a {@link java.lang.String} object.
+     */
+    String getAsString(final int aKey, final String defaultValue);
+
+    
     /**
      * <p>getAsMsg.</p>
      *
      * @param aKey a int.
-     * @return a {@link com.github.hermod.ser.Msg} object.
+     * @return a {@link com.github.hermod.ser.IMsg} object.
      */
-    Msg getAsMsg(final int aKey);
+    IMsg getAsMsg(final int aKey);
+    
+    /**
+     * <p>getAsMsg.</p>
+     *
+     * @param aKey a int.
+     * @return a {@link com.github.hermod.ser.IMsg} object.
+     */
+    IMsg getAsMsg(final int aKey, final IMsg defaultMsg);
+
+    
+    /**
+     * <p>getAsMsgInto.</p>
+     *
+     * @param aKey a int.
+     * @return a {@link com.github.hermod.ser.IMsg} object.
+     */
+    void getAsMsgInto(final int aKey, final IMsg destMsg);
     
 
     /**
@@ -100,6 +198,15 @@ public interface Msg extends Serializable {
      * @return
      */
     Object[] getAsArray(final int aKey);
+    
+    /**
+     * <p>getAsArray.</p>
+     *
+     * @param aKey
+     * @return
+     */
+    Object[] getAsArray(final int aKey, final Object[] defaultValue);
+
 
     /**
      * <p>getKeys.</p>
@@ -183,9 +290,9 @@ public interface Msg extends Serializable {
      * <p>set.</p>
      *
      * @param aKey a int.
-     * @param aMsg a {@link com.github.hermod.ser.Msg} object.
+     * @param aMsg a {@link com.github.hermod.ser.IMsg} object.
      */
-    void set(final int aKey, final Msg aMsg);
+    void set(final int aKey, final IMsg aMsg);
     
     /**
      * <p>set.</p>
@@ -206,9 +313,9 @@ public interface Msg extends Serializable {
     /**
      * <p>setAll.</p>
      *
-     * @param aMsg a {@link com.github.hermod.ser.Msg} object.
+     * @param aMsg a {@link com.github.hermod.ser.IMsg} object.
      */
-    void setAll(final Msg aMsg);
+    void setAll(final IMsg aMsg);
 
     /**
      * <p>remove.</p>

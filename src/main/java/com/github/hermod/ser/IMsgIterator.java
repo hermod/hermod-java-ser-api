@@ -6,7 +6,7 @@ package com.github.hermod.ser;
  * @author anavarro
  * @version $Id: $Id
  */
-public interface MsgIterator {
+public interface IMsgIterator {
 
     /**
      * <p>nextKey.</p>
@@ -95,8 +95,8 @@ public interface MsgIterator {
     /**
      * <p>getAsMsg.</p>
      *
-     * @return a {@link com.github.hermod.ser.Msg} object.
+     * @return a {@link com.github.hermod.ser.IMsg} object.
      */
-    Msg getAsMsg();
+    IMsg getAsMsg();
 
 }

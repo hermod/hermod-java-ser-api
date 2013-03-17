@@ -6,8 +6,15 @@ package com.github.hermod.ser;
  * @author anavarro
  * @version $Id: $Id
  */
-public interface Serializable {
+public interface ISerializable {
 
+    /**
+     * <p>readFrom.</p>
+     *
+     * @param bytes an array of byte.
+     */
+    void readFrom(final byte[] bytes);
+    
     /**
      * <p>readFrom.</p>
      *
@@ -16,6 +23,7 @@ public interface Serializable {
      * @param length a int.
      */
     void readFrom(final byte[] bytes, final int offset, final int length);
+    
 
     /**
      * <p>writeTo.</p>

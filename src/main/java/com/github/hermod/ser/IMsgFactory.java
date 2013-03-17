@@ -6,14 +6,14 @@ package com.github.hermod.ser;
  * @author anavarro
  * @version $Id: $Id
  */
-public interface MsgFactory {
+public interface IMsgFactory {
 
     /**
      * <p>create.</p>
      *
-     * @return a {@link com.github.hermod.ser.Msg} object.
+     * @return a {@link com.github.hermod.ser.IMsg} object.
      */
-    Msg create();
+    IMsg create();
     
     /**
      * create.
@@ -21,6 +21,6 @@ public interface MsgFactory {
      * @param size of the byte array : Caution byte array size does not make sense (more linked to keyMax), we set keyMax = size / 4   
      * @return
      */
-    Msg create(final int size);
+    IMsg create(final int size);
 
 }
