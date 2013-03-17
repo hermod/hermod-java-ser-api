@@ -18,6 +18,6 @@ public @interface Message {
     int id();
     String name() default "";
     String docName() default "";
-    Class<?>[] responseMessages();
+    Class<?>[] responseMessages() default {};
 
 }
