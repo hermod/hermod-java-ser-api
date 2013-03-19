@@ -1,19 +1,28 @@
 package com.github.hermod.ser.descriptor;
 
+import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import javax.xml.parsers.DocumentBuilder;
+
 /**
- * <p>InterfaceApi. </p>
+ * <p>AMessage. </p>
  *
  * @author anavarro - Mar 17, 2013
  *
  */
 @Retention(RetentionPolicy.RUNTIME) 
 @Target({ElementType.TYPE}) 
-public @interface InterfaceApi {
-
+@Documented
+public @interface AMessage {
     
+    int id();
+    String name() default "";
+    String docName() default "";
+    String docComment() default "";
+    Class<?>[] responseMessages() default {};
+
 }

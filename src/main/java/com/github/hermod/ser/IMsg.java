@@ -3,14 +3,13 @@ package com.github.hermod.ser;
 
 
 /**
- * <p>Msg interface.</p>
+ * <p>IMsg interface.</p>
  *
  * @author anavarro
  * @version $Id: $Id
  */
-public interface IMsg extends ISerializable {
+public interface IMsg {
 
-    // super instead of extends because of PECS (see Java Effective)
 
     /**
      * <p>contains.</p>
@@ -28,6 +27,22 @@ public interface IMsg extends ISerializable {
      */
     Object get(final int aKey);
 
+    /**
+     * <p>getAsByte.</p>
+     *
+     * @param aKey a int.
+     * @return a boolean.
+     */
+    boolean getAsBoolean(final int aKey);
+    
+    /**
+     * <p>getAsBoolean.</p>
+     *
+     * @param aKey a int.
+     * @return a boolean.
+     */
+    boolean getAsBoolean(final int aKey, final boolean defaultValue);
+    
     /**
      * <p>getAsByte.</p>
      *
@@ -52,7 +67,6 @@ public interface IMsg extends ISerializable {
      */
     short getAsShort(final int aKey);
     
-    
     /**
      * <p>getAsShort.</p>
      *
@@ -71,7 +85,6 @@ public interface IMsg extends ISerializable {
      */
     int getAsInt(final int aKey);
     
-
     /**
      * <p>getAsInt.</p>
      *
@@ -81,19 +94,6 @@ public interface IMsg extends ISerializable {
      */
     int getAsInt(final int aKey, final int defaultValue);    
 
-    
-    
-
-    /**
-     * <p>getAsInteger.</p>
-     *
-     * @param aKey a int.
-     * @param defaultValue
-     * @return a int.
-     */
-    Integer getAsInteger(final int aKey, final int defaultValue);  
-    
-    
     /**
      * <p>getAsLong.</p>
      *
@@ -102,7 +102,6 @@ public interface IMsg extends ISerializable {
      */
     long getAsLong(final int aKey);
     
-    
     /**
      * <p>getAsLong.</p>
      *
@@ -110,7 +109,6 @@ public interface IMsg extends ISerializable {
      * @return a long.
      */
     long getAsLong(final int aKey, final long defaultValue);
-    
 
     /**
      * <p>getAsFloat.</p>
@@ -128,8 +126,6 @@ public interface IMsg extends ISerializable {
      */
     float getAsFloat(final int aKey, final float defaultValue);
 
-    
-
     /**
      * <p>getAsDouble.</p>
      *
@@ -146,7 +142,6 @@ public interface IMsg extends ISerializable {
      */
     double getAsDouble(final int aKey, final double defaultValue);
 
-
     /**
      * <p>getAsString.</p>
      *
@@ -154,7 +149,6 @@ public interface IMsg extends ISerializable {
      * @return a {@link java.lang.String} object.
      */
     String getAsString(final int aKey);
-    
 
     /**
      * <p>getAsString.</p>
@@ -164,7 +158,6 @@ public interface IMsg extends ISerializable {
      */
     String getAsString(final int aKey, final String defaultValue);
 
-    
     /**
      * <p>getAsMsg.</p>
      *
@@ -180,7 +173,6 @@ public interface IMsg extends ISerializable {
      * @return a {@link com.github.hermod.ser.IMsg} object.
      */
     IMsg getAsMsg(final int aKey, final IMsg defaultMsg);
-
     
     /**
      * <p>getAsMsgInto.</p>
@@ -188,8 +180,7 @@ public interface IMsg extends ISerializable {
      * @param aKey a int.
      * @return a {@link com.github.hermod.ser.IMsg} object.
      */
-    void getAsMsgInto(final int aKey, final IMsg destMsg);
-    
+    void getAsMsgInto(final int aKey, final IMsg destMsg); 
 
     /**
      * <p>getAsArray.</p>
@@ -207,19 +198,26 @@ public interface IMsg extends ISerializable {
      */
     Object[] getAsArray(final int aKey, final Object[] defaultValue);
 
-
     /**
      * <p>getKeys.</p>
      *
      * @return an array of int.
      */
     int[] getKeys();
-    
 
+    
     /**
      * <p>clear.</p>
      */
     void clear();
+    
+    /**
+     * <p>set.</p>
+     *
+     * @param aKey a int.
+     * @param aBoolean a aBoolean.
+     */
+    void set(final int aKey, final boolean aBoolean);
 
     /**
      * <p>set.</p>
