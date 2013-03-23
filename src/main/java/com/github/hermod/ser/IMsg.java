@@ -4,7 +4,6 @@ package com.github.hermod.ser;
  * <p>IMsg interface.</p>
  *
  * @author anavarro
- * @version $Id: $Id
  */
 public interface IMsg {
 
