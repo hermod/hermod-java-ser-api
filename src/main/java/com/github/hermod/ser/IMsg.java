@@ -1,7 +1,5 @@
 package com.github.hermod.ser;
 
-
-
 /**
  * <p>IMsg interface.</p>
  *
@@ -9,7 +7,6 @@ package com.github.hermod.ser;
  * @version $Id: $Id
  */
 public interface IMsg {
-
 
     /**
      * <p>contains.</p>
@@ -20,15 +17,7 @@ public interface IMsg {
     boolean contains(final int aKey);
 
     /**
-     * <p>get.</p>
-     *
-     * @param aKey a int.
-     * @return a {@link java.lang.Object} object.
-     */
-    Object get(final int aKey);
-
-    /**
-     * <p>getAsByte.</p>
+     * <p>getAsBoolean.</p>
      *
      * @param aKey a int.
      * @return a boolean.
@@ -181,23 +170,48 @@ public interface IMsg {
      * @return a {@link com.github.hermod.ser.IMsg} object.
      */
     void getAsMsgInto(final int aKey, final IMsg destMsg); 
-
-    /**
-     * <p>getAsArray.</p>
-     *
-     * @param aKey
-     * @return
-     */
-    Object[] getAsArray(final int aKey);
     
     /**
-     * <p>getAsArray.</p>
+     * <p>get.</p>
+     *
+     * @param aKey a int.
+     * @return a {@link java.lang.Object} object.
+     */
+    Object getAsObject(final int aKey);
+
+    /**
+     * <p>getAsBytes.</p>
      *
      * @param aKey
      * @return
      */
-    Object[] getAsArray(final int aKey, final Object[] defaultValue);
-
+    byte[] getAsBytes(final int aKey);
+    
+    /**
+     * <p>getAsBytes.</p>
+     *
+     * @param aKey
+     * @return
+     */
+    byte[] getAsBytes(final int aKey, final byte[] defaultValue);
+    
+    //TODO add the other types  
+    /**
+     * <p>getAsObjects.</p>
+     *
+     * @param aKey
+     * @return
+     */
+    Object[] getAsObjects(final int aKey);
+    
+    /**
+     * <p>getAsObjects.</p>
+     *
+     * @param aKey
+     * @return
+     */
+    Object[] getAsObjects(final int aKey, final Object[] defaultValue);
+    
     /**
      * <p>getKeys.</p>
      *
@@ -205,7 +219,6 @@ public interface IMsg {
      */
     int[] getKeys();
 
-    
     /**
      * <p>clear.</p>
      */
@@ -291,15 +304,7 @@ public interface IMsg {
      * @param aMsg a {@link com.github.hermod.ser.IMsg} object.
      */
     void set(final int aKey, final IMsg aMsg);
-    
-    /**
-     * <p>set.</p>
-     *
-     * @param aKey a int.
-     * @param anArray a Object[]
-     */
-    void set(final int aKey, final Object[] anArray);
-    
+
     /**
      * <p>set.</p>
      *
@@ -307,7 +312,23 @@ public interface IMsg {
      * @param anObject
      */
     void set(final int aKey, final Object anObject);
+    
+    /**
+     * <p>set.</p>
+     *
+     * @param aKey a int.
+     * @param anArray a byte[]
+     */
+    void set(final int aKey, final byte[] aBytes);
 
+    /**
+     * <p>set.</p>
+     *
+     * @param aKey a int.
+     * @param anObjects a Object[]
+     */
+    void set(final int aKey, final Object[] anObjects);
+      
     /**
      * <p>setAll.</p>
      *

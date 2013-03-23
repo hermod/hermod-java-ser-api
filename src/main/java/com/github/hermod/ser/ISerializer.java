@@ -2,13 +2,12 @@ package com.github.hermod.ser;
 
 
 /**
- * <p>Serializer. </p>
+ * <p>ISerializer. </p>
  *
  * @author anavarro - Mar 9, 2013
  *
  */
 public interface ISerializer {
-
 
     /**
      * <p>readFrom.</p>
