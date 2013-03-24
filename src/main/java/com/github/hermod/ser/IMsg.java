@@ -7,6 +7,8 @@ package com.github.hermod.ser;
  */
 public interface IMsg {
 
+    // Read operations
+    
     /**
      * <p>contains.</p>
      *
@@ -168,7 +170,10 @@ public interface IMsg {
      * @param aKey a int.
      * @return a {@link com.github.hermod.ser.IMsg} object.
      */
-    void getAsMsgInto(final int aKey, final IMsg destMsg); 
+    void getAsMsgInto(final int aKey, final IMsg destMsg);
+    
+    //TODO should be change into
+    //IMsg getAsMsg(final int aKey, final IMsgFactory aMsgFactory);
     
     /**
      * <p>get.</p>
@@ -177,7 +182,23 @@ public interface IMsg {
      * @return a {@link java.lang.Object} object.
      */
     Object getAsObject(final int aKey);
-
+    
+    /**
+     * <p>getAsBooleans.</p>
+     *
+     * @param aKey
+     * @return
+     */
+    boolean[] getAsBooleans(final int aKey);
+    
+    /**
+     * <p>getAsBooleans.</p>
+     *
+     * @param aKey
+     * @return
+     */
+    boolean[] getAsBooleans(final int aKey, final boolean[] defaultValue);
+    
     /**
      * <p>getAsBytes.</p>
      *
@@ -194,7 +215,122 @@ public interface IMsg {
      */
     byte[] getAsBytes(final int aKey, final byte[] defaultValue);
     
-    //TODO add the other types  
+    /**
+     * <p>getAsShorts.</p>
+     *
+     * @param aKey
+     * @return
+     */
+    short[] getAsShorts(final int aKey);
+    
+    /**
+     * <p>getAsShorts.</p>
+     *
+     * @param aKey
+     * @return
+     */
+    short[] getAsShorts(final int aKey, final short[] defaultValue);
+    
+    /**
+     * <p>getAsInts.</p>
+     *
+     * @param aKey
+     * @return
+     */
+    int[] getAsInts(final int aKey);
+    
+    /**
+     * <p>getAsInts.</p>
+     *
+     * @param aKey
+     * @return
+     */
+    int[] getAsInts(final int aKey, final int[] defaultValue);
+    
+    /**
+     * <p>getAsLongs.</p>
+     *
+     * @param aKey
+     * @return
+     */
+    long[] getAsLongs(final int aKey);
+    
+    /**
+     * <p>getAsLongs.</p>
+     *
+     * @param aKey
+     * @return
+     */
+    long[] getAsLongs(final int aKey, final long[] defaultValue);
+    
+    /**
+     * <p>getAsFloats.</p>
+     *
+     * @param aKey
+     * @return
+     */
+    float[] getAsFloats(final int aKey);
+    
+    /**
+     * <p>getAsFloats.</p>
+     *
+     * @param aKey
+     * @return
+     */
+    float[] getAsFloats(final int aKey, final float[] defaultValue);
+    
+    /**
+     * <p>getAsDoubles.</p>
+     *
+     * @param aKey
+     * @return
+     */
+    double[] getAsDoubles(final int aKey);
+    
+    /**
+     * <p>getAsDoubles.</p>
+     *
+     * @param aKey
+     * @return
+     */
+    double[] getAsDoubles(final int aKey, final double[] defaultValue);
+    
+    
+    /**
+     * <p>getAsStrings.</p>
+     *
+     * @param aKey
+     * @return
+     */
+    String[] getAsStrings(final int aKey);
+    
+    /**
+     * <p>getAsStrings.</p>
+     *
+     * @param aKey
+     * @return
+     */
+    String[] getAsStrings(final int aKey, final String[] defaultValue);
+    
+    /**
+     * <p>getAsMsgs.</p>
+     *
+     * @param aKey
+     * @return
+     */
+    IMsg[] getAsMsgs(final int aKey);
+    
+    /**
+     * <p>getAsMsgs.</p>
+     *
+     * @param aKey
+     * @return
+     */
+    IMsg[] getAsMsgs(final int aKey, final IMsg[] defaultValue);
+    
+    //TODO add
+    //IMsg[] getAsMsgs(final int aKey, final IMsgFactory aMsgFactory);
+    
     /**
      * <p>getAsObjects.</p>
      *
@@ -217,7 +353,23 @@ public interface IMsg {
      * @return an array of int.
      */
     int[] getKeys();
-
+    
+    /**
+     * size.
+     *
+     * @return the number of keys
+     */
+    int size();
+    
+    /**
+     * isEmpty.
+     *
+     * @return
+     */
+    boolean isEmpty();
+        
+    
+    // Write opertations
     /**
      * <p>clear.</p>
      */
@@ -316,10 +468,75 @@ public interface IMsg {
      * <p>set.</p>
      *
      * @param aKey a int.
+     * @param anArray a boolean[]
+     */
+    void set(final int aKey, final boolean[] aBooleans);
+    
+    
+    /**
+     * <p>set.</p>
+     *
+     * @param aKey a int.
      * @param anArray a byte[]
      */
     void set(final int aKey, final byte[] aBytes);
+    
+    /**
+     * <p>set.</p>
+     *
+     * @param aKey a int.
+     * @param anArray a short[]
+     */
+    void set(final int aKey, final short[] aShorts);
+    
+    /**
+     * <p>set.</p>
+     *
+     * @param aKey a int.
+     * @param anArray a int[]
+     */
+    void set(final int aKey, final int[] aInts);
 
+    /**
+     * <p>set.</p>
+     *
+     * @param aKey a int.
+     * @param anArray a long[]
+     */
+    void set(final int aKey, final long[] aLongs);
+    
+    /**
+     * <p>set.</p>
+     *
+     * @param aKey a int.
+     * @param anArray a float[]
+     */
+    void set(final int aKey, final float[] aFloats);
+    
+    /**
+     * <p>set.</p>
+     *
+     * @param aKey a int.
+     * @param anArray a double[]
+     */
+    void set(final int aKey, final double[] aDoubles);
+    
+    /**
+     * <p>set.</p>
+     *
+     * @param aKey a int.
+     * @param anArray a string[]
+     */
+    void set(final int aKey, final String[] aStrings);
+    
+    /**
+     * <p>set.</p>
+     *
+     * @param aKey a int.
+     * @param anArray a IMsg[]
+     */
+    void set(final int aKey, final IMsg[] aMsgs);
+    
     /**
      * <p>set.</p>
      *
