@@ -9,6 +9,20 @@ package com.github.hermod.ser;
  */
 public interface ISerializer {
 
+    
+    /**
+     * <p>readFrom.</p>
+     *
+     * @param srcBytes an array of byte.
+     * @param offset a int.
+     * @param length a int.
+     * @param destMsg the dest message.
+     */
+    void readFrom(final byte[] srcBytes, IMsg destMsg);
+    
+    
+    //IMsg readFrom(final byte[] srcBytes, final Class clazz/* or factory*/);
+    
     /**
      * <p>readFrom.</p>
      *
