@@ -13,6 +13,7 @@ public interface ISerializer2<T> /* Int/Impl */ {
     // getInterfaceClass() //A
     // getImplementationClass() //I
     
+    //todo
     
     /**
      * <p>readFrom.</p>
