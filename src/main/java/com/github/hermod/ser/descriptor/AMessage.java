@@ -22,5 +22,6 @@ public @interface AMessage {
     String docName() default "";
     String docComment() default "";
     Class<?>[] responseMessages() default {};
+    ESender[] sender() default {}; 
 
 }

@@ -84,9 +84,6 @@ public interface IMsg {
      * @return a {@link java.lang.String} object.
      */
     String getAsString(final int aKey);
-    
-    //TODO make sense (Immutable)? symetric with the others Object
-    //void getAsString(final int aKey, final String destString);
 
     /**
      * <p>getAsMsg.</p>
@@ -97,15 +94,13 @@ public interface IMsg {
     IMsg getAsMsg(final int aKey);
     
     /**
-     * <p>getAsMsgInto.</p>
+     * <p>getAsMsg.</p>
      *
      * @param aKey a int.
      * @return a {@link com.github.hermod.ser.IMsg} object.
      */
     void getAsMsg(final int aKey, final IMsg destMsg);
     
-    //TODO should be change into
-    //IMsg getAsMsg(final int aKey, final IMsgFactory aMsgFactory);
     
     /**
      * <p>get.</p>
@@ -122,7 +117,6 @@ public interface IMsg {
      * @param clazz
      * @return a {@link java.lang.Object} object.
      */
-    //TODO pb create object for IMsg
     <T> T getAsObject(final int aKey, final Class<T> clazz);
     
     /**
@@ -132,8 +126,8 @@ public interface IMsg {
      * @param clazz
      * @param destObj
      */
-    //TODO order clazz destObj
-    <T> void getAsObject(final int aKey, final Class<T> clazz, final T destObj);
+    //TODO to add?
+    //<T> void getAsObject(final int aKey, final Class<T> clazz, final T destObj);
     
     /**
      * <p>getAsBooleans.</p>
@@ -151,6 +145,18 @@ public interface IMsg {
      */
     byte[] getAsBytes(final int aKey);
     
+    
+    /**
+     * getAsBytes.
+     *
+     * @param aKey
+     * @param aSerializer
+     * @return
+     */
+    //TODO
+    //<T extends IMsg> T getAsBytes(final int aKey, final ISerializer aSerializer);
+    <T> T getAsBytes(final int aKey, final ISerializer2<T> aSerializer);
+    <T> void getAsBytes(final int aKey, final T dest, final ISerializer2<T> aSerializer);
     /**
      * <p>getAsShorts.</p>
      *
@@ -198,9 +204,7 @@ public interface IMsg {
      * @return
      */
     String[] getAsStrings(final int aKey);
-    
-    //TODO add? weird?
-    //void getAsStrings(final int aKey, final String[] strings);
+
     /**
      * <p>getAsMsgs.</p>
      *
@@ -208,69 +212,48 @@ public interface IMsg {
      * @return
      */
     IMsg[] getAsMsgs(final int aKey);
-    
-  //TODO weird, the client can't know the size of T[] before
-    //void getAsMsgs(final int aKey, final IMsgFactory aMsgFactory);
-    
-    
-    
+
     /**
-     * <p>getAsObjects.</p>
+     * getAsMsgs.
      *
      * @param aKey
-     * @return
+     * @param destMsgs
      */
-    //TODO pb create for IMsg
-    Object[] getAsObjects(final int aKey);
+    void getAsMsgs(final int aKey, IMsg[] destMsgs);
     
-    /**
-     * getAsObjects.
-     *
-     * @param aKey
-     * @param clazz
-     * @return
-     */
-    //TODO pb create for IMsg
-    <T> T[] getAsObjects(final int aKey, final Class<T> clazz);
-    
-    
-    /**
-     * getAsObjects.
-     *
-     * @param aKey
-     * @param clazz
-     * @param destObjects
-     */
-    //TODO weird, the client can't know the size of T[] before
-    //TODO pb create for IMsg
-    <T> void getAsObjects(final int aKey, final Class<T> clazz, final T[] destObjects);
-   
-    /**
-     * getAsList.
-     *
-     * @param aKey
-     * @param clazz
-     * @return
-     */
-    //TODO pb create for IMsg
-    <T> List<T> getAsList(final int aKey, final Class<T> clazz);
-    
-    /**
-     * getAsList.
-     *
-     * @param aKey
-     * @param clazz
-     * @param destList
-     */
-    //TODO pb create for IMsg
-    <T> void getAsList(final int aKey, final Class<T> clazz, final List<T> destList);
-  
+
     /**
      * getAll.
      *
      * @return
      */
-    IMsg getAll();
+    //TODO is it clone?
+    IMsg getAll(); 
+    
+    
+    /**
+     * getType.
+     *
+     * @param key
+     * @return
+     */
+    EType getType(final int key);
+    
+    /**
+     * isArray.
+     *
+     * @param key
+     * @return
+     */
+    boolean isArray(final int key);
+    
+    /**
+     * getArrayLength.
+     *
+     * @param key
+     * @return
+     */
+    int getArrayLength(final int key);
     
     
     /**
@@ -293,6 +276,7 @@ public interface IMsg {
      * @return
      */
     boolean isEmpty();
+    
         
     
     // Write opertations
@@ -458,25 +442,7 @@ public interface IMsg {
      */
     void set(final int aKey, final IMsg... aMsgs);
     
-    /**
-     * <p>set.</p>
-     *
-     * @param aKey a int.
-     * @param anObjects a Object[]
-     */
-    void set(final int aKey, final Object... anObjects);
-    
-    
-    /**
-     * set.
-     *
-     * @param aKey
-     * @param clazz
-     * @param anObjects
-     */
-    //TODO order class List, t
-    <T> void set(final int aKey, final Class<T> clazz, final List<T> anObjects);
-      
+
     /**
      * <p>setAll.</p>
      *

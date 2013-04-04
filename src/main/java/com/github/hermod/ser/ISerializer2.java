@@ -7,8 +7,12 @@ package com.github.hermod.ser;
  * @author anavarro - Mar 9, 2013
  *
  */
-public interface ISerializer {
+public interface ISerializer2<T> /* Int/Impl */ {
 
+    //TODO
+    // getInterfaceClass() //A
+    // getImplementationClass() //I
+    
     
     /**
      * <p>readFrom.</p>
@@ -18,10 +22,10 @@ public interface ISerializer {
      * @param length a int.
      * @param destMsg the dest message.
      */
-    void readFrom(final byte[] srcBytes, IMsg destMsg);
+    void readFrom(final byte[] srcBytes, T destObj);
     
-    
-    //IMsg readFrom(final byte[] srcBytes, final Class clazz/* or factory*/);
+    //TODO
+    //A readFrom(final byte[] srcBytes);
     
     /**
      * <p>readFrom.</p>
@@ -31,7 +35,7 @@ public interface ISerializer {
      * @param length a int.
      * @param destMsg the dest message.
      */
-    void readFrom(final byte[] srcBytes, final int offset, final int length, IMsg destMsg);
+    void readFrom(final byte[] srcBytes, final int offset, final int length, T destObj);
     
     /**
      * <p>writeTo.</p>
@@ -39,8 +43,7 @@ public interface ISerializer {
      * @param srcMsg the src message.
      * @return an array of byte.
      */
-    //TODO to remove (symetric readFrom)?
-    byte[] writeTo(final IMsg srcMsg);
+    byte[] writeTo(final T srcObj);
 
     /**
      * <p>writeTo.</p>
@@ -50,14 +53,14 @@ public interface ISerializer {
      * @param offset a int.
      * @return a int.
      */
-    int writeTo(final IMsg srcMsg, byte[] destBytes, final int offset);
+    int writeTo(final T srcObj, byte[] destBytes, final int offset);
     
     /**
      * <p>getLength.</p>
      *
      * @return the length of byte[] return by writeTo.
      */
-    int getLength(final IMsg msg);
+    int getLength(final T obj);
 
 
 }
