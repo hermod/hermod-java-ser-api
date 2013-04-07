@@ -239,7 +239,7 @@ public interface IMsg {
      * @param aKey
      * @param destMsgs
      */
-    void getAsMsgs(final int aKey, IMsg[] destMsgs);
+    void getAsMsgs(final int aKey, IMsg... destMsgs);
     
 
     /**
@@ -381,12 +381,9 @@ public interface IMsg {
      */
     void set(final int aKey, final IMsg aMsg);
     
-    //TODO
+    //TODO add or not
     // set(key, IMsgConvertor.convertToMsg(clazz, aObj));
-    //<T> void set(final int aKey, final IMsgConvertor aMsgConvertor, T aObj);
     
-    
-
     /**
      * <p>set.</p>
      *
@@ -495,14 +492,8 @@ public interface IMsg {
     /**
      * <p>removeAll.</p>
      *
-     */
-    void removeAll();
-    
-    /**
-     * <p>removeAll.</p>
-     *
      * @param aKey a int[].
      */
-    void removeAll(final int[] aKey);
+    void removeAll(final int... aKey);
 
 }
