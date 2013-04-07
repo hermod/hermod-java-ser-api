@@ -1,6 +1,5 @@
 package com.github.hermod.ser;
 
-import java.util.List;
 
 /**
  * <p>IMsg interface.</p>
@@ -21,61 +20,82 @@ public interface IMsg {
 
     /**
      * <p>getAsBoolean.</p>
+     * 
+     * Can throw new IllegalArgumentException if the key is not present in the Msg (can return null for a primitive type).
+     * Use <T> T getAsObject(final int aKey, final Class<T> clazz); if you want to have directy null or in your try/catch
      *
      * @param aKey a int.
      * @return a boolean.
      */
-    boolean getAsBoolean(final int aKey);
+    boolean getAsBoolean(final int aKey) throws IllegalArgumentException;
     
     
     /**
      * <p>getAsByte.</p>
      *
+     * Can throw new IllegalArgumentException if the key is not present in the Msg (can return null for a primitive type).
+     * Use <T> T getAsObject(final int aKey, final Class<T> clazz); if you want to have directy null or in your try/catch
+     *
      * @param aKey a int.
      * @return a byte.
      */
-    byte getAsByte(final int aKey);
+    byte getAsByte(final int aKey) throws IllegalArgumentException;
     
     /**
      * <p>getAsShort.</p>
      *
+     * Can throw new IllegalArgumentException if the key is not present in the Msg (can return null for a primitive type).
+     * Use <T> T getAsObject(final int aKey, final Class<T> clazz); if you want to have directy null or in your try/catch
+     *
      * @param aKey a int.
      * @return a short.
      */
-    short getAsShort(final int aKey);
+    short getAsShort(final int aKey) throws IllegalArgumentException;
     
     /**
      * <p>getAsInt.</p>
+     *
+     * Can throw new IllegalArgumentException if the key is not present in the Msg (can return null for a primitive type).
+     * Use <T> T getAsObject(final int aKey, final Class<T> clazz); if you want to have directy null or in your try/catch
      *
      * @param aKey a int.
      * @param defaultValue
      * @return a int.
      */
-    int getAsInt(final int aKey);
+    int getAsInt(final int aKey) throws IllegalArgumentException;
      
     /**
      * <p>getAsLong.</p>
      *
+     * Can throw new IllegalArgumentException if the key is not present in the Msg (can return null for a primitive type).
+     * Use <T> T getAsObject(final int aKey, final Class<T> clazz); if you want to have directy null or in your try/catch
+     *
      * @param aKey a int.
      * @return a long.
      */
-    long getAsLong(final int aKey);
+    long getAsLong(final int aKey) throws IllegalArgumentException;
 
     /**
      * <p>getAsFloat.</p>
      *
+     * Can throw new IllegalArgumentException if the key is not present in the Msg (can return null for a primitive type).
+     * Use <T> T getAsObject(final int aKey, final Class<T> clazz); if you want to have directy null or in your try/catch
+     *
      * @param aKey a int.
      * @return a float.
      */
-    float getAsFloat(final int aKey);
+    float getAsFloat(final int aKey) throws IllegalArgumentException;
 
     /**
      * <p>getAsDouble.</p>
      *
+     * Can throw new IllegalArgumentException if the key is not present in the Msg (can return null for a primitive type).
+     * Use <T> T getAsObject(final int aKey, final Class<T> clazz); if you want to have directy null or in your try/catch
+     *
      * @param aKey a int.
      * @return a double.
      */
-    double getAsDouble(final int aKey);
+    double getAsDouble(final int aKey) throws IllegalArgumentException;
 
     /**
      * <p>getAsString.</p>
@@ -93,6 +113,7 @@ public interface IMsg {
      */
     IMsg getAsMsg(final int aKey);
     
+    
     /**
      * <p>getAsMsg.</p>
      *
@@ -101,6 +122,15 @@ public interface IMsg {
      */
     void getAsMsg(final int aKey, final IMsg destMsg);
     
+    /**
+     * getAsMsg.
+     *
+     * @param aKey
+     * @param aMsgConvertor
+     * @return
+     */
+    //TODO add or not IMsgConvertor.convertToClass(clazz, getAsMsg(key));
+    //<T> T getAsMsg(final int aKey, final IMsgConvertor aMsgConvertor, final Class<T> aClass);
     
     /**
      * <p>get.</p>
@@ -119,15 +149,6 @@ public interface IMsg {
      */
     <T> T getAsObject(final int aKey, final Class<T> clazz);
     
-    /**
-     * getAsObject.
-     *
-     * @param aKey
-     * @param clazz
-     * @param destObj
-     */
-    //TODO to add?
-    //<T> void getAsObject(final int aKey, final Class<T> clazz, final T destObj);
     
     /**
      * <p>getAsBooleans.</p>
@@ -153,10 +174,9 @@ public interface IMsg {
      * @param aSerializer
      * @return
      */
-    //TODO
-    //<T extends IMsg> T getAsBytes(final int aKey, final ISerializer aSerializer);
-    <T> T getAsBytes(final int aKey, final ISerializer2<T> aSerializer);
-    <T> void getAsBytes(final int aKey, final T dest, final ISerializer2<T> aSerializer);
+    // TODO Really needed ? can do IBytesConvertor.convertTo(getAsBytes(key))
+    <T> T getAsBytes(final int aKey, final IBytesConvertor<T> aByteConvertor);
+    
     /**
      * <p>getAsShorts.</p>
      *
@@ -360,6 +380,12 @@ public interface IMsg {
      * @param aMsg a {@link com.github.hermod.ser.IMsg} object.
      */
     void set(final int aKey, final IMsg aMsg);
+    
+    //TODO
+    // set(key, IMsgConvertor.convertToMsg(clazz, aObj));
+    //<T> void set(final int aKey, final IMsgConvertor aMsgConvertor, T aObj);
+    
+    
 
     /**
      * <p>set.</p>
@@ -377,7 +403,6 @@ public interface IMsg {
      */
     void set(final int aKey, final boolean... aBooleans);
     
-    
     /**
      * <p>set.</p>
      *
@@ -385,6 +410,16 @@ public interface IMsg {
      * @param anArray a byte[]
      */
     void set(final int aKey, final byte... aBytes);
+
+    /**
+     * <p>set.</p>
+     *
+     * @param aKey a int.
+     * @param byteSerializer
+     * @param anArray a byte[]
+     */
+    //TODO  Really needed ? can do set(key, IBytesConvertor.convertTo(srcObj));
+    <T> void set(final int aKey, final IBytesConvertor<T> bytesConvertor, final T aSrc);
     
     /**
      * <p>set.</p>
@@ -442,7 +477,6 @@ public interface IMsg {
      */
     void set(final int aKey, final IMsg... aMsgs);
     
-
     /**
      * <p>setAll.</p>
      *
@@ -450,7 +484,6 @@ public interface IMsg {
      */
     void setAll(final IMsg aMsg);
 
-    
     
     /**
      * <p>remove.</p>
