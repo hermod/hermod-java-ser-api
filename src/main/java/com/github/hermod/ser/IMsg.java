@@ -487,13 +487,13 @@ public interface IMsg {
      *
      * @param aKey a int.
      */
-    void remove(final int aKey);
+    void remove(final int... aKeys);
     
     /**
      * <p>removeAll.</p>
      *
-     * @param aKey a int[].
      */
-    void removeAll(final int... aKey);
+    void removeAll();
+    
 
 }
