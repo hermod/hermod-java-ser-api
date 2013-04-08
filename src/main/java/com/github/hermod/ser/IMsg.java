@@ -122,15 +122,6 @@ public interface IMsg {
      */
     void getAsMsg(final int aKey, final IMsg destMsg);
     
-    /**
-     * getAsMsg.
-     *
-     * @param aKey
-     * @param aMsgConvertor
-     * @return
-     */
-    //TODO add or not IMsgConvertor.convertToClass(clazz, getAsMsg(key));
-    //<T> T getAsMsg(final int aKey, final IMsgConvertor aMsgConvertor, final Class<T> aClass);
     
     /**
      * <p>get.</p>
@@ -166,16 +157,6 @@ public interface IMsg {
      */
     byte[] getAsBytes(final int aKey);
     
-    
-    /**
-     * getAsBytes.
-     *
-     * @param aKey
-     * @param aSerializer
-     * @return
-     */
-    // TODO Really needed ? can do IBytesConvertor.convertTo(getAsBytes(key))
-    <T> T getAsBytes(final int aKey, final IBytesConvertor<T> aByteConvertor);
     
     /**
      * <p>getAsShorts.</p>
@@ -241,7 +222,6 @@ public interface IMsg {
      */
     void getAsMsgs(final int aKey, IMsg... destMsgs);
     
-
     /**
      * getAll.
      *
@@ -249,7 +229,6 @@ public interface IMsg {
      */
     //TODO is it clone?
     IMsg getAll(); 
-    
     
     /**
      * getType.
@@ -364,6 +343,8 @@ public interface IMsg {
      * @param nbDigit a int.
      */
     void set(final int aKey, final double aDouble, final int nbDigit);
+    //void set(final int aKey, final double aDouble, final EPrecision aPrecision);
+    
 
     /**
      * <p>set.</p>
@@ -380,9 +361,6 @@ public interface IMsg {
      * @param aMsg a {@link com.github.hermod.ser.IMsg} object.
      */
     void set(final int aKey, final IMsg aMsg);
-    
-    //TODO add or not
-    // set(key, IMsgConvertor.convertToMsg(clazz, aObj));
     
     /**
      * <p>set.</p>
@@ -407,16 +385,6 @@ public interface IMsg {
      * @param anArray a byte[]
      */
     void set(final int aKey, final byte... aBytes);
-
-    /**
-     * <p>set.</p>
-     *
-     * @param aKey a int.
-     * @param byteSerializer
-     * @param anArray a byte[]
-     */
-    //TODO  Really needed ? can do set(key, IBytesConvertor.convertTo(srcObj));
-    <T> void set(final int aKey, final IBytesConvertor<T> bytesConvertor, final T aSrc);
     
     /**
      * <p>set.</p>

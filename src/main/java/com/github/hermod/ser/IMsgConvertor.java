@@ -1,7 +1,10 @@
 package com.github.hermod.ser;
 
 /**
- * <p>IMsgConvertor. </p>
+ * <p>IMsgConvertor.</p>
+ * 
+ * Class to convert from Class, IMsg, byte[] to Class, IMsg, byte[].
+ * If you want to have performance and customize destination Msg, use IMsgSerializer. 
  *
  * @author anavarro - Apr 7, 2013
  *
