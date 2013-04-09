@@ -8,6 +8,7 @@ package com.github.hermod.ser;
  * @param <T>
  *
  */
+@Deprecated
 public interface IBytesConvertor<T> {
     
     /**

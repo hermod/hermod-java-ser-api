@@ -9,6 +9,7 @@ package com.github.hermod.ser;
  * @author anavarro - Apr 7, 2013
  *
  */
+@Deprecated
 public interface IMsgConvertor {
     
     // Class <-> Msg
@@ -27,7 +28,7 @@ public interface IMsgConvertor {
      * @param src
      * @return
      */
-    <S> IMsg convertToMsg(final S src);
+    IMsg convertToMsg(final Object src);
 
     // byte[] <-> Class 
     /**
@@ -45,7 +46,7 @@ public interface IMsgConvertor {
      * @param src
      * @return
      */
-    <S> byte[] convertToBytes(final S src);
+    byte[] convertToBytes(final Object src);
    
     // byte[] <-> Msg
     /**

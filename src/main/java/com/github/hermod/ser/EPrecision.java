@@ -55,29 +55,5 @@ public enum EPrecision {
         return this.precision;
     }
 
-    /**
-     * getPrecision.
-     * 
-     * @param nbDigit
-     * @return
-     */
-    public static final EPrecision getPrecisionFromNbDigit(final int nbDigit) {
-        for (final EPrecision precision : EPrecision.values()) {
-            if (nbDigit == precision.getNbDigit()) {
-                return precision;
-            }
-        }
-        throw new IllegalArgumentException("Precision not found with nbDigit=" + nbDigit + " in " + Arrays.asList(EPrecision.values()));
-    }
-    
-    
-    public static final EPrecision getPrecision(final double aPrecision) {
-        for (final EPrecision precision : EPrecision.values()) {
-            if (aPrecision == precision.getPrecision()) {
-                return precision;
-            }
-        }
-        throw new IllegalArgumentException("Precision not found with precision=" + aPrecision + " in " + Arrays.asList(EPrecision.values()));
-    }
 
 }
