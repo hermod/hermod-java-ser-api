@@ -343,6 +343,7 @@ public interface IMsg {
      * @param nbDigit a int.
      */
     void set(final int aKey, final double aDouble, final int nbDigit);
+    //TODO
     //void set(final int aKey, final double aDouble, final EPrecision aPrecision);
     
 
@@ -353,6 +354,10 @@ public interface IMsg {
      * @param aString a {@link java.lang.String} object.
      */
     void set(final int aKey, final String aString);
+    
+    //TODO
+    //void set(final int aKey, final String aString, final ECharset charset);
+    
 
     /**
      * <p>set.</p>

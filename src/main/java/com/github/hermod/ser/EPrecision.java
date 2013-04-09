@@ -34,7 +34,11 @@ public enum EPrecision {
      * @return
      */
     public final long calculateIntegerMantissa(final double aValue) {
-        return (long) (aValue / this.precision);
+        return (long) (aValue / this.precision + 0.5);
+    }
+    
+    public final double calculateDouble(final double aValue) {
+        return (aValue * this.precision);
     }
 
     /**

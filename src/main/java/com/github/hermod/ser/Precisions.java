@@ -15,7 +15,6 @@ public final class Precisions {
      *
      */
     private Precisions() {
-        // TODO Auto-generated constructor stub
         super();
         
     }
@@ -26,7 +25,8 @@ public final class Precisions {
      * @param nbDigit
      * @return
      */
-    public static final EPrecision getPrecisionFromNbDigit(final int nbDigit) {
+    public static final EPrecision fromNbDigit(final int nbDigit) {
+        //TODO to optimize with a 2 tables
         for (final EPrecision precision : EPrecision.values()) {
             if (nbDigit == precision.getNbDigit()) {
                 return precision;
@@ -42,7 +42,7 @@ public final class Precisions {
      * @param aPrecision
      * @return
      */
-    public static final EPrecision getPrecision(final double aPrecision) {
+    public static final EPrecision fromPrecision(final double aPrecision) {
         for (final EPrecision precision : EPrecision.values()) {
             if (aPrecision == precision.getPrecision()) {
                 return precision;

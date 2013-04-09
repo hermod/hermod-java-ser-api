@@ -17,6 +17,10 @@ public interface IBytesSerializable {
      */
     byte[] serializeToBytes();
     
+    //TODO inverse args
+    void serializeToBytes(final byte[] destBytes, final int offset);
+    
+    // getLength();
     // convertTo()
     /**
      * deserializeFrom.
@@ -25,6 +29,7 @@ public interface IBytesSerializable {
      * @param offset
      * @param length
      */
+  //TODO inverse args
     void deserializeFrom(final byte[] srcBytes, final int offset, final int length);
     
 }
