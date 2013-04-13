@@ -3,13 +3,14 @@ package com.github.hermod.ser;
 import java.nio.ByteBuffer;
 
 
+
 /**
  * <p>IByteBufferSerializable. </p>
  *
- * @author anavarro - Apr 10, 2013
+ * @author anavarro - Apr 13, 2013
  *
  */
-public interface IByteBufferSerializable {
+public interface IByteBufferSerializable extends ISerializable {
 
     /**
      * serializeToByteBuffer.
@@ -17,15 +18,21 @@ public interface IByteBufferSerializable {
      * @param destByteBuffer
      */
     void serializeToByteBuffer(final ByteBuffer destByteBuffer);
-    //ByteBuffer serializeToByteBuffer();
+
+    /**
+     * serializeToByteBuffer.
+     *
+     * @return
+     */
+    ByteBuffer serializeToByteBuffer();
     
     /**
      * deserializeFrom.
      *
      * @param srcByteBuffer
      * @param offset
-     * @param length
+     * @param srcLength
      */
-    void deserializeFrom(final ByteBuffer srcByteBuffer, final int offset, final int length);
+    void deserializeFrom(final ByteBuffer srcByteBuffer, final int srcLength);
     
 }

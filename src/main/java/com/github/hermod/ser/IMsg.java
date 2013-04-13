@@ -239,6 +239,19 @@ public interface IMsg {
     EType getType(final int key);
     
     /**
+     * getTypeAsByte.
+     *
+     * @param key
+     * @return
+     */
+    byte getTypeAsByte(final int key);
+    
+    // TODO
+    // Add it or not?
+    // with lenghtOfLenght / type
+    //int getLength(final int key);
+    
+    /**
      * isArray.
      *
      * @param key
@@ -276,7 +289,8 @@ public interface IMsg {
      */
     boolean isEmpty();
     
-        
+    
+    
     
     // Write opertations
     /**
@@ -343,10 +357,16 @@ public interface IMsg {
      * @param nbDigit a int.
      */
     void set(final int aKey, final double aDouble, final int nbDigit);
-    //TODO
-    //void set(final int aKey, final double aDouble, final EPrecision aPrecision);
     
-
+    /**
+     * set.
+     *
+     * @param aKey
+     * @param aDouble
+     * @param aPrecision
+     */
+    void set(final int aKey, final double aDouble, final EPrecision aPrecision);
+    
     /**
      * <p>set.</p>
      *
@@ -355,8 +375,14 @@ public interface IMsg {
      */
     void set(final int aKey, final String aString);
     
-    //TODO
-    //void set(final int aKey, final String aString, final ECharset charset);
+    /**
+     * set.
+     *
+     * @param aKey
+     * @param aString
+     * @param forceIso88591Charset
+     */
+    void set(final int aKey, final String aString, final boolean forceIso88591Charset);
     
 
     /**
@@ -437,7 +463,7 @@ public interface IMsg {
      * @param aKey a int.
      * @param anArray a string[]
      */
-    void set(final int aKey, final String... aStrings);
+    void set(final int aKey, final String[] aStrings, final boolean forceIso88591Charset);
     
     /**
      * <p>set.</p>
@@ -454,7 +480,6 @@ public interface IMsg {
      */
     void setAll(final IMsg aMsg);
 
-    
     /**
      * <p>remove.</p>
      *
@@ -467,6 +492,6 @@ public interface IMsg {
      *
      */
     void removeAll();
-    
+
 
 }

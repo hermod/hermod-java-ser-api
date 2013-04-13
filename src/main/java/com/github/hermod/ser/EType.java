@@ -1,13 +1,13 @@
 package com.github.hermod.ser;
 
 import static com.github.hermod.ser.Types.DECIMAL_TYPE;
-import static com.github.hermod.ser.Types.FIXED_VALUE_LENGTH_ARRAY_TYPE;
+import static com.github.hermod.ser.Types.ARRAY_FIXED_VALUE_TYPE;
 import static com.github.hermod.ser.Types.INTEGER_TYPE;
 import static com.github.hermod.ser.Types.MSG_TYPE;
 import static com.github.hermod.ser.Types.NULL_TYPE;
 import static com.github.hermod.ser.Types.STRING_ISO_8859_1_TYPE;
-import static com.github.hermod.ser.Types.STRING_UTF16_TYPE;
-import static com.github.hermod.ser.Types.VARIABLE_VALUE_LENGTH_ARRAY_TYPE;
+import static com.github.hermod.ser.Types.STRING_TYPE;
+import static com.github.hermod.ser.Types.ARRAY_VARIABLE_VALUE_TYPE;
 
 /**
  * <p>EType.</p>
@@ -16,16 +16,30 @@ import static com.github.hermod.ser.Types.VARIABLE_VALUE_LENGTH_ARRAY_TYPE;
  * 
  */
 public enum EType {
-    
-    NULL(NULL_TYPE), MSG(MSG_TYPE), INTEGER(INTEGER_TYPE), DECIMAL(DECIMAL_TYPE), STRING_ISO_8859_1(STRING_ISO_8859_1_TYPE), STRING_UTF16(STRING_UTF16_TYPE), FIXED_VALUE_LENGTH_ARRAY(
-            FIXED_VALUE_LENGTH_ARRAY_TYPE), VARIABLE_VALUE_LENGTH_ARRAY(VARIABLE_VALUE_LENGTH_ARRAY_TYPE);
+
+    NULL(NULL_TYPE), MSG(MSG_TYPE), INTEGER(INTEGER_TYPE), DECIMAL(DECIMAL_TYPE), STRING_ISO_8859_1(STRING_ISO_8859_1_TYPE), STRING(STRING_TYPE), ARRAY_FIXED_VALUE(
+            ARRAY_FIXED_VALUE_TYPE), ARRAY_VARIABLE_VALUE(ARRAY_VARIABLE_VALUE_TYPE);
 
     private final byte id;
 
+    private static final EType[] ETYPES;
+
+    static {
+        int maxTypeId = 0;
+        for (final EType type : EType.values()) {
+            if (type.getId() > maxTypeId) {
+                maxTypeId = type.getId();
+            }
+        }
+        ETYPES = new EType[maxTypeId];
+        for (final EType type : EType.values()) {
+            ETYPES[type.getId()] = type;
+        }
+    }
 
     /**
      * Constructor.
-     *
+     * 
      * @param aId
      */
     EType(byte aId) {
@@ -34,11 +48,21 @@ public enum EType {
 
     /**
      * getId.
-     *
+     * 
      * @return
      */
     public final byte getId() {
         return this.id;
+    }
+
+    /**
+     * fromId.
+     * 
+     * @param id
+     * @return
+     */
+    public static EType valueOf(final byte id) {
+        return ETYPES[id];
     }
 
 }

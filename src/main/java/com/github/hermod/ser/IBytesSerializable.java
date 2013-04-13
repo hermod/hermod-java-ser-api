@@ -1,15 +1,14 @@
 package com.github.hermod.ser;
 
+
 /**
  * <p>IBytesSerializable. </p>
  *
- * @author anavarro - Apr 10, 2013
+ * @author anavarro - Apr 13, 2013
  *
  */
-//TODO Name IBytesConvertible?
-public interface IBytesSerializable {
+public interface IBytesSerializable extends ISerializable {
 
-    // convertToBytes()
     /**
      * serializeToBytes.
      *
@@ -17,19 +16,23 @@ public interface IBytesSerializable {
      */
     byte[] serializeToBytes();
     
-    //TODO inverse args
-    void serializeToBytes(final byte[] destBytes, final int offset);
+    /**
+     * serializeToBytes.
+     *
+     * @param destBytes
+     * @param destOffset
+     * @return
+     */
+    int serializeToBytes(final byte[] destBytes, final int destOffset);
     
-    // getLength();
-    // convertTo()
     /**
      * deserializeFrom.
      *
      * @param srcBytes
-     * @param offset
-     * @param length
+     * @param srcOffset
+     * @param srcLength
      */
-  //TODO inverse args
-    void deserializeFrom(final byte[] srcBytes, final int offset, final int length);
+    void deserializeFrom(final byte[] srcBytes, final int srcOffset, final int srcLength);
+
     
 }
