@@ -19,20 +19,20 @@ public interface IBytesSerializable extends ISerializable {
     /**
      * serializeToBytes.
      *
-     * @param destBytes
-     * @param destOffset
+     * @param aDestBytes
+     * @param aDestOffset
      * @return
      */
-    int serializeToBytes(final byte[] destBytes, final int destOffset);
+    int serializeToBytes(byte[] aDestBytes, int aDestOffset);
     
     /**
      * deserializeFrom.
      *
-     * @param srcBytes
-     * @param srcOffset
-     * @param srcLength
+     * @param aSrcBytes
+     * @param aSrcOffset
+     * @param aSrcLength
      */
-    void deserializeFrom(final byte[] srcBytes, final int srcOffset, final int srcLength);
+    void deserializeFrom(final byte[] aSrcBytes, final int aSrcOffset, final int aSrcLength);
 
     
 }

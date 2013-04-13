@@ -14,32 +14,32 @@ public interface IBytesClassSerializer<T> {
     /**
      * serializeToBytes.
      *
-     * @param srcObject
+     * @param aSrcObject
      * @return
      */
-    byte[] serializeToBytes(final T srcObject);
+    byte[] serializeToBytes(final T aSrcObject);
     
     
     /**
      * serializeToBytes.
      *
-     * @param srcObject
-     * @param destBytes
-     * @param destOffset
+     * @param aSrcObject
+     * @param aDestBytes
+     * @param aDestOffset
      * @return
      */
-    int serializeToBytes(final T srcObject, byte[] destBytes, int destOffset);
+    int serializeToBytes(final T aSrcObject, byte[] aDestBytes, int aDestOffset);
     
     
     /**
      * deserializeFrom.
      *
-     * @param srcBytes
-     * @param srcOffset
-     * @param srcLength
-     * @param destObject
+     * @param aSrcBytes
+     * @param aSrcOffset
+     * @param aSrcLength
+     * @param aDestObject
      */
-    void deserializeFrom(final byte[] srcBytes, final int srcOffset, final int srcLength, T destObject);
+    void deserializeFrom(final byte[] aSrcBytes, final int aSrcOffset, final int aSrcLength, T aDestObject);
     
     //T deserializeFrom(final byte[] srcBytes, final int srcOffset, final int srcLength);
     

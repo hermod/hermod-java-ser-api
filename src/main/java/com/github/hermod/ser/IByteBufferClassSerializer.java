@@ -16,29 +16,28 @@ public interface IByteBufferClassSerializer<T> {
     /**
      * serializeToByteBuffer.
      *
-     * @param srcMsg
+     * @param aSrcObjet
      * @return
      */
-    ByteBuffer serializeToByteBuffer(final T srcObjet);
+    ByteBuffer serializeToByteBuffer(final T aSrcObjet);
     
     /**
      * serializeToByteBuffer.
      *
-     * @param srcObjet
-     * @param destByteBuffer
+     * @param aSrcObjet
+     * @param aDestByteBuffer
      */
-    void serializeToByteBuffer(final T srcObjet, final ByteBuffer destByteBuffer);
+    void serializeToByteBuffer(final T aSrcObjet, final ByteBuffer aDestByteBuffer);
     
-
     /**
      * deserializeFrom.
      *
-     * @param srcByteBuffer
+     * @param aSrcByteBuffer
      * @param offset
-     * @param srcLength
-     * @param destObject
+     * @param aSrcLength
+     * @param aDestObject
      */
-    void deserializeFrom(final ByteBuffer srcByteBuffer, final int srcLength, T destObject);
+    void deserializeFrom(final ByteBuffer aSrcByteBuffer, final int aSrcLength, T aDestObject);
    
     //T deserializeFrom(final ByteBuffer srcByteBuffer, final int srcLength);
     

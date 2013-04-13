@@ -95,7 +95,7 @@ public enum EPrecision {
      *
      * @return
      */
-    public double getPrecision() {
+    public final double getPrecision() {
         return this.precision;
     }
 
@@ -105,7 +105,7 @@ public enum EPrecision {
      * @param nbDigit
      * @return
      */
-    public static final EPrecision valueOf(final int nbDigit) {
+    public static EPrecision valueOf(final int nbDigit) {
         try {
             return (nbDigit >= 0) ? positiveNbDigitPrecision[nbDigit] : negativeNbDigitPrecision[-nbDigit];
         } catch (final IndexOutOfBoundsException e) {

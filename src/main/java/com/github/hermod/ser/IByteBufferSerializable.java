@@ -15,9 +15,9 @@ public interface IByteBufferSerializable extends ISerializable {
     /**
      * serializeToByteBuffer.
      *
-     * @param destByteBuffer
+     * @param aDestByteBuffer
      */
-    void serializeToByteBuffer(final ByteBuffer destByteBuffer);
+    void serializeToByteBuffer(final ByteBuffer aDestByteBuffer);
 
     /**
      * serializeToByteBuffer.
@@ -29,10 +29,10 @@ public interface IByteBufferSerializable extends ISerializable {
     /**
      * deserializeFrom.
      *
-     * @param srcByteBuffer
+     * @param aSrcByteBuffer
      * @param offset
-     * @param srcLength
+     * @param aSrcLength
      */
-    void deserializeFrom(final ByteBuffer srcByteBuffer, final int srcLength);
+    void deserializeFrom(final ByteBuffer aSrcByteBuffer, final int aSrcLength);
     
 }

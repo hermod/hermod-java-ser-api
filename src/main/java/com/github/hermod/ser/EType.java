@@ -42,7 +42,7 @@ public enum EType {
      * 
      * @param aId
      */
-    EType(byte aId) {
+    private EType(byte aId) {
         this.id = aId;
     }
 
@@ -56,13 +56,13 @@ public enum EType {
     }
 
     /**
-     * fromId.
+     * valueOf.
      * 
-     * @param id
+     * @param aId
      * @return
      */
-    public static EType valueOf(final byte id) {
-        return ETYPES[id];
+    public static EType valueOf(final byte aId) {
+        return ETYPES[aId];
     }
 
 }
