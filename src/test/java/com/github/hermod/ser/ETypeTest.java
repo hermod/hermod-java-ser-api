@@ -1,8 +1,9 @@
 package com.github.hermod.ser;
 
-import static org.junit.Assert.*;
 
-import org.junit.Ignore;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.failBecauseExceptionWasNotThrown;
+
 import org.junit.Test;
 
 /**
@@ -11,17 +12,7 @@ import org.junit.Test;
  * @author anavarro - Apr 13, 2013
  *
  */
-@Ignore
 public class ETypeTest {
-
-    /**
-     * testGetId.
-     *
-     */
-    @Test
-    public void testGetId() {
-        fail("Not yet implemented");
-    }
 
     /**
      * testValueOf.
@@ -29,7 +20,16 @@ public class ETypeTest {
      */
     @Test
     public void testValueOf() {
-        fail("Not yet implemented");
+        assertThat(EType.valueOf("INTEGER")).isEqualTo(EType.INTEGER);
+        assertThat(EType.valueOf(Types.INTEGER_TYPE)).isEqualTo(EType.INTEGER);
+        assertThat(EType.valueOf(Types.MSG_TYPE)).isEqualTo(EType.MSG);
+        try {
+            assertThat(EType.valueOf((byte) 1));
+            failBecauseExceptionWasNotThrown(IllegalArgumentException.class);
+            
+        } catch (final Exception e) { 
+            assertThat(e).isInstanceOf(IllegalArgumentException.class);
+        }
     }
 
 }

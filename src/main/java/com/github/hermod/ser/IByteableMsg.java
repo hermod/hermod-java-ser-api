@@ -7,7 +7,7 @@ package com.github.hermod.ser;
  *
  */
 
-// Msg -> IntMap, Map, KeyValueMap
+// Msg -> IntMap, Map, KeyValueMap?
 // current = Msg + BytesSerializable -> IntMapByte(s)Msg, MapByte(s)Msg, KeyValueMapBytes, MapByteable
 //TODO Name? IMsgBytesSerializable, IMsgByteable, IMsgBytesable?, IMsgBytes, IBytesMsg
 //KeyValueMsg, MapMsg, ?

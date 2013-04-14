@@ -1,13 +1,15 @@
 package com.github.hermod.ser;
 
-import static com.github.hermod.ser.Types.DECIMAL_TYPE;
 import static com.github.hermod.ser.Types.ARRAY_FIXED_VALUE_TYPE;
+import static com.github.hermod.ser.Types.ARRAY_VARIABLE_VALUE_TYPE;
+import static com.github.hermod.ser.Types.DECIMAL_TYPE;
 import static com.github.hermod.ser.Types.INTEGER_TYPE;
 import static com.github.hermod.ser.Types.MSG_TYPE;
 import static com.github.hermod.ser.Types.NULL_TYPE;
 import static com.github.hermod.ser.Types.STRING_ISO_8859_1_TYPE;
 import static com.github.hermod.ser.Types.STRING_TYPE;
-import static com.github.hermod.ser.Types.ARRAY_VARIABLE_VALUE_TYPE;
+
+import java.util.Arrays;
 
 /**
  * <p>EType.</p>
@@ -22,21 +24,7 @@ public enum EType {
 
     private final byte id;
 
-    private static final EType[] ETYPES;
-
-    static {
-        int maxTypeId = 0;
-        for (final EType type : EType.values()) {
-            if (type.getId() > maxTypeId) {
-                maxTypeId = type.getId();
-            }
-        }
-        ETYPES = new EType[maxTypeId];
-        for (final EType type : EType.values()) {
-            ETYPES[type.getId()] = type;
-        }
-    }
-
+    
     /**
      * Constructor.
      * 
@@ -62,7 +50,12 @@ public enum EType {
      * @return
      */
     public static EType valueOf(final byte aId) {
-        return ETYPES[aId];
+        for (final EType type : EType.values()) {
+            if (type.getId() == aId) {
+                return type;
+            }
+        }
+        throw new IllegalArgumentException("The type with id=" + aId + " not found in EType.values()=" + Arrays.asList(EType.values()));
     }
 
 }

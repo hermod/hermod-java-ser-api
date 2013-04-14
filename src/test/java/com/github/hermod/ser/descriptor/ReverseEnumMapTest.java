@@ -1,5 +1,6 @@
 package com.github.hermod.ser.descriptor;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.*;
 
 import org.junit.Ignore;
@@ -11,17 +12,8 @@ import org.junit.Test;
  * @author anavarro - Apr 13, 2013
  *
  */
-@Ignore
 public class ReverseEnumMapTest {
 
-    /**
-     * testReverseEnumMap.
-     *
-     */
-    @Test
-    public void testReverseEnumMap() {
-        fail("Not yet implemented");
-    }
 
     /**
      * testGet.
@@ -29,7 +21,8 @@ public class ReverseEnumMapTest {
      */
     @Test
     public void testGet() {
-        fail("Not yet implemented");
+        final ReverseEnumMap<FootballPlayer> map = new ReverseEnumMap<>(FootballPlayer.class);
+        assertThat(map.get(1)).isEqualTo(FootballPlayer.GOALKEEPER);
     }
 
 }

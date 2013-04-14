@@ -16,7 +16,7 @@ import java.util.Arrays;
  */
 public enum EPrecision {
 
-    UNITS(0), TENTHS(0.1), HUNDREDTHS(0.01), THOUSANDTHS(0.001), TEN_THOUSANDTHS(0.0001), HUNDRED_THOUSANDTHS(0.00001), MILLIONTHS(0.000001), TEN_MILLIONTHS(
+    UNITS(1), TENTHS(0.1), HUNDREDTHS(0.01), THOUSANDTHS(0.001), TEN_THOUSANDTHS(0.0001), HUNDRED_THOUSANDTHS(0.00001), MILLIONTHS(0.000001), TEN_MILLIONTHS(
             0.0000001), HUNDRED_MILLIONTHS(0.00000001), TENS(10.0), HUNDREDS(100.0), THOUSANDS(1000.0), TEN_THOUSANDS(10000.0), HUNDRED_THOUSANDS(
             100000.0), MILLIONS(1000000.0), TEN_MILLIONS(10000000.0), HUNDRED_MILLIONS(100000000.0);
 
@@ -38,14 +38,14 @@ public enum EPrecision {
                 minNbDigitPrecision = precision.getNbDigit();
             }
         }
-        negativeNbDigitPrecision = new EPrecision[-minNbDigitPrecision];
-        positiveNbDigitPrecision = new EPrecision[maxNbDigitPrecision];
+        negativeNbDigitPrecision = new EPrecision[- minNbDigitPrecision + 1];
+        positiveNbDigitPrecision = new EPrecision[maxNbDigitPrecision + 1];
         
         for (final EPrecision precision : EPrecision.values()) {
             if (precision.getNbDigit() >= 0) {
                 positiveNbDigitPrecision[precision.getNbDigit()] = precision;
             } else {
-                positiveNbDigitPrecision[-precision.getNbDigit()] = precision;
+                negativeNbDigitPrecision[-precision.getNbDigit()] = precision;
             }
         }
     }
@@ -57,7 +57,7 @@ public enum EPrecision {
      */
     private EPrecision(final double aPrecision) {
         this.precision = aPrecision;
-        this.nbDigit = (int) Math.log10(this.precision);
+        this.nbDigit = (int) - Math.log10(this.precision);
         
     }
 
@@ -67,8 +67,8 @@ public enum EPrecision {
      * @param aValue
      * @return
      */
-    public final long calculateIntegerMantissa(final double aValue) {
-        return (long) (aValue / this.precision + 0.5);
+    public final int calculateIntegerMantissa(final double aValue) {
+        return (int) (aValue / this.precision + 0.5);
     }
     
     /**
@@ -77,7 +77,7 @@ public enum EPrecision {
      * @param aValue
      * @return
      */
-    public final double calculateDouble(final double aValue) {
+    public final double calculateDoubleFromIntegerMantissa(final int aValue) {
         return (aValue * this.precision);
     }
 

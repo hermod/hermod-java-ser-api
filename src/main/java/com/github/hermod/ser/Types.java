@@ -13,7 +13,6 @@ public final class Types {
      *
      */
     private Types() {
-        super();
     }
 
     
