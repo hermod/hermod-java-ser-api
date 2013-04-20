@@ -23,6 +23,7 @@ public class EPrecisionTest {
         assertThat((int) EPrecision.THOUSANDTHS.calculateIntegerMantissa(1.122)).isEqualTo(1122);
         assertThat((int) EPrecision.HUNDREDS.calculateIntegerMantissa(100.122)).isEqualTo(1);
         assertThat(EPrecision.HUNDREDS.calculateIntegerMantissa(Long.MAX_VALUE)).isNaN();
+        assertThat(EPrecision.HUNDREDS.calculateIntegerMantissa(Long.MIN_VALUE)).isNaN();
     }
 
     /**
