@@ -22,7 +22,11 @@ public enum EPrecision {
 
     private static final EPrecision[] NEGATIVE_NB_DIGIT_PRECISION; 
     private static final EPrecision[] POSITIVE_NB_DIGIT_PRECISION;
-    private static final double HALF = 0.5;
+    
+    /**
+     * HALF
+     */
+    public static final double HALF = 0.5;
     
     
     private final double precision;

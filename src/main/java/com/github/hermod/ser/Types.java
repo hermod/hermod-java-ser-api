@@ -1,5 +1,7 @@
 package com.github.hermod.ser;
 
+import java.nio.charset.Charset;
+
 /**
  * <p>Types. </p>
  *
@@ -42,9 +44,30 @@ public final class Types {
     public static final byte STRING_ISO_8859_1_TYPE = (byte) 0b1000_0000;
     
     /**
+     * ISO_8859_1_CHARSET_NAME
+     */
+    public static final String ISO_8859_1_CHARSET_NAME = "ISO-8859-1";
+    
+    /**
+     * ISO_8859_1_CHARSET
+     */
+    public static final Charset ISO_8859_1_CHARSET = Charset.forName(ISO_8859_1_CHARSET_NAME);
+    
+    
+    /**
      * STRING_TYPE (UTF16 by default as it is in a String)
      */
-    public static final byte STRING_UTF16_TYPE = (byte) 0b1010_0000;
+    public static final byte STRING_UTF_16_TYPE = (byte) 0b1010_0000;
+    
+    /**
+     * UTF_16_CHARSET_NAME
+     */
+    public static final String UTF_16_CHARSET_NAME = "UTF-16";
+    
+    /**
+     * UTF_16_CHARSET
+     */
+    public static final Charset UTF_16_CHARSET = Charset.forName(UTF_16_CHARSET_NAME);
     
     /**
      * ARRAY_FIXED_VALUE_TYPE Array with fixde length value like byte[] ...
