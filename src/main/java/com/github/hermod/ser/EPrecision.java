@@ -71,8 +71,8 @@ public enum EPrecision {
      * @return
      */
     public final double calculateIntegerMantissa(final double aValue) {
-        final double mantissa = (aValue / this.precision + 0.5);
-        return (mantissa >= Integer.MIN_VALUE && mantissa <= Integer.MAX_VALUE) ? mantissa : Double.NaN;
+        final double mantissa = aValue / this.precision + 0.5;
+        return mantissa >= Integer.MIN_VALUE && mantissa <= Integer.MAX_VALUE ? mantissa : Double.NaN;
     }
     
     /**
@@ -82,7 +82,7 @@ public enum EPrecision {
      * @return
      */
     public final double calculateDoubleFromIntegerMantissa(final long aValue) {
-        return (aValue * this.precision);
+        return aValue * this.precision;
     }
 
     /**
@@ -111,7 +111,7 @@ public enum EPrecision {
      */
     public static EPrecision valueOf(final int nbDigit) {
         try {
-            return (nbDigit >= 0) ? positiveNbDigitPrecision[nbDigit] : negativeNbDigitPrecision[-nbDigit];
+            return nbDigit >= 0 ? positiveNbDigitPrecision[nbDigit] : negativeNbDigitPrecision[-nbDigit];
         } catch (final IndexOutOfBoundsException e) {
             throw new IllegalArgumentException("Precision not found with nbDigit=" + nbDigit + " in " + Arrays.asList(EPrecision.values()));
         }
