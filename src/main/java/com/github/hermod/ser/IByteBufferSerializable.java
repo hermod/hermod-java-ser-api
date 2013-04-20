@@ -19,20 +19,12 @@ public interface IByteBufferSerializable extends ISerializable {
      */
     void serializeToByteBuffer(final ByteBuffer aDestByteBuffer);
 
-    /**
-     * serializeToByteBuffer.
-     *
-     * @return
-     */
-    ByteBuffer serializeToByteBuffer();
     
     /**
      * deserializeFrom.
      *
      * @param aSrcByteBuffer
-     * @param offset
-     * @param aSrcLength
      */
-    void deserializeFrom(final ByteBuffer aSrcByteBuffer, final int aSrcLength);
+    void deserializeFrom(final ByteBuffer aSrcByteBuffer);
     
 }

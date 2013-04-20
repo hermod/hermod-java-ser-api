@@ -44,7 +44,7 @@ public final class Types {
     /**
      * STRING_TYPE (UTF16 by default as it is in a String)
      */
-    public static final byte STRING_TYPE = (byte) 0b1010_0000;
+    public static final byte STRING_UTF16_TYPE = (byte) 0b1010_0000;
     
     /**
      * ARRAY_FIXED_VALUE_TYPE Array with fixde length value like byte[] ...

@@ -20,23 +20,14 @@ public interface IByteBufferMsgSerializer extends IMsgSerializer {
      */
     int serializeToByteBuffer(final IMsg aSrcMsg, ByteBuffer aDestByteBuffer);
     
-    /**
-     * serializeToByteBuffer.
-     *
-     * @param aSrcMsg
-     * @return
-     */
-    ByteBuffer serializeToByteBuffer(final IMsg aSrcMsg);
     
     /**
      * deserializeFrom.
      *
      * @param aSrcByteBuffer
-     * @param aSrcOffset
-     * @param aSrcLength
      * @param aDestMsg
      */
-    void deserializeFrom(final ByteBuffer aSrcByteBuffer, final int aSrcOffset, final int aSrcLength, IMsg aDestMsg);
+    void deserializeFrom(final ByteBuffer aSrcByteBuffer, IMsg aDestMsg);
     
     
 }

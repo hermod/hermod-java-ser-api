@@ -64,11 +64,15 @@ public enum EPrecision {
     /**
      * calculateIntegerMantissa.
      * 
+     * Caution it return a double to cast to int after
+     * It return Double.NaN if not possible to have mantissa on a int
+     * 
      * @param aValue
      * @return
      */
-    public final int calculateIntegerMantissa(final double aValue) {
-        return (int) (aValue / this.precision + 0.5);
+    public final double calculateIntegerMantissa(final double aValue) {
+        final double mantissa = (aValue / this.precision + 0.5);
+        return (mantissa >= Integer.MIN_VALUE && mantissa <= Integer.MAX_VALUE) ? mantissa : Double.NaN;
     }
     
     /**
@@ -77,7 +81,7 @@ public enum EPrecision {
      * @param aValue
      * @return
      */
-    public final double calculateDoubleFromIntegerMantissa(final int aValue) {
+    public final double calculateDoubleFromIntegerMantissa(final long aValue) {
         return (aValue * this.precision);
     }
 

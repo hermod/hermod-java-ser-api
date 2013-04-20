@@ -7,7 +7,7 @@ import static com.github.hermod.ser.Types.INTEGER_TYPE;
 import static com.github.hermod.ser.Types.MSG_TYPE;
 import static com.github.hermod.ser.Types.NULL_TYPE;
 import static com.github.hermod.ser.Types.STRING_ISO_8859_1_TYPE;
-import static com.github.hermod.ser.Types.STRING_TYPE;
+import static com.github.hermod.ser.Types.STRING_UTF16_TYPE;
 
 import java.util.Arrays;
 
@@ -19,7 +19,7 @@ import java.util.Arrays;
  */
 public enum EType {
 
-    NULL(NULL_TYPE), MSG(MSG_TYPE), INTEGER(INTEGER_TYPE), DECIMAL(DECIMAL_TYPE), STRING_ISO_8859_1(STRING_ISO_8859_1_TYPE), STRING(STRING_TYPE), ARRAY_FIXED_VALUE(
+    NULL(NULL_TYPE), MSG(MSG_TYPE), INTEGER(INTEGER_TYPE), DECIMAL(DECIMAL_TYPE), STRING_ISO_8859_1(STRING_ISO_8859_1_TYPE), STRING_UTF16(STRING_UTF16_TYPE), ARRAY_FIXED_VALUE(
             ARRAY_FIXED_VALUE_TYPE), ARRAY_VARIABLE_VALUE(ARRAY_VARIABLE_VALUE_TYPE);
 
     private final byte id;

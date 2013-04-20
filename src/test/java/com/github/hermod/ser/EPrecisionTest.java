@@ -19,10 +19,10 @@ public class EPrecisionTest {
      */
     @Test
     public void testCalculateIntegerMantissa() {
-        assertThat(EPrecision.TENTHS.calculateIntegerMantissa(1.1)).isEqualTo(11);
-        assertThat(EPrecision.THOUSANDTHS.calculateIntegerMantissa(1.122)).isEqualTo(1122);
-        assertThat(EPrecision.HUNDREDS.calculateIntegerMantissa(100.122)).isEqualTo(1);
-
+        assertThat((int) EPrecision.TENTHS.calculateIntegerMantissa(1.1)).isEqualTo(11);
+        assertThat((int) EPrecision.THOUSANDTHS.calculateIntegerMantissa(1.122)).isEqualTo(1122);
+        assertThat((int) EPrecision.HUNDREDS.calculateIntegerMantissa(100.122)).isEqualTo(1);
+        assertThat(EPrecision.HUNDREDS.calculateIntegerMantissa(Long.MAX_VALUE)).isNaN();
     }
 
     /**
