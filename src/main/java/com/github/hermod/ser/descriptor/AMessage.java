@@ -17,11 +17,46 @@ import java.lang.annotation.Target;
 @Documented
 public @interface AMessage {
     
+    /**
+     * id.
+     *
+     * @return
+     */
     int id();
+    
+    /**
+     * name.
+     *
+     * @return
+     */
     String name() default "";
+    
+    /**
+     * docName.
+     *
+     * @return
+     */
     String docName() default "";
+    
+    /**
+     * docComment.
+     *
+     * @return
+     */
     String docComment() default "";
+    
+    /**
+     * responseMessages.
+     *
+     * @return
+     */
     Class<?>[] responseMessages() default {};
+    
+    /**
+     * sender.
+     *
+     * @return
+     */
     ESender[] sender() default {}; 
 
 }

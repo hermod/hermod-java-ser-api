@@ -41,9 +41,26 @@ public interface IBytesClassSerializer<T> {
      */
     void deserializeFrom(final byte[] aSrcBytes, final int aSrcOffset, final int aSrcLength, T aDestObject);
     
-    //T deserializeFrom(final byte[] srcBytes, final int srcOffset, final int srcLength);
+    /**
+     * deserializeFrom.
+     *
+     * @param srcBytes
+     * @param srcOffset
+     * @param srcLength
+     * @return
+     */
+    T deserializeFrom(final byte[] srcBytes, final int srcOffset, final int srcLength);
     
-    //<S> S deserializeFrom(final byte[] srcBytes, final int srcOffset, final int srcLength, final Class<S> aClass);
+    /**
+     * deserializeFrom.
+     *
+     * @param srcBytes
+     * @param srcOffset
+     * @param srcLength
+     * @param aClass
+     * @return
+     */
+    <S> S deserializeFrom(final byte[] srcBytes, final int srcOffset, final int srcLength, final Class<S> aClass);
     
     
 }

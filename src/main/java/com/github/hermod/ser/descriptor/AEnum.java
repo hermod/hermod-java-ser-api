@@ -17,8 +17,25 @@ import java.lang.annotation.Target;
 @Documented
 public @interface AEnum {
     
+    /**
+     * name.
+     *
+     * @return
+     */
     String name() default "";
+    
+    /**
+     * docName.
+     *
+     * @return
+     */
     String docName() default "";
+    
+    /**
+     * docComment.
+     *
+     * @return
+     */
     String docComment() default "";
 
 }

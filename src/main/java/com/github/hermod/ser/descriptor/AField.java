@@ -17,10 +17,39 @@ import java.lang.annotation.Target;
 @Documented
 public @interface AField {
 
+    /**
+     * id.
+     *
+     * @return
+     */
     int id();
+    
+    /**
+     * docName.
+     *
+     * @return
+     */
     String docName() default "";
+    
+    /**
+     * docComment.
+     *
+     * @return
+     */
     String docComment() default "";
+    
+    /**
+     * name.
+     *
+     * @return
+     */
     String name();
+    
+    /**
+     * mandatory.
+     *
+     * @return
+     */
     boolean mandatory() default false;
     
 }

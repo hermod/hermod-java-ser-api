@@ -1,9 +1,7 @@
 package com.github.hermod.ser.descriptor;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.*;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 /**

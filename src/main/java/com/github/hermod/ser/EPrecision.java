@@ -20,8 +20,10 @@ public enum EPrecision {
             0.0000001), HUNDRED_MILLIONTHS(0.00000001), TENS(10.0), HUNDREDS(100.0), THOUSANDS(1000.0), TEN_THOUSANDS(10000.0), HUNDRED_THOUSANDS(
             100000.0), MILLIONS(1000000.0), TEN_MILLIONS(10000000.0), HUNDRED_MILLIONS(100000000.0);
 
-    private static final EPrecision[] negativeNbDigitPrecision; 
-    private static final EPrecision[] positiveNbDigitPrecision;
+    private static final EPrecision[] NEGATIVE_NB_DIGIT_PRECISION; 
+    private static final EPrecision[] POSITIVE_NB_DIGIT_PRECISION;
+    private static final double HALF = 0.5;
+    
     
     private final double precision;
     private final int nbDigit;
@@ -38,14 +40,14 @@ public enum EPrecision {
                 minNbDigitPrecision = precision.getNbDigit();
             }
         }
-        negativeNbDigitPrecision = new EPrecision[- minNbDigitPrecision + 1];
-        positiveNbDigitPrecision = new EPrecision[maxNbDigitPrecision + 1];
+        NEGATIVE_NB_DIGIT_PRECISION = new EPrecision[- minNbDigitPrecision + 1];
+        POSITIVE_NB_DIGIT_PRECISION = new EPrecision[maxNbDigitPrecision + 1];
         
         for (final EPrecision precision : EPrecision.values()) {
             if (precision.getNbDigit() >= 0) {
-                positiveNbDigitPrecision[precision.getNbDigit()] = precision;
+                POSITIVE_NB_DIGIT_PRECISION[precision.getNbDigit()] = precision;
             } else {
-                negativeNbDigitPrecision[-precision.getNbDigit()] = precision;
+                NEGATIVE_NB_DIGIT_PRECISION[-precision.getNbDigit()] = precision;
             }
         }
     }
@@ -71,7 +73,7 @@ public enum EPrecision {
      * @return
      */
     public final double calculateIntegerMantissa(final double aValue) {
-        final double mantissa = aValue / this.precision + 0.5;
+        final double mantissa = aValue / this.precision + HALF;
         return mantissa >= Integer.MIN_VALUE && mantissa <= Integer.MAX_VALUE ? mantissa : Double.NaN;
     }
     
@@ -111,9 +113,9 @@ public enum EPrecision {
      */
     public static EPrecision valueOf(final int nbDigit) {
         try {
-            return nbDigit >= 0 ? positiveNbDigitPrecision[nbDigit] : negativeNbDigitPrecision[-nbDigit];
+            return nbDigit >= 0 ? POSITIVE_NB_DIGIT_PRECISION[nbDigit] : NEGATIVE_NB_DIGIT_PRECISION[-nbDigit];
         } catch (final IndexOutOfBoundsException e) {
-            throw new IllegalArgumentException("Precision not found with nbDigit=" + nbDigit + " in " + Arrays.asList(EPrecision.values()));
+            throw new IllegalArgumentException("Precision not found with nbDigit=" + nbDigit + " in " + Arrays.asList(EPrecision.values()), e);
         }
     }
     

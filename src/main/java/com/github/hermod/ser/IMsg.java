@@ -27,7 +27,7 @@ public interface IMsg {
      * @param aKey a int.
      * @return a boolean.
      */
-    boolean getAsBoolean(final int aKey) throws IllegalArgumentException;
+    boolean getAsBoolean(final int aKey);
     
     
     /**
@@ -39,7 +39,7 @@ public interface IMsg {
      * @param aKey a int.
      * @return a byte.
      */
-    byte getAsByte(final int aKey) throws IllegalArgumentException;
+    byte getAsByte(final int aKey);
     
     /**
      * <p>getAsShort.</p>
@@ -50,7 +50,7 @@ public interface IMsg {
      * @param aKey a int.
      * @return a short.
      */
-    short getAsShort(final int aKey) throws IllegalArgumentException;
+    short getAsShort(final int aKey);
     
     /**
      * <p>getAsInt.</p>
@@ -62,7 +62,7 @@ public interface IMsg {
      * @param defaultValue
      * @return a int.
      */
-    int getAsInt(final int aKey) throws IllegalArgumentException;
+    int getAsInt(final int aKey);
      
     /**
      * <p>getAsLong.</p>
@@ -73,7 +73,7 @@ public interface IMsg {
      * @param aKey a int.
      * @return a long.
      */
-    long getAsLong(final int aKey) throws IllegalArgumentException;
+    long getAsLong(final int aKey);
 
     /**
      * <p>getAsFloat.</p>
@@ -84,7 +84,7 @@ public interface IMsg {
      * @param aKey a int.
      * @return a float.
      */
-    float getAsFloat(final int aKey) throws IllegalArgumentException;
+    float getAsFloat(final int aKey);
 
     /**
      * <p>getAsDouble.</p>
@@ -95,7 +95,7 @@ public interface IMsg {
      * @param aKey a int.
      * @return a double.
      */
-    double getAsDouble(final int aKey) throws IllegalArgumentException;
+    double getAsDouble(final int aKey);
 
     /**
      * <p>getAsString.</p>
@@ -249,7 +249,7 @@ public interface IMsg {
     // TODO
     // Add it or not?
     // with lenghtOfLenght / type
-    //int getLength(final int key);
+    //int getLength(final int key)
     
     /**
      * isArray.

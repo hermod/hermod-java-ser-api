@@ -17,7 +17,18 @@ import java.lang.annotation.Target;
 @Documented
 public @interface AInterface {
     
+    /**
+     * docName.
+     *
+     * @return
+     */
     String docName() default "";
+    
+    /**
+     * docComment.
+     *
+     * @return
+     */
     String docComment() default "";
     
 }

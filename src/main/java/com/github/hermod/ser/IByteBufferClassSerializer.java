@@ -11,6 +11,20 @@ import java.nio.ByteBuffer;
  * @param <T>
  *
  */
+/**
+ * <p>IByteBufferClassSerializer. </p>
+ *
+ * @author anavarro - Apr 20, 2013
+ * @param <T>
+ *
+ */
+/**
+ * <p>IByteBufferClassSerializer. </p>
+ *
+ * @author anavarro - Apr 20, 2013
+ * @param <T>
+ *
+ */
 public interface IByteBufferClassSerializer<T> {
 
     /**
@@ -39,9 +53,24 @@ public interface IByteBufferClassSerializer<T> {
      */
     void deserializeFrom(final ByteBuffer aSrcByteBuffer, final int aSrcLength, T aDestObject);
    
-    //T deserializeFrom(final ByteBuffer srcByteBuffer, final int srcLength);
+    /**
+     * deserializeFrom.
+     *
+     * @param srcByteBuffer
+     * @param srcLength
+     * @return
+     */
+    T deserializeFrom(final ByteBuffer srcByteBuffer, final int srcLength);
     
-    //<S> S deserializeFrom(final ByteBuffer srcByteBuffer, final int srcLength, final Class<S> aClass);
+    /**
+     * deserializeFrom.
+     *
+     * @param srcByteBuffer
+     * @param srcLength
+     * @param aClass
+     * @return
+     */
+    <S> S deserializeFrom(final ByteBuffer srcByteBuffer, final int srcLength, final Class<S> aClass);
     
     
 }

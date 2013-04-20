@@ -17,9 +17,32 @@ import java.lang.annotation.Target;
 @Documented
 public @interface AEnumValue {
 
+    /**
+     * id.
+     *
+     * @return
+     */
     int id();
+    
+    /**
+     * docName.
+     *
+     * @return
+     */
     String docName() default "";
+    
+    /**
+     * docComment.
+     *
+     * @return
+     */
     String docComment() default "";
+    
+    /**
+     * name.
+     *
+     * @return
+     */
     String name() default "";
     
 }

@@ -13,6 +13,5 @@ public interface IEnumIntConverter {
      *
      * @return int value.
      */
-
     Integer convert();
 }
