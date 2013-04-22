@@ -22,19 +22,26 @@ public interface IMsg {
      * <p>getAsBoolean.</p>
      * 
      * Can throw new IllegalArgumentException if the key is not present in the Msg (can return null for a primitive type).
-     * Use <T> T getAsObject(final int aKey, final Class<T> clazz); if you want to have directy null or in your try/catch
+     * Use <T> T getAsNullableBoolean(final int aKey); if you want to have directy null
      *
      * @param aKey a int.
      * @return a boolean.
      */
     boolean getAsBoolean(final int aKey);
     
+    /**
+     * getAsNullableBoolean.
+     *
+     * @param aKey
+     * @return
+     */
+    Boolean getAsNullableBoolean(final int aKey);
     
     /**
      * <p>getAsByte.</p>
      *
      * Can throw new IllegalArgumentException if the key is not present in the Msg (can return null for a primitive type).
-     * Use <T> T getAsObject(final int aKey, final Class<T> clazz); if you want to have directy null or in your try/catch
+     * Use <T> T getAsNullableByte(final int aKey, final Class<T> clazz); if you want to have directy null.
      *
      * @param aKey a int.
      * @return a byte.
@@ -42,10 +49,19 @@ public interface IMsg {
     byte getAsByte(final int aKey);
     
     /**
+     * getAsNullableByte.
+     *
+     * @param aKey
+     * @return
+     */
+    Byte getAsNullableByte(final int aKey);
+    
+    
+    /**
      * <p>getAsShort.</p>
      *
      * Can throw new IllegalArgumentException if the key is not present in the Msg (can return null for a primitive type).
-     * Use <T> T getAsObject(final int aKey, final Class<T> clazz); if you want to have directy null or in your try/catch
+     * Use <T> T getAsNullableShort(final int aKey); if you want to have directy null
      *
      * @param aKey a int.
      * @return a short.
@@ -53,49 +69,89 @@ public interface IMsg {
     short getAsShort(final int aKey);
     
     /**
+     * getAsNullableShort.
+     *
+     * @param aKey
+     * @return
+     */
+    Short getAsNullableShort(final int aKey);
+    
+    /**
      * <p>getAsInt.</p>
      *
      * Can throw new IllegalArgumentException if the key is not present in the Msg (can return null for a primitive type).
-     * Use <T> T getAsObject(final int aKey, final Class<T> clazz); if you want to have directy null or in your try/catch
+     * Use <T> T getAsNullableInteger(final int aKey); if you want to have directy null
      *
      * @param aKey a int.
      * @param defaultValue
      * @return a int.
      */
     int getAsInt(final int aKey);
+    
+    /**
+     * getAsNullableInt.
+     *
+     * @param aKey
+     * @return
+     */
+    Integer getAsNullableInteger(final int aKey);
      
     /**
      * <p>getAsLong.</p>
      *
      * Can throw new IllegalArgumentException if the key is not present in the Msg (can return null for a primitive type).
-     * Use <T> T getAsObject(final int aKey, final Class<T> clazz); if you want to have directy null or in your try/catch
+     * Use <T> T getAsNullableLong(final int aKey); if you want to have directy null
      *
      * @param aKey a int.
      * @return a long.
      */
     long getAsLong(final int aKey);
+    
+    /**
+     * getAsNullableLong.
+     *
+     * @param aKey
+     * @return
+     */
+    Long getAsNullableLong(final int aKey);
 
     /**
      * <p>getAsFloat.</p>
      *
      * Can throw new IllegalArgumentException if the key is not present in the Msg (can return null for a primitive type).
-     * Use <T> T getAsObject(final int aKey, final Class<T> clazz); if you want to have directy null or in your try/catch
+     * Use <T> T getAsNullableFloat(final int aKey); if you want to have directy null
      *
      * @param aKey a int.
      * @return a float.
      */
     float getAsFloat(final int aKey);
+    
+    /**
+     * getAsNullableFloat.
+     *
+     * @param aKey
+     * @return
+     */
+    Float getAsNullableFloat(final int aKey);
 
     /**
      * <p>getAsDouble.</p>
      *
      * Can throw new IllegalArgumentException if the key is not present in the Msg (can return null for a primitive type).
-     * Use <T> T getAsObject(final int aKey, final Class<T> clazz); if you want to have directy null or in your try/catch
+     * Use <T> T getAsNullableDouble(final int aKey); if you want to have directy null
      *
      * @param aKey a int.
      * @return a double.
      */
     double getAsDouble(final int aKey);
+    
+    /**
+     * getAsNullableDouble.
+     *
+     * @param aKey
+     * @return
+     */
+    Double getAsNullableDouble(final int aKey);
 
     /**
      * <p>getAsString.</p>
@@ -150,6 +206,14 @@ public interface IMsg {
     boolean[] getAsBooleans(final int aKey);
     
     /**
+     * getAsNullableBooleans.
+     *
+     * @param aKey
+     * @return
+     */
+    Boolean[] getAsNullableBooleans(final int aKey);
+    
+    /**
      * <p>getAsBytes.</p>
      *
      * @param aKey
@@ -157,6 +221,13 @@ public interface IMsg {
      */
     byte[] getAsBytes(final int aKey);
     
+    /**
+     * getAsNullableBytes.
+     *
+     * @param aKey
+     * @return
+     */
+    Byte[] getAsNullableBytes(final int aKey);
     
     /**
      * <p>getAsShorts.</p>
@@ -165,6 +236,15 @@ public interface IMsg {
      * @return
      */
     short[] getAsShorts(final int aKey);
+    
+    
+    /**
+     * getAsNullableShorts.
+     *
+     * @param aKey
+     * @return
+     */
+    Short[] getAsNullableShorts(final int aKey);
     
     /**
      * <p>getAsInts.</p>
@@ -175,12 +255,28 @@ public interface IMsg {
     int[] getAsInts(final int aKey);
     
     /**
+     * getAsNullableIntegers.
+     *
+     * @param aKey
+     * @return
+     */
+    Integer[] getAsNullableIntegers(final int aKey);
+    
+    /**
      * <p>getAsLongs.</p>
      *
      * @param aKey
      * @return
      */
     long[] getAsLongs(final int aKey);
+    
+    /**
+     * getAsNullableLongs.
+     *
+     * @param aKey
+     * @return
+     */
+    Long[] getAsNullableLongs(final int aKey);
     
     /**
      * <p>getAsFloats.</p>
@@ -191,12 +287,28 @@ public interface IMsg {
     float[] getAsFloats(final int aKey);
     
     /**
+     * getAsNullableFloats.
+     *
+     * @param aKey
+     * @return
+     */
+    Float[] getAsNullableFloats(final int aKey);
+    
+    /**
      * <p>getAsDoubles.</p>
      *
      * @param aKey
      * @return
      */
     double[] getAsDoubles(final int aKey);
+    
+    /**
+     * getAsNullableDoubles.
+     *
+     * @param aKey
+     * @return
+     */
+    Double[] getAsNullableDoubles(final int aKey);
     
     /**
      * <p>getAsStrings.</p>
@@ -300,6 +412,14 @@ public interface IMsg {
      * @param aBoolean a aBoolean.
      */
     void set(final int aKey, final boolean aBoolean);
+    
+    /**
+     * set.
+     *
+     * @param aKey
+     * @param aBoolean
+     */
+    void set(final int aKey, final Boolean aBoolean);
 
     /**
      * <p>set.</p>
@@ -308,6 +428,14 @@ public interface IMsg {
      * @param aByte a byte.
      */
     void set(final int aKey, final byte aByte);
+    
+    /**
+     * <p>set.</p>
+     *
+     * @param aKey a int.
+     * @param aByte a byte.
+     */
+    void set(final int aKey, final Byte aByte);
 
     /**
      * <p>set.</p>
@@ -316,6 +444,14 @@ public interface IMsg {
      * @param aShort a short.
      */
     void set(final int aKey, final short aShort);
+    
+    /**
+     * <p>set.</p>
+     *
+     * @param aKey a int.
+     * @param aShort a short.
+     */
+    void set(final int aKey, final Short aShort);
 
     /**
      * <p>set.</p>
@@ -324,6 +460,14 @@ public interface IMsg {
      * @param aInt a int.
      */
     void set(final int aKey, final int aInt);
+    
+    /**
+     * <p>set.</p>
+     *
+     * @param aKey a int.
+     * @param aInt a int.
+     */
+    void set(final int aKey, final Integer aInt);
 
     /**
      * <p>set.</p>
@@ -332,6 +476,14 @@ public interface IMsg {
      * @param aLong a long.
      */
     void set(final int aKey, final long aLong);
+    
+    /**
+     * <p>set.</p>
+     *
+     * @param aKey a int.
+     * @param aLong a long.
+     */
+    void set(final int aKey, final Long aLong);
 
     /**
      * <p>set.</p>
@@ -340,6 +492,14 @@ public interface IMsg {
      * @param aFloat a float.
      */
     void set(final int aKey, final float aFloat);
+    
+    /**
+     * <p>set.</p>
+     *
+     * @param aKey a int.
+     * @param aFloat a float.
+     */
+    void set(final int aKey, final Float aFloat);
 
     /**
      * <p>set.</p>
@@ -348,6 +508,14 @@ public interface IMsg {
      * @param aDouble a double.
      */
     void set(final int aKey, final double aDouble);
+    
+    /**
+     * <p>set.</p>
+     *
+     * @param aKey a int.
+     * @param aDouble a double.
+     */
+    void set(final int aKey, final Double aDouble);
 
     /**
      * <p>set.</p>
@@ -366,6 +534,24 @@ public interface IMsg {
      * @param aPrecision
      */
     void set(final int aKey, final double aDouble, final EPrecision aPrecision);
+    
+    /**
+     * <p>set.</p>
+     *
+     * @param aKey a int.
+     * @param aDouble a double.
+     * @param nbDigit a int.
+     */
+    void set(final int aKey, final Double aDouble, final int nbDigit);
+    
+    /**
+     * set.
+     *
+     * @param aKey
+     * @param aDouble
+     * @param aPrecision
+     */
+    void set(final int aKey, final Double aDouble, final EPrecision aPrecision);
     
     /**
      * <p>set.</p>
@@ -413,6 +599,14 @@ public interface IMsg {
      * <p>set.</p>
      *
      * @param aKey a int.
+     * @param anArray a boolean[]
+     */
+    void set(final int aKey, final Boolean... aBooleans);
+    
+    /**
+     * <p>set.</p>
+     *
+     * @param aKey a int.
      * @param anArray a byte[]
      */
     void set(final int aKey, final byte... aBytes);
@@ -421,9 +615,25 @@ public interface IMsg {
      * <p>set.</p>
      *
      * @param aKey a int.
+     * @param anArray a byte[]
+     */
+    void set(final int aKey, final Byte... aBytes);
+    
+    /**
+     * <p>set.</p>
+     *
+     * @param aKey a int.
      * @param anArray a short[]
      */
     void set(final int aKey, final short... aShorts);
+   
+    /**
+     * <p>set.</p>
+     *
+     * @param aKey a int.
+     * @param anArray a short[]
+     */
+    void set(final int aKey, final Short... aShorts);
     
     /**
      * <p>set.</p>
@@ -437,9 +647,25 @@ public interface IMsg {
      * <p>set.</p>
      *
      * @param aKey a int.
+     * @param anArray a int[]
+     */
+    void set(final int aKey, final Integer... aInts);
+    
+    /**
+     * <p>set.</p>
+     *
+     * @param aKey a int.
      * @param anArray a long[]
      */
     void set(final int aKey, final long... aLongs);
+    
+    /**
+     * <p>set.</p>
+     *
+     * @param aKey a int.
+     * @param anArray a long[]
+     */
+    void set(final int aKey, final Long... aLongs);
     
     /**
      * <p>set.</p>
@@ -453,9 +679,33 @@ public interface IMsg {
      * <p>set.</p>
      *
      * @param aKey a int.
+     * @param anArray a float[]
+     */
+    void set(final int aKey, final Float... aFloats);
+    
+    /**
+     * <p>set.</p>
+     *
+     * @param aKey a int.
      * @param anArray a double[]
      */
     void set(final int aKey, final double... aDoubles);
+    
+    /**
+     * <p>set.</p>
+     *
+     * @param aKey a int.
+     * @param anArray a double[]
+     */
+    void set(final int aKey, final Double... aDoubles);
+    
+    /**
+     * <p>set.</p>
+     *
+     * @param aKey a int.
+     * @param anArray a string[]
+     */
+    void set(final int aKey, final String... aStrings);
     
     /**
      * <p>set.</p>
