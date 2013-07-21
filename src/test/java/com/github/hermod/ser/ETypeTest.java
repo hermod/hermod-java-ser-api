@@ -20,11 +20,11 @@ public class ETypeTest {
      */
     @Test
     public void testValueOf() {
-        assertThat(EType.valueOf("INTEGER")).isEqualTo(EType.INTEGER);
-        assertThat(EType.valueOf(Types.INTEGER_TYPE)).isEqualTo(EType.INTEGER);
-        assertThat(EType.valueOf(Types.MSG_TYPE)).isEqualTo(EType.MSG);
+        assertThat(Type.valueOf("INTEGER")).isEqualTo(Type.INTEGER);
+        assertThat(Type.valueOf(Types.INTEGER_TYPE)).isEqualTo(Type.INTEGER);
+        assertThat(Type.valueOf(Types.MSG_TYPE)).isEqualTo(Type.MSG);
         try {
-            assertThat(EType.valueOf((byte) 1));
+            assertThat(Type.valueOf((byte) 1));
             failBecauseExceptionWasNotThrown(IllegalArgumentException.class);
             
         } catch (final Exception e) { 

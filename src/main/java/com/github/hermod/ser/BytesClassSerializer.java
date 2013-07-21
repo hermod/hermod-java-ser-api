@@ -9,7 +9,7 @@ package com.github.hermod.ser;
  * @param <T>
  *
  */
-public interface IBytesClassSerializer<T> {
+public interface BytesClassSerializer<T> {
 
     /**
      * serializeToBytes.

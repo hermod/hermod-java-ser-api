@@ -10,7 +10,7 @@ import java.nio.ByteBuffer;
  * @author anavarro - Apr 13, 2013
  *
  */
-public interface IByteBufferSerializable extends ISerializable {
+public interface ByteBufferSerializable extends Serializable {
 
     /**
      * serializeToByteBuffer.

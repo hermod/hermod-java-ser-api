@@ -10,7 +10,7 @@ import java.nio.ByteBuffer;
  * @author anavarro - Apr 13, 2013
  *
  */
-public interface IByteBufferMsgSerializer extends IMsgSerializer {
+public interface ByteBufferMsgSerializer extends MsgSerializer {
     
     /**
      * serializeToByteBuffer.
@@ -18,7 +18,7 @@ public interface IByteBufferMsgSerializer extends IMsgSerializer {
      * @param aSrcMsg
      * @param aDestByteBuffer
      */
-    int serializeToByteBuffer(final IMsg aSrcMsg, ByteBuffer aDestByteBuffer);
+    int serializeToByteBuffer(final Msg aSrcMsg, ByteBuffer aDestByteBuffer);
     
     
     /**
@@ -27,7 +27,7 @@ public interface IByteBufferMsgSerializer extends IMsgSerializer {
      * @param aSrcByteBuffer
      * @param aDestMsg
      */
-    void deserializeFrom(final ByteBuffer aSrcByteBuffer, IMsg aDestMsg);
+    void deserializeFrom(final ByteBuffer aSrcByteBuffer, Msg aDestMsg);
     
     
 }

@@ -19,11 +19,11 @@ public class EPrecisionTest {
      */
     @Test
     public void testCalculateIntegerMantissa() {
-        assertThat((int) EPrecision.TENTHS.calculateIntegerMantissa(1.1)).isEqualTo(11);
-        assertThat((int) EPrecision.THOUSANDTHS.calculateIntegerMantissa(1.122)).isEqualTo(1122);
-        assertThat((int) EPrecision.HUNDREDS.calculateIntegerMantissa(100.122)).isEqualTo(1);
-        assertThat(EPrecision.HUNDREDS.calculateIntegerMantissa(Long.MAX_VALUE)).isNaN();
-        assertThat(EPrecision.HUNDREDS.calculateIntegerMantissa(Long.MIN_VALUE)).isNaN();
+        assertThat((int) Precision.TENTHS.calculateIntegerMantissa(1.1)).isEqualTo(11);
+        assertThat((int) Precision.THOUSANDTHS.calculateIntegerMantissa(1.122)).isEqualTo(1122);
+        assertThat((int) Precision.HUNDREDS.calculateIntegerMantissa(100.122)).isEqualTo(1);
+        assertThat(Precision.HUNDREDS.calculateIntegerMantissa(Long.MAX_VALUE)).isNaN();
+        assertThat(Precision.HUNDREDS.calculateIntegerMantissa(Long.MIN_VALUE)).isNaN();
     }
 
     /**
@@ -32,9 +32,9 @@ public class EPrecisionTest {
      */
     @Test
     public void calculateDoubleFromIntegerMantissa() {
-        assertThat(EPrecision.TENTHS.calculateDoubleFromIntegerMantissa(11)).isEqualTo(1.1);
-        assertThat(EPrecision.THOUSANDTHS.calculateDoubleFromIntegerMantissa(1122)).isEqualTo(1.122);
-        assertThat(EPrecision.HUNDREDS.calculateDoubleFromIntegerMantissa(1)).isEqualTo(100);
+        assertThat(Precision.TENTHS.calculateDoubleFromIntegerMantissa(11)).isEqualTo(1.1);
+        assertThat(Precision.THOUSANDTHS.calculateDoubleFromIntegerMantissa(1122)).isEqualTo(1.122);
+        assertThat(Precision.HUNDREDS.calculateDoubleFromIntegerMantissa(1)).isEqualTo(100);
 
     }
 
@@ -44,7 +44,7 @@ public class EPrecisionTest {
      */
     @Test
     public void testGetNbDigit() {
-        assertThat(EPrecision.TENTHS.getNbDigit()).isEqualTo(1);
+        assertThat(Precision.TENTHS.getNbDigit()).isEqualTo(1);
     }
 
     /**
@@ -53,7 +53,7 @@ public class EPrecisionTest {
      */
     @Test
     public void testGetPrecision() {
-        assertThat(EPrecision.TENTHS.getPrecision()).isEqualTo(0.1);
+        assertThat(Precision.TENTHS.getPrecision()).isEqualTo(0.1);
     }
 
     /**
@@ -62,10 +62,10 @@ public class EPrecisionTest {
      */
     @Test
     public void testValueOfInt() {
-        assertThat(EPrecision.valueOf(1)).isEqualTo(EPrecision.TENTHS);
-        assertThat(EPrecision.valueOf(-1)).isEqualTo(EPrecision.TENS);
+        assertThat(Precision.valueOf(1)).isEqualTo(Precision.TENTHS);
+        assertThat(Precision.valueOf(-1)).isEqualTo(Precision.TENS);
         try {
-            EPrecision.valueOf(Integer.MAX_VALUE);
+            Precision.valueOf(Integer.MAX_VALUE);
             failBecauseExceptionWasNotThrown(IllegalArgumentException.class);
         } catch (Exception e) {
             assertThat(e).isInstanceOf(IllegalArgumentException.class);
@@ -79,10 +79,10 @@ public class EPrecisionTest {
      */
     @Test
     public void testValueOfDouble() {
-        assertThat(EPrecision.valueOf(0.1)).isEqualTo(EPrecision.TENTHS);
-        assertThat(EPrecision.valueOf(10.0)).isEqualTo(EPrecision.TENS);
+        assertThat(Precision.valueOf(0.1)).isEqualTo(Precision.TENTHS);
+        assertThat(Precision.valueOf(10.0)).isEqualTo(Precision.TENS);
         try {
-            EPrecision.valueOf(Double.MAX_VALUE);
+            Precision.valueOf(Double.MAX_VALUE);
             failBecauseExceptionWasNotThrown(IllegalArgumentException.class);
         } catch (Exception e) {
             assertThat(e).isInstanceOf(IllegalArgumentException.class);
@@ -91,7 +91,7 @@ public class EPrecisionTest {
     
     @Test
     public void testValueOf() {
-        assertThat(EPrecision.valueOf("TENTHS")).isEqualTo(EPrecision.TENTHS);
+        assertThat(Precision.valueOf("TENTHS")).isEqualTo(Precision.TENTHS);
     }
 
 }

@@ -1,12 +1,15 @@
 package com.github.hermod.ser;
 
+import checkers.nullness.quals.NonNull;
+import checkers.nullness.quals.Nullable;
+
 
 /**
  * <p>IMsg interface.</p>
  *
  * @author anavarro
  */
-public interface IMsg {
+public interface Msg {
 
     // Read operations
     
@@ -35,7 +38,7 @@ public interface IMsg {
      * @param aKey
      * @return
      */
-    Boolean getAsNullableBoolean(final int aKey);
+    @Nullable Boolean getAsNullableBoolean(final int aKey);
     
     /**
      * <p>getAsByte.</p>
@@ -54,7 +57,7 @@ public interface IMsg {
      * @param aKey
      * @return
      */
-    Byte getAsNullableByte(final int aKey);
+    @Nullable Byte getAsNullableByte(final int aKey);
     
     
     /**
@@ -74,7 +77,7 @@ public interface IMsg {
      * @param aKey
      * @return
      */
-    Short getAsNullableShort(final int aKey);
+    @Nullable Short getAsNullableShort(final int aKey);
     
     /**
      * <p>getAsInt.</p>
@@ -94,7 +97,7 @@ public interface IMsg {
      * @param aKey
      * @return
      */
-    Integer getAsNullableInteger(final int aKey);
+    @Nullable Integer getAsNullableInteger(final int aKey);
      
     /**
      * <p>getAsLong.</p>
@@ -113,7 +116,7 @@ public interface IMsg {
      * @param aKey
      * @return
      */
-    Long getAsNullableLong(final int aKey);
+    @Nullable Long getAsNullableLong(final int aKey);
 
     /**
      * <p>getAsFloat.</p>
@@ -132,7 +135,7 @@ public interface IMsg {
      * @param aKey
      * @return
      */
-    Float getAsNullableFloat(final int aKey);
+    @Nullable Float getAsNullableFloat(final int aKey);
 
     /**
      * <p>getAsDouble.</p>
@@ -151,7 +154,7 @@ public interface IMsg {
      * @param aKey
      * @return
      */
-    Double getAsNullableDouble(final int aKey);
+    @Nullable Double getAsNullableDouble(final int aKey);
 
     /**
      * <p>getAsString.</p>
@@ -159,24 +162,24 @@ public interface IMsg {
      * @param aKey a int.
      * @return a {@link java.lang.String} object.
      */
-    String getAsString(final int aKey);
+    @Nullable String getAsString(final int aKey);
 
     /**
      * <p>getAsMsg.</p>
      *
      * @param aKey a int.
-     * @return a {@link com.github.hermod.ser.IMsg} object.
+     * @return a {@link com.github.hermod.ser.Msg} object.
      */
-    IMsg getAsMsg(final int aKey);
+    @Nullable Msg getAsMsg(final int aKey);
     
     
     /**
      * <p>getAsMsg.</p>
      *
      * @param aKey a int.
-     * @return a {@link com.github.hermod.ser.IMsg} object.
+     * @return a {@link com.github.hermod.ser.Msg} object.
      */
-    void getAsMsg(final int aKey, final IMsg destMsg);
+    void getAsMsg(final int aKey, final Msg destMsg);
     
     
     /**
@@ -185,7 +188,7 @@ public interface IMsg {
      * @param aKey a int.
      * @return a {@link java.lang.Object} object.
      */
-    Object getAsObject(final int aKey);
+    @Nullable Object getAsObject(final int aKey);
     
     /**
      * <p>getAsObject.</p>
@@ -194,7 +197,7 @@ public interface IMsg {
      * @param clazz
      * @return a {@link java.lang.Object} object.
      */
-    <T> T getAsObject(final int aKey, final Class<T> clazz);
+    @Nullable <T> T getAsObject(final int aKey, final Class<T> clazz);
     
     
     /**
@@ -203,7 +206,7 @@ public interface IMsg {
      * @param aKey
      * @return
      */
-    boolean[] getAsBooleans(final int aKey);
+    /*@Nullable*/ boolean[] getAsBooleans(final int aKey);
     
     /**
      * getAsNullableBooleans.
@@ -211,7 +214,7 @@ public interface IMsg {
      * @param aKey
      * @return
      */
-    Boolean[] getAsNullableBooleans(final int aKey);
+    @Nullable Boolean[] getAsNullableBooleans(final int aKey);
     
     /**
      * <p>getAsBytes.</p>
@@ -219,7 +222,7 @@ public interface IMsg {
      * @param aKey
      * @return
      */
-    byte[] getAsBytes(final int aKey);
+    /*@Nullable*/ byte[] getAsBytes(final int aKey);
     
     /**
      * getAsNullableBytes.
@@ -227,7 +230,7 @@ public interface IMsg {
      * @param aKey
      * @return
      */
-    Byte[] getAsNullableBytes(final int aKey);
+    @Nullable Byte[] getAsNullableBytes(final int aKey);
     
     /**
      * <p>getAsShorts.</p>
@@ -235,7 +238,7 @@ public interface IMsg {
      * @param aKey
      * @return
      */
-    short[] getAsShorts(final int aKey);
+    /*@Nullable*/ short[] getAsShorts(final int aKey);
     
     
     /**
@@ -244,7 +247,7 @@ public interface IMsg {
      * @param aKey
      * @return
      */
-    Short[] getAsNullableShorts(final int aKey);
+    @Nullable Short[] getAsNullableShorts(final int aKey);
     
     /**
      * <p>getAsInts.</p>
@@ -252,7 +255,7 @@ public interface IMsg {
      * @param aKey
      * @return
      */
-    int[] getAsInts(final int aKey);
+    /*@Nullable*/ int[] getAsInts(final int aKey);
     
     /**
      * getAsNullableIntegers.
@@ -260,7 +263,7 @@ public interface IMsg {
      * @param aKey
      * @return
      */
-    Integer[] getAsNullableIntegers(final int aKey);
+    @Nullable Integer[] getAsNullableIntegers(final int aKey);
     
     /**
      * <p>getAsLongs.</p>
@@ -268,7 +271,7 @@ public interface IMsg {
      * @param aKey
      * @return
      */
-    long[] getAsLongs(final int aKey);
+    /*@Nullable*/ long[] getAsLongs(final int aKey);
     
     /**
      * getAsNullableLongs.
@@ -276,7 +279,7 @@ public interface IMsg {
      * @param aKey
      * @return
      */
-    Long[] getAsNullableLongs(final int aKey);
+    @Nullable Long[] getAsNullableLongs(final int aKey);
     
     /**
      * <p>getAsFloats.</p>
@@ -284,7 +287,7 @@ public interface IMsg {
      * @param aKey
      * @return
      */
-    float[] getAsFloats(final int aKey);
+    /*@Nullable*/ float[] getAsFloats(final int aKey);
     
     /**
      * getAsNullableFloats.
@@ -292,7 +295,7 @@ public interface IMsg {
      * @param aKey
      * @return
      */
-    Float[] getAsNullableFloats(final int aKey);
+    @Nullable Float[] getAsNullableFloats(final int aKey);
     
     /**
      * <p>getAsDoubles.</p>
@@ -300,7 +303,7 @@ public interface IMsg {
      * @param aKey
      * @return
      */
-    double[] getAsDoubles(final int aKey);
+    /*@Nullable*/ double[] getAsDoubles(final int aKey);
     
     /**
      * getAsNullableDoubles.
@@ -308,7 +311,7 @@ public interface IMsg {
      * @param aKey
      * @return
      */
-    Double[] getAsNullableDoubles(final int aKey);
+    @Nullable Double[] getAsNullableDoubles(final int aKey);
     
     /**
      * <p>getAsStrings.</p>
@@ -316,7 +319,7 @@ public interface IMsg {
      * @param aKey
      * @return
      */
-    String[] getAsStrings(final int aKey);
+    @Nullable String[] getAsStrings(final int aKey);
 
     /**
      * <p>getAsMsgs.</p>
@@ -324,7 +327,7 @@ public interface IMsg {
      * @param aKey
      * @return
      */
-    IMsg[] getAsMsgs(final int aKey);
+    @Nullable Msg[] getAsMsgs(final int aKey);
 
     /**
      * getAsMsgs.
@@ -332,7 +335,7 @@ public interface IMsg {
      * @param aKey
      * @param destMsgs
      */
-    void getAsMsgs(final int aKey, IMsg... destMsgs);
+    void getAsMsgs(final int aKey, @Nullable Msg... destMsgs);
     
     /**
      * getAll.
@@ -340,7 +343,7 @@ public interface IMsg {
      * @return
      */
     //TODO is it clone?
-    IMsg getAll(); 
+    @NonNull Msg getAll(); 
     
     /**
      * getType.
@@ -348,7 +351,7 @@ public interface IMsg {
      * @param key
      * @return
      */
-    EType getType(final int key);
+    @NonNull Type getType(final int key);
     
     /**
      * getTypeAsByte.
@@ -419,7 +422,7 @@ public interface IMsg {
      * @param aKey
      * @param aBoolean
      */
-    void set(final int aKey, final Boolean aBoolean);
+    void set(final int aKey, @Nullable final Boolean aBoolean);
 
     /**
      * <p>set.</p>
@@ -435,7 +438,7 @@ public interface IMsg {
      * @param aKey a int.
      * @param aByte a byte.
      */
-    void set(final int aKey, final Byte aByte);
+    void set(final int aKey, @Nullable final Byte aByte);
 
     /**
      * <p>set.</p>
@@ -451,7 +454,7 @@ public interface IMsg {
      * @param aKey a int.
      * @param aShort a short.
      */
-    void set(final int aKey, final Short aShort);
+    void set(final int aKey, @Nullable final Short aShort);
 
     /**
      * <p>set.</p>
@@ -467,7 +470,7 @@ public interface IMsg {
      * @param aKey a int.
      * @param aInt a int.
      */
-    void set(final int aKey, final Integer aInt);
+    void set(final int aKey, @Nullable final Integer aInt);
 
     /**
      * <p>set.</p>
@@ -483,7 +486,7 @@ public interface IMsg {
      * @param aKey a int.
      * @param aLong a long.
      */
-    void set(final int aKey, final Long aLong);
+    void set(final int aKey, @Nullable final Long aLong);
 
     /**
      * <p>set.</p>
@@ -499,7 +502,7 @@ public interface IMsg {
      * @param aKey a int.
      * @param aFloat a float.
      */
-    void set(final int aKey, final Float aFloat);
+    void set(final int aKey, @Nullable final Float aFloat);
 
     /**
      * <p>set.</p>
@@ -515,7 +518,7 @@ public interface IMsg {
      * @param aKey a int.
      * @param aDouble a double.
      */
-    void set(final int aKey, final Double aDouble);
+    void set(final int aKey, @Nullable final Double aDouble);
 
     /**
      * <p>set.</p>
@@ -533,7 +536,7 @@ public interface IMsg {
      * @param aDouble
      * @param aPrecision
      */
-    void set(final int aKey, final double aDouble, final EPrecision aPrecision);
+    void set(final int aKey, final double aDouble, @NonNull final Precision aPrecision);
     
     /**
      * <p>set.</p>
@@ -542,7 +545,7 @@ public interface IMsg {
      * @param aDouble a double.
      * @param nbDigit a int.
      */
-    void set(final int aKey, final Double aDouble, final int nbDigit);
+    void set(final int aKey, @Nullable final Double aDouble, final int nbDigit);
     
     /**
      * set.
@@ -551,7 +554,7 @@ public interface IMsg {
      * @param aDouble
      * @param aPrecision
      */
-    void set(final int aKey, final Double aDouble, final EPrecision aPrecision);
+    void set(final int aKey, @Nullable final Double aDouble, @NonNull final Precision aPrecision);
     
     /**
      * <p>set.</p>
@@ -559,7 +562,7 @@ public interface IMsg {
      * @param aKey a int.
      * @param aString a {@link java.lang.String} object.
      */
-    void set(final int aKey, final String aString);
+    void set(final int aKey, @Nullable final String aString);
     
     /**
      * set.
@@ -568,16 +571,16 @@ public interface IMsg {
      * @param aString
      * @param forceIso88591Charset
      */
-    void set(final int aKey, final String aString, final boolean forceIso88591Charset);
+    void set(final int aKey, @Nullable final String aString, final boolean forceIso88591Charset);
     
 
     /**
      * <p>set.</p>
      *
      * @param aKey a int.
-     * @param aMsg a {@link com.github.hermod.ser.IMsg} object.
+     * @param aMsg a {@link com.github.hermod.ser.Msg} object.
      */
-    void set(final int aKey, final IMsg aMsg);
+    void set(final int aKey, @Nullable final Msg aMsg);
     
     /**
      * <p>set.</p>
@@ -585,7 +588,7 @@ public interface IMsg {
      * @param aKey
      * @param anObject
      */
-    void set(final int aKey, final Object anObject);
+    void set(final int aKey, @Nullable final Object anObject);
     
     /**
      * <p>set.</p>
@@ -593,7 +596,7 @@ public interface IMsg {
      * @param aKey a int.
      * @param anArray a boolean[]
      */
-    void set(final int aKey, final boolean... aBooleans);
+    void set(final int aKey, @Nullable final boolean... aBooleans);
     
     /**
      * <p>set.</p>
@@ -601,7 +604,7 @@ public interface IMsg {
      * @param aKey a int.
      * @param anArray a boolean[]
      */
-    void set(final int aKey, final Boolean... aBooleans);
+    void set(final int aKey, @Nullable final Boolean... aBooleans);
     
     /**
      * <p>set.</p>
@@ -609,7 +612,7 @@ public interface IMsg {
      * @param aKey a int.
      * @param anArray a byte[]
      */
-    void set(final int aKey, final byte... aBytes);
+    void set(final int aKey, @Nullable final byte... aBytes);
     
     /**
      * <p>set.</p>
@@ -617,7 +620,7 @@ public interface IMsg {
      * @param aKey a int.
      * @param anArray a byte[]
      */
-    void set(final int aKey, final Byte... aBytes);
+    void set(final int aKey, @Nullable final Byte... aBytes);
     
     /**
      * <p>set.</p>
@@ -625,7 +628,7 @@ public interface IMsg {
      * @param aKey a int.
      * @param anArray a short[]
      */
-    void set(final int aKey, final short... aShorts);
+    void set(final int aKey, @Nullable final short... aShorts);
    
     /**
      * <p>set.</p>
@@ -633,7 +636,7 @@ public interface IMsg {
      * @param aKey a int.
      * @param anArray a short[]
      */
-    void set(final int aKey, final Short... aShorts);
+    void set(final int aKey, @Nullable final Short... aShorts);
     
     /**
      * <p>set.</p>
@@ -641,7 +644,7 @@ public interface IMsg {
      * @param aKey a int.
      * @param anArray a int[]
      */
-    void set(final int aKey, final int... aInts);
+    void set(final int aKey, @Nullable final int... aInts);
 
     /**
      * <p>set.</p>
@@ -649,7 +652,7 @@ public interface IMsg {
      * @param aKey a int.
      * @param anArray a int[]
      */
-    void set(final int aKey, final Integer... aInts);
+    void set(final int aKey, @Nullable final Integer... aInts);
     
     /**
      * <p>set.</p>
@@ -657,7 +660,7 @@ public interface IMsg {
      * @param aKey a int.
      * @param anArray a long[]
      */
-    void set(final int aKey, final long... aLongs);
+    void set(final int aKey, @Nullable final long... aLongs);
     
     /**
      * <p>set.</p>
@@ -665,7 +668,7 @@ public interface IMsg {
      * @param aKey a int.
      * @param anArray a long[]
      */
-    void set(final int aKey, final Long... aLongs);
+    void set(final int aKey, @Nullable final Long... aLongs);
     
     /**
      * <p>set.</p>
@@ -673,7 +676,7 @@ public interface IMsg {
      * @param aKey a int.
      * @param anArray a float[]
      */
-    void set(final int aKey, final float... aFloats);
+    void set(final int aKey, @Nullable final float... aFloats);
     
     /**
      * <p>set.</p>
@@ -681,7 +684,7 @@ public interface IMsg {
      * @param aKey a int.
      * @param anArray a float[]
      */
-    void set(final int aKey, final Float... aFloats);
+    void set(final int aKey, @Nullable final Float... aFloats);
     
     /**
      * <p>set.</p>
@@ -689,7 +692,7 @@ public interface IMsg {
      * @param aKey a int.
      * @param anArray a double[]
      */
-    void set(final int aKey, final double... aDoubles);
+    void set(final int aKey, @Nullable final double... aDoubles);
     
     /**
      * <p>set.</p>
@@ -697,7 +700,7 @@ public interface IMsg {
      * @param aKey a int.
      * @param anArray a double[]
      */
-    void set(final int aKey, final Double... aDoubles);
+    void set(final int aKey, @Nullable final Double... aDoubles);
     
     /**
      * <p>set.</p>
@@ -705,7 +708,7 @@ public interface IMsg {
      * @param aKey a int.
      * @param anArray a string[]
      */
-    void set(final int aKey, final String... aStrings);
+    void set(final int aKey, @Nullable final String... aStrings);
     
     /**
      * <p>set.</p>
@@ -713,7 +716,7 @@ public interface IMsg {
      * @param aKey a int.
      * @param anArray a string[]
      */
-    void set(final int aKey, final String[] aStrings, final boolean forceIso88591Charset);
+    void set(final int aKey, @Nullable final String[] aStrings, final boolean forceIso88591Charset);
     
     /**
      * <p>set.</p>
@@ -721,21 +724,21 @@ public interface IMsg {
      * @param aKey a int.
      * @param anArray a IMsg[]
      */
-    void set(final int aKey, final IMsg... aMsgs);
+    void set(final int aKey, @Nullable final Msg... aMsgs);
     
     /**
      * <p>setAll.</p>
      *
-     * @param aMsg a {@link com.github.hermod.ser.IMsg} object.
+     * @param aMsg a {@link com.github.hermod.ser.Msg} object.
      */
-    void setAll(final IMsg aMsg);
+    void setAll(@Nullable final Msg aMsg);
 
     /**
      * <p>remove.</p>
      *
      * @param aKey a int.
      */
-    void remove(final int... aKeys);
+    void remove(@Nullable final int... aKeys);
     
     /**
      * <p>removeAll.</p>

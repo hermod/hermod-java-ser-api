@@ -8,7 +8,7 @@ package com.github.hermod.ser;
  * @author anavarro - Apr 13, 2013
  *
  */
-public interface IBytesMsgSerializer extends IMsgSerializer {
+public interface BytesMsgSerializer extends MsgSerializer {
 
     /**
      * serializeToBytes.
@@ -16,7 +16,7 @@ public interface IBytesMsgSerializer extends IMsgSerializer {
      * @param aSrcMsg
      * @return
      */
-    byte[] serializeToBytes(final IMsg aSrcMsg);
+    byte[] serializeToBytes(final Msg aSrcMsg);
     
     /**
      * serializeToBytes.
@@ -26,7 +26,7 @@ public interface IBytesMsgSerializer extends IMsgSerializer {
      * @param aSrcMsg
      * @return
      */
-    int serializeToBytes(final IMsg aSrcMsg, byte[] aDestBytes, int aDestOffset);
+    int serializeToBytes(final Msg aSrcMsg, byte[] aDestBytes, int aDestOffset);
     
     /**
      * deserializeFrom.
@@ -36,7 +36,7 @@ public interface IBytesMsgSerializer extends IMsgSerializer {
      * @param aSrcLength
      * @param aDestMsg
      */
-    void deserializeFrom(final byte[] aSrcBytes, final int aSrcOffset, final int aSrcLength, IMsg aDestMsg);
+    void deserializeFrom(final byte[] aSrcBytes, final int aSrcOffset, final int aSrcLength, Msg aDestMsg);
     
     
 }

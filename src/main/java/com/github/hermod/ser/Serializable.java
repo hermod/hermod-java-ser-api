@@ -6,7 +6,7 @@ package com.github.hermod.ser;
  * @author anavarro - Apr 12, 2013
  *
  */
-public interface ISerializable {
+public interface Serializable {
 
     /**
      * getLength.

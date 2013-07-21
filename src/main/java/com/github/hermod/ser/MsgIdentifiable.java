@@ -6,7 +6,7 @@ package com.github.hermod.ser;
  * @author anavarro - Apr 20, 2013
  *
  */
-public interface IMsgIdentifiable {
+public interface MsgIdentifiable {
 
     /**
      * getMsgId.

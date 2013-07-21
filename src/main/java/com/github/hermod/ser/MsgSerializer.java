@@ -6,7 +6,7 @@ package com.github.hermod.ser;
  * @author anavarro - Apr 13, 2013
  *
  */
-public interface IMsgSerializer {
+public interface MsgSerializer {
 
     /**
      * getLength.
@@ -14,6 +14,6 @@ public interface IMsgSerializer {
      * @param srcMsg
      * @return
      */
-    int getLength(final IMsg srcMsg);
+    int getLength(final Msg srcMsg);
     
 }

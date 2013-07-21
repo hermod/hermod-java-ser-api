@@ -7,7 +7,7 @@ package com.github.hermod.ser;
  * @author anavarro - Apr 13, 2013
  *
  */
-public interface IBytesSerializable extends ISerializable {
+public interface BytesSerializable extends Serializable {
 
     /**
      * serializeToBytes.

@@ -9,11 +9,15 @@
 	<artifactId>hermod-java-ser-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	
 	<properties>
 		<projectUrl>${parentUrl}</projectUrl>
 	</properties>
 	<dependencies>
+		<dependency>
+			<groupId>edu.washington.cs.types.checker</groupId>
+			<artifactId>checker-framework</artifactId>
+			<scope>provided</scope>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

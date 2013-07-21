@@ -25,7 +25,7 @@ import java.nio.ByteBuffer;
  * @param <T>
  *
  */
-public interface IByteBufferClassSerializer<T> {
+public interface ByteBufferClassSerializer<T> {
 
     /**
      * serializeToByteBuffer.
