@@ -33,7 +33,7 @@ public interface ByteBufferClassSerializer<T> {
      * @param aSrcObjet
      * @return
      */
-    ByteBuffer serializeToByteBuffer(final T aSrcObjet);
+    //ByteBuffer serializeToByteBuffer(final T aSrcObjet);
     
     /**
      * serializeToByteBuffer.
@@ -51,7 +51,7 @@ public interface ByteBufferClassSerializer<T> {
      * @param aSrcLength
      * @param aDestObject
      */
-    void deserializeFrom(final ByteBuffer aSrcByteBuffer, final int aSrcLength, T aDestObject);
+    void deserializeFromByteBuffer(final ByteBuffer aSrcByteBuffer, final int aSrcLength, T aDestObject);
    
     /**
      * deserializeFrom.
@@ -60,7 +60,7 @@ public interface ByteBufferClassSerializer<T> {
      * @param srcLength
      * @return
      */
-    T deserializeFrom(final ByteBuffer srcByteBuffer, final int srcLength);
+    T deserializeFromByteBuffer(final ByteBuffer srcByteBuffer, final int srcLength);
     
     /**
      * deserializeFrom.
@@ -70,7 +70,7 @@ public interface ByteBufferClassSerializer<T> {
      * @param aClass
      * @return
      */
-    <S> S deserializeFrom(final ByteBuffer srcByteBuffer, final int srcLength, final Class<S> aClass);
+    <S> S deserializeFromByteBuffer(final ByteBuffer srcByteBuffer, final int srcLength, final Class<S> aClass);
     
     
 }

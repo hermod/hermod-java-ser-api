@@ -36,7 +36,7 @@ public interface BytesMsgSerializer extends MsgSerializer {
      * @param aSrcLength
      * @param aDestMsg
      */
-    void deserializeFrom(final byte[] aSrcBytes, final int aSrcOffset, final int aSrcLength, Msg aDestMsg);
+    void deserializeFromBytes(final byte[] aSrcBytes, final int aSrcOffset, final int aSrcLength, Msg aDestMsg);
     
     
 }

@@ -25,6 +25,6 @@ public interface ByteBufferSerializable extends Serializable {
      *
      * @param aSrcByteBuffer
      */
-    void deserializeFrom(final ByteBuffer aSrcByteBuffer);
+    void deserializeFromByteBuffer(final ByteBuffer aSrcByteBuffer);
     
 }

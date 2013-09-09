@@ -32,7 +32,7 @@ public interface BytesSerializable extends Serializable {
      * @param aSrcOffset
      * @param aSrcLength
      */
-    void deserializeFrom(final byte[] aSrcBytes, final int aSrcOffset, final int aSrcLength);
+    void deserializeFromBytes(final byte[] aSrcBytes, final int aSrcOffset, final int aSrcLength);
 
     
 }

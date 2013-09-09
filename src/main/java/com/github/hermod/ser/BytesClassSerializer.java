@@ -39,7 +39,7 @@ public interface BytesClassSerializer<T> {
      * @param aSrcLength
      * @param aDestObject
      */
-    void deserializeFrom(final byte[] aSrcBytes, final int aSrcOffset, final int aSrcLength, T aDestObject);
+    void deserializeFromBytes(final byte[] aSrcBytes, final int aSrcOffset, final int aSrcLength, T aDestObject);
     
     /**
      * deserializeFrom.
@@ -49,7 +49,7 @@ public interface BytesClassSerializer<T> {
      * @param srcLength
      * @return
      */
-    T deserializeFrom(final byte[] srcBytes, final int srcOffset, final int srcLength);
+    T deserializeFromBytes(final byte[] srcBytes, final int srcOffset, final int srcLength);
     
     /**
      * deserializeFrom.
@@ -60,7 +60,7 @@ public interface BytesClassSerializer<T> {
      * @param aClass
      * @return
      */
-    <S> S deserializeFrom(final byte[] srcBytes, final int srcOffset, final int srcLength, final Class<S> aClass);
+    <S> S deserializeFromBytes(final byte[] srcBytes, final int srcOffset, final int srcLength, final Class<S> aClass);
     
     
 }
