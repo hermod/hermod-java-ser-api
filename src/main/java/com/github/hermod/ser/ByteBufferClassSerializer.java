@@ -33,7 +33,7 @@ public interface ByteBufferClassSerializer<T> {
      * @param aSrcObjet
      * @return
      */
-    //ByteBuffer serializeToByteBuffer(final T aSrcObjet);
+    ByteBuffer serializeToByteBuffer(final T aSrcObjet);
     
     /**
      * serializeToByteBuffer.
