@@ -16,6 +16,13 @@ public interface ByteBufferMsgSerializer extends MsgSerializer {
      * serializeToByteBuffer.
      *
      * @param aSrcMsg
+     */
+    ByteBuffer serializeToByteBuffer(final Msg aSrcMsg);
+    
+    /**
+     * serializeToByteBuffer.
+     *
+     * @param aSrcMsg
      * @param aDestByteBuffer
      */
     int serializeToByteBuffer(final Msg aSrcMsg, ByteBuffer aDestByteBuffer);
