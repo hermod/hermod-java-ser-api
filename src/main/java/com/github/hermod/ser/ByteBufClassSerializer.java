@@ -27,7 +27,7 @@ import java.nio.ByteBuffer;
  * @param <T>
  *
  */
-public interface ByteBufferSerializable {
+public interface ByteBufClassSerializer<T> {
 
     /**
      * serializeToByteBuffer.
@@ -35,7 +35,7 @@ public interface ByteBufferSerializable {
      * @param aSrcObjet
      * @return
      */
-    ByteBuf serializeToByteBuffer();
+    ByteBuf serializeToByteBuf(final T aSrcObjet);
     
     /**
      * serializeToByteBuffer.
@@ -43,7 +43,7 @@ public interface ByteBufferSerializable {
      * @param aSrcObjet
      * @param aDestByteBuffer
      */
-    void serializeToByteBuffer(final ByteBuffer aDestByteBuffer);
+    void serializeToByteBuf(final T aSrcObjet, final ByteBuf aDestByteBuf);
     
     /**
      * deserializeFrom.
@@ -53,8 +53,16 @@ public interface ByteBufferSerializable {
      * @param aSrcLength
      * @param aDestObject
      */
-    void deserializeFromByteBuffer(final ByteBuffer aSrcByteBuffer);
+    void deserializeFromByteBuf(final ByteBuf aSrcByteBuf, final int aSrcLength, T aDestObject);
    
+    /**
+     * deserializeFrom.
+     *
+     * @param srcByteBuffer
+     * @param srcLength
+     * @return
+     */
+    T deserializeFromByteBuf(final ByteBuf srcByteBuf, final int srcLength);
     
     /**
      * deserializeFrom.
@@ -64,7 +72,7 @@ public interface ByteBufferSerializable {
      * @param aClass
      * @return
      */
-    <S> S deserializeFromByteBuffer(final ByteBuffer srcByteBuffer, final Class<S> aClass);
+    <S> S deserializeFromByteBuf(final ByteBuf srcByteBuf, final int srcLength, final Class<S> aClass);
     
     
 }

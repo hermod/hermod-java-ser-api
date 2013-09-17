@@ -14,6 +14,12 @@
 	</properties>
 	<dependencies>
 		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-buffer</artifactId>
+			<type>bundle</type>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
 			<groupId>edu.washington.cs.types.checker</groupId>
 			<artifactId>checker-framework</artifactId>
 			<scope>provided</scope>
