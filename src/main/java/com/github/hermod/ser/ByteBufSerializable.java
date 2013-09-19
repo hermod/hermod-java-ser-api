@@ -56,15 +56,5 @@ public interface ByteBufSerializable {
     void deserializeFromByteBuf(final ByteBuffer aSrcByteBuf);
    
     
-    /**
-     * deserializeFrom.
-     *
-     * @param srcByteBuffer
-     * @param srcLength
-     * @param aClass
-     * @return
-     */
-    <S> S deserializeFromByteBuf(final ByteBuffer srcByteBuf, final Class<S> aClass);
-    
     
 }
