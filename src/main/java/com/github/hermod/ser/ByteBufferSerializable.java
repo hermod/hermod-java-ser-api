@@ -1,6 +1,5 @@
 package com.github.hermod.ser;
 
-import io.netty.buffer.ByteBuf;
 
 import java.nio.ByteBuffer;
 
@@ -35,7 +34,7 @@ public interface ByteBufferSerializable {
      * @param aSrcObjet
      * @return
      */
-    ByteBuf serializeToByteBuffer();
+    ByteBuffer serializeToByteBuffer();
     
     /**
      * serializeToByteBuffer.
@@ -56,6 +55,15 @@ public interface ByteBufferSerializable {
     void deserializeFromByteBuffer(final ByteBuffer aSrcByteBuffer);
    
     
+    /**
+     * deserializeFrom.
+     *
+     * @param srcByteBuffer
+     * @param srcLength
+     * @param aClass
+     * @return
+     */
+    //<S> S deserializeFromByteBuffer(final ByteBuffer srcByteBuffer, final Class<S> aClass);
     
     
 }
