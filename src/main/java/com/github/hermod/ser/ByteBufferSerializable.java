@@ -3,6 +3,8 @@ package com.github.hermod.ser;
 
 import java.nio.ByteBuffer;
 
+import com.github.hermod.ser.Serializable;
+
 
 
 /**
@@ -26,7 +28,7 @@ import java.nio.ByteBuffer;
  * @param <T>
  *
  */
-public interface ByteBufferSerializable {
+public interface ByteBufferSerializable extends Serializable {
 
     /**
      * serializeToByteBuffer.
