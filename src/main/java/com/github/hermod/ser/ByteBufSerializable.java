@@ -53,7 +53,7 @@ public interface ByteBufSerializable {
      * @param aSrcLength
      * @param aDestObject
      */
-    void deserializeFromByteBuf(final ByteBuffer aSrcByteBuf);
+    void deserializeFromByteBuf(final ByteBuf aSrcByteBuf);
    
     
     
