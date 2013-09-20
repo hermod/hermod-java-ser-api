@@ -36,7 +36,7 @@ public interface ByteBufMsgSerializer extends MsgSerializer {
      * @param aSrcByteBuffer
      * @param aDestMsg
      */
-    void deserializeFromBuf(final ByteBuffer aSrcByteBuf, Msg aDestMsg);
+    void deserializeFromByteBuf(final ByteBuf aSrcByteBuf, Msg aDestMsg);
     
     
 }
