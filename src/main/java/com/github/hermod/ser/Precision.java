@@ -3,13 +3,7 @@ package com.github.hermod.ser;
 import java.util.Arrays;
 
 /**
- * <p>EPrecision. </p>
- * 
- * @author anavarro - Apr 7, 2013
- * 
- */
-/**
- * <p>EPrecision. </p>
+ * <p>Precision. </p>
  *
  * @author anavarro - Apr 13, 2013
  *

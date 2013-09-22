@@ -5,23 +5,9 @@ import java.nio.ByteBuffer;
 
 
 /**
- * <p>IByteBufferClassSerializer. </p>
+ * <p>ByteBufferClassSerializer. </p>
  *
- * @author anavarro - Apr 13, 2013
- * @param <T>
- *
- */
-/**
- * <p>IByteBufferClassSerializer. </p>
- *
- * @author anavarro - Apr 20, 2013
- * @param <T>
- *
- */
-/**
- * <p>IByteBufferClassSerializer. </p>
- *
- * @author anavarro - Apr 20, 2013
+ * @author anavarro - Sep 22, 2013
  * @param <T>
  *
  */

@@ -1,7 +1,7 @@
 package com.github.hermod.ser;
 
 /**
- * <p>ISerializable. </p>
+ * <p>Serializable. </p>
  *
  * @author anavarro - Apr 12, 2013
  *

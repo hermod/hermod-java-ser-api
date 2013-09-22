@@ -2,28 +2,13 @@ package com.github.hermod.ser;
 
 import io.netty.buffer.ByteBuf;
 
-import java.nio.ByteBuffer;
 
 
 
 /**
- * <p>IByteBufferClassSerializer. </p>
+ * <p>ByteBufClassSerializer. </p>
  *
- * @author anavarro - Apr 13, 2013
- * @param <T>
- *
- */
-/**
- * <p>IByteBufferClassSerializer. </p>
- *
- * @author anavarro - Apr 20, 2013
- * @param <T>
- *
- */
-/**
- * <p>IByteBufferClassSerializer. </p>
- *
- * @author anavarro - Apr 20, 2013
+ * @author anavarro - Sep 22, 2013
  * @param <T>
  *
  */

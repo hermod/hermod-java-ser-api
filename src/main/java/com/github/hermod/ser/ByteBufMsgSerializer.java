@@ -2,12 +2,11 @@ package com.github.hermod.ser;
 
 import io.netty.buffer.ByteBuf;
 
-import java.nio.ByteBuffer;
 
 
 
 /**
- * <p>IByteBufferMsgSerializer. </p>
+ * <p>ByteBufferMsgSerializer. </p>
  *
  * @author anavarro - Apr 13, 2013
  *

@@ -7,25 +7,11 @@ import com.github.hermod.ser.Serializable;
 
 
 
+
 /**
- * <p>IByteBufferClassSerializer. </p>
+ * <p>ByteBufferSerializable. </p>
  *
- * @author anavarro - Apr 13, 2013
- * @param <T>
- *
- */
-/**
- * <p>IByteBufferClassSerializer. </p>
- *
- * @author anavarro - Apr 20, 2013
- * @param <T>
- *
- */
-/**
- * <p>IByteBufferClassSerializer. </p>
- *
- * @author anavarro - Apr 20, 2013
- * @param <T>
+ * @author anavarro - Sep 22, 2013
  *
  */
 public interface ByteBufferSerializable extends Serializable {

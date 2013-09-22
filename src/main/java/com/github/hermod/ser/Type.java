@@ -3,7 +3,7 @@ package com.github.hermod.ser;
 import java.util.Arrays;
 
 /**
- * <p>EType.</p>
+ * <p>Type.</p>
  * 
  * @author anavarro - Apr 4, 2013
  * 
