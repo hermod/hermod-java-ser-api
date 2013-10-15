@@ -399,11 +399,11 @@ public interface Msg {
     int getArrayLength(final int key);
 
     /**
-     * <p>getKeys.</p>
+     * <p>retrieveKeys.</p>
      * 
      * @return an array of int.
      */
-    int[] getKeys();
+    int[] retrieveKeys();
 
     /**
      * size.
