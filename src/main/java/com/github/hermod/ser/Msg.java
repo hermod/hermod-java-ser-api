@@ -356,9 +356,23 @@ public interface Msg {
      * 
      * @return
      */
-    // TODO is it clone?
     @NonNull
-    Msg getAll();
+    Msg getAllAsMsg();
+    
+    /**
+     * getAllAsObjects.
+     *
+     * @return
+     */
+    @NonNull
+    Object[] getAllAsObjects();
+    
+    /**
+     * getAllAsObjects.
+     *
+     * @param aObjects
+     */
+    void getAllAsObjects(final Object... aObjects);
 
     /**
      * getType.
@@ -404,6 +418,13 @@ public interface Msg {
      * @return an array of int.
      */
     int[] retrieveKeys();
+    
+    /**
+     * retrieveKeyMax.
+     *
+     * @return
+     */
+    int retrieveKeyMax();
 
     /**
      * size.
@@ -743,6 +764,13 @@ public interface Msg {
      * @param aMsg a {@link com.github.hermod.ser.Msg} object.
      */
     void setAll(@Nullable final Msg aMsg);
+    
+    /**
+     * setAll.
+     *
+     * @param aObjects
+     */
+    void setAll(@Nullable final Object... aObjects);
 
     /**
      * <p>remove.</p>
