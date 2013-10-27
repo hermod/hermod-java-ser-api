@@ -21,7 +21,6 @@ public interface Msg {
      */
     boolean isEmpty();
     
-    
     // Keys Information methods
     /**
      * <p>retrieveKeys.</p>
