@@ -13,6 +13,15 @@ public interface Msg {
     
     // Read methods
     
+    // Msg Inforation methods
+    /**
+     * isEmpty.
+     * 
+     * @return
+     */
+    boolean isEmpty();
+    
+    
     // Keys Information methods
     /**
      * <p>retrieveKeys.</p>
@@ -39,13 +48,6 @@ public interface Msg {
     // Value Information methods
     
     /**
-     * isEmpty.
-     * 
-     * @return
-     */
-    boolean isEmpty();
-    
-    /**
      * getType.
      * 
      * @param key
@@ -69,14 +71,6 @@ public interface Msg {
 
 
     /**
-     * <p>contains.</p>
-     * 
-     * @param aKey a int.
-     * @return a boolean.
-     */
-    boolean contains(final int aKey);
-
-    /**
      * isArray.
      * 
      * @param aKey
@@ -92,7 +86,15 @@ public interface Msg {
      */
     int getArrayLength(final int aKey);
     
-    
+    /**
+     * <p>contains.</p>
+     * 
+     * @param aKey a int.
+     * @return a boolean.
+     */
+    boolean contains(final int aKey);
+
+
     // Read Value Operations
     
     /**
@@ -299,22 +301,13 @@ public interface Msg {
 
     
     /**
-     * get.
-     *
-     * @param aKey
-     * @return
-     */
-    //TODO to add
-    //Object get(final int aKey);
-    
-    
-    /**
      * <p>get.</p>
      * 
      * @param aKey a int.
      * @return a {@link java.lang.Object} object.
      */
     @Nullable
+    //TODO to modify get
     Object getAsObject(final int aKey);
 
     /**
@@ -325,6 +318,7 @@ public interface Msg {
      * @return a {@link java.lang.Object} object.
      */
     @Nullable
+    //TODO to modify get
     <T> T getAsObject(final int aKey, final Class<T> clazz);
 
     /**
@@ -471,6 +465,23 @@ public interface Msg {
      * @param destMsgs
      */
     void getAsMsgs(final int aKey, @Nullable Msg... destMsgs);
+    
+    /**
+     * <p>getAsObjects.</p>
+     * 
+     * @param aKey
+     * @return
+     */
+    @Nullable
+    Object[] getAsObjects(final int aKey);
+
+    /**
+     * getAsObjects.
+     * 
+     * @param aKey
+     * @param destObjects
+     */
+    void getAsObjects(final int aKey, @Nullable Object... destObjects);
 
     /**
      * getAll.
