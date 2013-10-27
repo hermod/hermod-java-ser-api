@@ -307,11 +307,10 @@ public interface Msg {
      * @return a {@link java.lang.Object} object.
      */
     @Nullable
-    //TODO to modify get
-    Object getAsObject(final int aKey);
+    Object get(final int aKey);
 
     /**
-     * <p>getAsObject.</p>
+     * <p>get.</p>
      * 
      * @param aKey a int
      * @param clazz
@@ -319,7 +318,7 @@ public interface Msg {
      */
     @Nullable
     //TODO to modify get
-    <T> T getAsObject(final int aKey, final Class<T> clazz);
+    <T> T get(final int aKey, final Class<T> clazz);
 
     /**
      * <p>getAsBooleans.</p>
