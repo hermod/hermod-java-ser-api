@@ -24,9 +24,10 @@ public final class Types {
     public static final byte NULL_TYPE = 0b0000_0000;
     
     /**
-     * MSG_TYPE
+     * SKIPPED_KEYS_TYPE
      */
-    public static final byte MSG_TYPE = 0b0010_0000;
+    //TODO to add
+    //public static final byte SKIPPED_KEYS_TYPE = 0b0010_0000;
     
     /**
      * INTEGER_TYPE (long / int / short / byte / boolean / Enum)
@@ -38,6 +39,9 @@ public final class Types {
      */
     public static final byte DECIMAL_TYPE = 0b0110_0000;
 
+    
+    
+    // TODO to remove STRING_ISO_8859_1_TYPE
     /**
      * STRING_ISO_8859_1_TYPE String with charset = ISO_8859_1
      */
@@ -53,7 +57,7 @@ public final class Types {
      */
     public static final Charset ISO_8859_1_CHARSET = Charset.forName(ISO_8859_1_CHARSET_NAME);
     
-    
+    // TODO to remove STRING_UTF_16_TYPE
     /**
      * STRING_TYPE (UTF16 by default as it is in a String)
      */
@@ -68,6 +72,29 @@ public final class Types {
      * UTF_16_CHARSET
      */
     public static final Charset UTF_16_CHARSET = Charset.forName(UTF_16_CHARSET_NAME);
+    
+    
+    // TODO to add
+    /**
+     * STRING_TYPE (UTF8 by default as it is in a String)
+     */
+    //public static final byte STRING_UTF_8_TYPE = (byte) 0b1000_0000;
+    
+    /**
+     * UTF_8_CHARSET_NAME
+     */
+    //public static final String UTF_8_CHARSET_NAME = "UTF-8";
+    
+    /**
+     * UTF_8_CHARSET
+     */
+    //public static final Charset UTF_8_CHARSET = Charset.forName(UTF_8_CHARSET_NAME);
+    
+    /**
+     * MSG_TYPE
+     */
+    // TODO to change
+    public static final byte MSG_TYPE = 0b0010_0000; // should be 0b1010_0000
     
     /**
      * ARRAY_FIXED_VALUE_TYPE Array with fixde length value like byte[] ...

@@ -10,7 +10,63 @@ import checkers.nullness.quals.Nullable;
  */
 public interface Msg {
 
-    // Read operations
+    
+    // Read methods
+    
+    // Keys Information methods
+    /**
+     * <p>retrieveKeys.</p>
+     * 
+     * @return an array of int.
+     */
+    int[] retrieveKeys();
+    
+    /**
+     * retrieveKeyMax.
+     *
+     * @return
+     */
+    int retrieveKeyMax();
+
+    /**
+     * size.
+     * 
+     * @return the number of keys
+     */
+    int countKeys();
+
+    
+    // Value Information methods
+    
+    /**
+     * isEmpty.
+     * 
+     * @return
+     */
+    boolean isEmpty();
+    
+    /**
+     * getType.
+     * 
+     * @param key
+     * @return
+     */
+    @NonNull
+    Type getType(final int key);
+
+    /**
+     * getTypeAsByte.
+     * 
+     * @param key
+     * @return
+     */
+    byte getTypeAsByte(final int key);
+
+    // TODO
+    // Add it or not?
+    // with lenghtOfLenght / type
+    // int getLength(final int key)
+
 
     /**
      * <p>contains.</p>
@@ -20,6 +76,25 @@ public interface Msg {
      */
     boolean contains(final int aKey);
 
+    /**
+     * isArray.
+     * 
+     * @param aKey
+     * @return
+     */
+    boolean isArray(final int aKey);
+
+    /**
+     * getArrayLength.
+     * 
+     * @param aKey
+     * @return
+     */
+    int getArrayLength(final int aKey);
+    
+    
+    // Read Value Operations
+    
     /**
      * <p>getAsBoolean.</p>
      * 
@@ -187,6 +262,17 @@ public interface Msg {
      */
     void getAsMsg(final int aKey, final Msg destMsg);
 
+    
+    /**
+     * get.
+     *
+     * @param aKey
+     * @return
+     */
+    //TODO to add
+    //Object get(final int aKey);
+    
+    
     /**
      * <p>get.</p>
      * 
@@ -374,73 +460,11 @@ public interface Msg {
      */
     void getAllAsObjects(final Object... aObjects);
 
-    /**
-     * getType.
-     * 
-     * @param key
-     * @return
-     */
-    @NonNull
-    Type getType(final int key);
 
-    /**
-     * getTypeAsByte.
-     * 
-     * @param key
-     * @return
-     */
-    byte getTypeAsByte(final int key);
-
-    // TODO
-    // Add it or not?
-    // with lenghtOfLenght / type
-    // int getLength(final int key)
-
-    /**
-     * isArray.
-     * 
-     * @param key
-     * @return
-     */
-    boolean isArray(final int key);
-
-    /**
-     * getArrayLength.
-     * 
-     * @param key
-     * @return
-     */
-    int getArrayLength(final int key);
-
-    /**
-     * <p>retrieveKeys.</p>
-     * 
-     * @return an array of int.
-     */
-    int[] retrieveKeys();
     
-    /**
-     * retrieveKeyMax.
-     *
-     * @return
-     */
-    int retrieveKeyMax();
 
-    /**
-     * size.
-     * 
-     * @return the number of keys
-     */
-    int countKeys();
 
-    /**
-     * isEmpty.
-     * 
-     * @return
-     */
-    boolean isEmpty();
-
-    //  Write opertations
+    //  Write Value Methods
     /**
      * <p>set.</p>
      * 
@@ -596,6 +620,7 @@ public interface Msg {
      * @param aString a {@link java.lang.String} object.
      */
     void set(final int aKey, @Nullable final String aString);
+    
 
     /**
      * set.
@@ -604,6 +629,7 @@ public interface Msg {
      * @param aString
      * @param forceIso88591Charset
      */
+    // TODO remove this method (use setAsciiString instead)
     void set(final int aKey, @Nullable final String aString, final boolean forceIso88591Charset);
 
     /**
@@ -748,6 +774,7 @@ public interface Msg {
      * @param aKey a int.
      * @param anArray a string[]
      */
+    // TODO remove this method (use setAsciiString instead)
     void set(final int aKey, @Nullable final String[] aStrings, final boolean forceIso88591Charset);
 
     /**
@@ -758,6 +785,193 @@ public interface Msg {
      */
     void set(final int aKey, @Nullable final Msg... aMsgs);
 
+    
+    // TODO add it
+    /**
+     * setNull.
+     *
+     * @param aKey
+     */
+    //void setNull(final int aKey);
+    
+    /**
+     * set.
+     *
+     * @param aKey
+     * @param aLength
+     */
+    //void setNull(final int aKey, final int aLength);
+    
+    
+    // TODO add it
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey a int.
+     * @param aBoolean a aBoolean.
+     */
+    //void setAsInteger(final int aKey, final boolean aBoolean);
+
+    /**
+     * set.
+     * 
+     * @param aKey
+     * @param aBoolean
+     */
+    //void setAsInteger(final int aKey, @Nullable final Boolean aBoolean);
+    
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey a int.
+     * @param aByte a byte.
+     */
+    //void setAsInteger(final int aKey, final byte aByte);
+
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey a int.
+     * @param aByte a byte.
+     */
+    //void setAsInteger(final int aKey, @Nullable final Byte aByte);
+
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey a int.
+     * @param aShort a short.
+     */
+    //void setAsInteger(final int aKey, final short aShort);
+
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey a int.
+     * @param aShort a short.
+     */
+    //void setAsInteger(final int aKey, @Nullable final Short aShort);
+
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey a int.
+     * @param aInt a int.
+     */
+    //void setAsInteger(final int aKey, final int aInt);
+
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey a int.
+     * @param aInt a int.
+     */
+    //void setAsInteger(final int aKey, @Nullable final Integer aInt);
+
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey a int.
+     * @param aLong a long.
+     */
+    //void setAsInteger(final int aKey, final long aLong);
+
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey a int.
+     * @param aLong a long.
+     */
+    //void setAsInteger(final int aKey, @Nullable final Long aLong);
+    
+    
+    
+    //TODO add it
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey a int.
+     * @param aFloat a float.
+     */
+    //void setAsDecimal(final int aKey, final float aFloat);
+
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey a int.
+     * @param aFloat a float.
+     */
+    //void setAsDecimal(final int aKey, @Nullable final Float aFloat);
+
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey a int.
+     * @param aDouble a double.
+     */
+    //void setAsDecimal(final int aKey, final double aDouble);
+
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey a int.
+     * @param aDouble a double.
+     */
+    //void setAsDecimal(final int aKey, @Nullable final Double aDouble);
+
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey a int.
+     * @param aDouble a double.
+     * @param nbDigit a int.
+     */
+    //void setAsDecimal(final int aKey, final double aDouble, final int nbDigit);
+
+    /**
+     * set.
+     * 
+     * @param aKey
+     * @param aDouble
+     * @param aPrecision
+     */
+    //void setAsDecimal(final int aKey, final double aDouble, @NonNull final Precision aPrecision);
+
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey a int.
+     * @param aDouble a double.
+     * @param nbDigit a int.
+     */
+    //void setAsDecimal(final int aKey, @Nullable final Double aDouble, final int nbDigit);
+
+    /**
+     * set.
+     * 
+     * @param aKey
+     * @param aDouble
+     * @param aPrecision
+     */
+    //void setAsDecimal(final int aKey, @Nullable final Double aDouble, @NonNull final Precision aPrecision);
+
+    //TODO to add it
+    /**
+     * setAsciiString.
+     *
+     * @param aKey
+     * @param aString
+     */
+    //void setAsAsciiString(final int aKey, @Nullable final String aString);
+    
+    /**
+     * setAsAsciiString.
+     *
+     * @param aKey
+     * @param aStrings
+     */
+    //void setAsAsciiString(final int aKey, @Nullable final String... aStrings);
+    
     /**
      * <p>setAll.</p>
      * 
@@ -768,9 +982,9 @@ public interface Msg {
     /**
      * setAll.
      *
-     * @param aObjects
+     * @param anObjects
      */
-    void setAll(@Nullable final Object... aObjects);
+    void setAll(@Nullable final Object... anObjects);
 
     /**
      * <p>remove.</p>
