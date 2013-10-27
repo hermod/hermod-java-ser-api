@@ -21,6 +21,11 @@ public interface Msg {
      */
     boolean isEmpty();
     
+    //TODO to add
+    // boolean isBytesSerializable();
+    // boolean isByteBufferSerializable();
+    // boolean isByteBufSerializable();
+    
     // Keys Information methods
     /**
      * <p>retrieveKeys.</p>
@@ -95,6 +100,26 @@ public interface Msg {
 
 
     // Read Value Operations
+    
+    /**
+     * <p>get.</p>
+     * 
+     * @param aKey an unsigned int.
+     * @return a {@link java.lang.Object} object.
+     */
+    @Nullable
+    Object get(final int aKey);
+
+    /**
+     * <p>get.</p>
+     * 
+     * @param aKey an unsigned int
+     * @param clazz
+     * @return a {@link java.lang.Object} object.
+     */
+    @Nullable
+    //TODO to modify get
+    <T> T get(final int aKey, final Class<T> clazz);
     
     /**
      * <p>getAsBoolean.</p>
@@ -298,27 +323,6 @@ public interface Msg {
      */
     void getAsMsg(final int aKey, final Msg destMsg);
 
-    
-    /**
-     * <p>get.</p>
-     * 
-     * @param aKey an unsigned int.
-     * @return a {@link java.lang.Object} object.
-     */
-    @Nullable
-    Object get(final int aKey);
-
-    /**
-     * <p>get.</p>
-     * 
-     * @param aKey an unsigned int
-     * @param clazz
-     * @return a {@link java.lang.Object} object.
-     */
-    @Nullable
-    //TODO to modify get
-    <T> T get(final int aKey, final Class<T> clazz);
-
     /**
      * <p>getAsBooleans.</p>
      * 
@@ -505,10 +509,17 @@ public interface Msg {
     void getAllAsObjects(final Object... aObjects);
 
 
-    
-
 
     //  Write Value Methods
+    
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey an unsigned int.
+     * @param anObject
+     */
+    void set(final int aKey, @Nullable final Object anObject);
+    
     /**
      * <p>set.</p>
      * 
@@ -683,14 +694,6 @@ public interface Msg {
      * @param aMsg a {@link com.github.hermod.ser.Msg} object.
      */
     void set(final int aKey, @Nullable final Msg aMsg);
-
-    /**
-     * <p>set.</p>
-     * 
-     * @param aKey an unsigned int.
-     * @param anObject
-     */
-    void set(final int aKey, @Nullable final Object anObject);
 
     /**
      * <p>set.</p>
