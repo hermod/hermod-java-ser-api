@@ -225,7 +225,7 @@ public interface Msg {
     
     // TODO to add
     /**
-     * getAsInteger.
+     * getAsVarInteger.
      *
      * @param aKey an unsigned int.
      * @return
@@ -495,6 +495,8 @@ public interface Msg {
     
     /**
      * getAllAsObjects.
+     * 
+     * Each key is representing with the index of the array and each value is representing with the values of the array return.
      *
      * @return
      */
@@ -503,10 +505,13 @@ public interface Msg {
     
     /**
      * getAllAsObjects.
+     * 
+     * Each key is representing with the index of the array and each value is representing with the values of the array return.
+     * Use retrieveKeyMax before to allocate before the right number in the anObjects
      *
-     * @param aObjects
+     * @return
      */
-    void getAllAsObjects(final Object... aObjects);
+    void getAllAsObjects(@NonNull final Object... aObjects);
 
 
 
@@ -1028,6 +1033,8 @@ public interface Msg {
     
     /**
      * setAll.
+     * 
+     * Each key is representing with the index of the array and each value is representing with the value of the array in argument.
      *
      * @param anObjects
      */
