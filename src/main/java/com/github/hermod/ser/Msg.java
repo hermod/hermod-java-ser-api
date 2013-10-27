@@ -195,6 +195,24 @@ public interface Msg {
      */
     @Nullable
     Long getAsNullableLong(final int aKey);
+    
+    
+    // TODO to add
+    /**
+     * getAsInteger.
+     *
+     * @param aKey
+     * @return
+     */
+    //@Nullable long getAsVarInteger(final int aKey);
+    
+    /**
+     * getAsInteger.
+     *
+     * @param aKey
+     * @return
+     */
+    //@Nullable Long getAsNullableVarInteger(final int aKey);
 
     /**
      * <p>getAsFloat.</p>
@@ -235,7 +253,24 @@ public interface Msg {
      */
     @Nullable
     Double getAsNullableDouble(final int aKey);
-
+    
+    //TODO to add
+    /**
+     * getAsDecimal.
+     *
+     * @param aKey
+     * @return
+     */
+    //@Nullable double getAsVarDecimal(final int aKey);
+    
+    /**
+     * getAsNullableDecimal.
+     *
+     * @param aKey
+     * @return
+     */
+    //@Nullable Double getAsNullableVarDecimal(final int aKey);
+    
     /**
      * <p>getAsString.</p>
      * 
@@ -810,7 +845,7 @@ public interface Msg {
      * @param aKey a int.
      * @param aBoolean a aBoolean.
      */
-    //void setAsInteger(final int aKey, final boolean aBoolean);
+    //void setAsVarInteger(final int aKey, final boolean aBoolean);
 
     /**
      * set.
@@ -818,7 +853,7 @@ public interface Msg {
      * @param aKey
      * @param aBoolean
      */
-    //void setAsInteger(final int aKey, @Nullable final Boolean aBoolean);
+    //void setAsVarInteger(final int aKey, @Nullable final Boolean aBoolean);
     
     /**
      * <p>set.</p>
@@ -826,7 +861,7 @@ public interface Msg {
      * @param aKey a int.
      * @param aByte a byte.
      */
-    //void setAsInteger(final int aKey, final byte aByte);
+    //void setAsVarInteger(final int aKey, final byte aByte);
 
     /**
      * <p>set.</p>
@@ -834,7 +869,7 @@ public interface Msg {
      * @param aKey a int.
      * @param aByte a byte.
      */
-    //void setAsInteger(final int aKey, @Nullable final Byte aByte);
+    //void setAsVarInteger(final int aKey, @Nullable final Byte aByte);
 
     /**
      * <p>set.</p>
@@ -842,7 +877,7 @@ public interface Msg {
      * @param aKey a int.
      * @param aShort a short.
      */
-    //void setAsInteger(final int aKey, final short aShort);
+    //void setAsVarInteger(final int aKey, final short aShort);
 
     /**
      * <p>set.</p>
@@ -850,7 +885,7 @@ public interface Msg {
      * @param aKey a int.
      * @param aShort a short.
      */
-    //void setAsInteger(final int aKey, @Nullable final Short aShort);
+    //void setAsVarInteger(final int aKey, @Nullable final Short aShort);
 
     /**
      * <p>set.</p>
@@ -858,7 +893,7 @@ public interface Msg {
      * @param aKey a int.
      * @param aInt a int.
      */
-    //void setAsInteger(final int aKey, final int aInt);
+    //void setAsVarInteger(final int aKey, final int aInt);
 
     /**
      * <p>set.</p>
@@ -866,7 +901,7 @@ public interface Msg {
      * @param aKey a int.
      * @param aInt a int.
      */
-    //void setAsInteger(final int aKey, @Nullable final Integer aInt);
+    //void setAsVarInteger(final int aKey, @Nullable final Integer aInt);
 
     /**
      * <p>set.</p>
@@ -874,7 +909,7 @@ public interface Msg {
      * @param aKey a int.
      * @param aLong a long.
      */
-    //void setAsInteger(final int aKey, final long aLong);
+    //void setAsVarInteger(final int aKey, final long aLong);
 
     /**
      * <p>set.</p>
@@ -882,7 +917,7 @@ public interface Msg {
      * @param aKey a int.
      * @param aLong a long.
      */
-    //void setAsInteger(final int aKey, @Nullable final Long aLong);
+    //void setAsVarInteger(final int aKey, @Nullable final Long aLong);
     
     
     
@@ -893,7 +928,7 @@ public interface Msg {
      * @param aKey a int.
      * @param aFloat a float.
      */
-    //void setAsDecimal(final int aKey, final float aFloat);
+    //void setAsVarDecimal(final int aKey, final float aFloat);
 
     /**
      * <p>set.</p>
@@ -901,7 +936,7 @@ public interface Msg {
      * @param aKey a int.
      * @param aFloat a float.
      */
-    //void setAsDecimal(final int aKey, @Nullable final Float aFloat);
+    //void setAsVarDecimal(final int aKey, @Nullable final Float aFloat);
 
     /**
      * <p>set.</p>
@@ -909,7 +944,7 @@ public interface Msg {
      * @param aKey a int.
      * @param aDouble a double.
      */
-    //void setAsDecimal(final int aKey, final double aDouble);
+    //void setAsVarDecimal(final int aKey, final double aDouble);
 
     /**
      * <p>set.</p>
@@ -917,25 +952,7 @@ public interface Msg {
      * @param aKey a int.
      * @param aDouble a double.
      */
-    //void setAsDecimal(final int aKey, @Nullable final Double aDouble);
-
-    /**
-     * <p>set.</p>
-     * 
-     * @param aKey a int.
-     * @param aDouble a double.
-     * @param nbDigit a int.
-     */
-    //void setAsDecimal(final int aKey, final double aDouble, final int nbDigit);
-
-    /**
-     * set.
-     * 
-     * @param aKey
-     * @param aDouble
-     * @param aPrecision
-     */
-    //void setAsDecimal(final int aKey, final double aDouble, @NonNull final Precision aPrecision);
+    //void setAsVarDecimal(final int aKey, @Nullable final Double aDouble);
 
     /**
      * <p>set.</p>
@@ -944,7 +961,7 @@ public interface Msg {
      * @param aDouble a double.
      * @param nbDigit a int.
      */
-    //void setAsDecimal(final int aKey, @Nullable final Double aDouble, final int nbDigit);
+    //void setAsVarDecimal(final int aKey, final double aDouble, final int nbDigit);
 
     /**
      * set.
@@ -953,7 +970,25 @@ public interface Msg {
      * @param aDouble
      * @param aPrecision
      */
-    //void setAsDecimal(final int aKey, @Nullable final Double aDouble, @NonNull final Precision aPrecision);
+    //void setAsVarDecimal(final int aKey, final double aDouble, @NonNull final Precision aPrecision);
+
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey a int.
+     * @param aDouble a double.
+     * @param nbDigit a int.
+     */
+    //void setAsVarDecimal(final int aKey, @Nullable final Double aDouble, final int nbDigit);
+
+    /**
+     * set.
+     * 
+     * @param aKey
+     * @param aDouble
+     * @param aPrecision
+     */
+    //void setAsVarDecimal(final int aKey, @Nullable final Double aDouble, @NonNull final Precision aPrecision);
 
     //TODO to add it
     /**
