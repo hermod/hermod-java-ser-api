@@ -21,10 +21,26 @@ public interface Msg {
      */
     boolean isEmpty();
     
-    //TODO to add
-    // boolean isBytesSerializable();
-    // boolean isByteBufferSerializable();
-    // boolean isByteBufSerializable();
+    /**
+     * isBytesSerializable.
+     *
+     * @return
+     */
+    boolean isBytesSerializable();
+    
+    /**
+     * isByteBufferSerializable.
+     *
+     * @return
+     */
+    boolean isByteBufferSerializable();
+    
+    /**
+     * isByteBufSerializable.
+     *
+     * @return
+     */
+    boolean isByteBufSerializable();
     
     // Keys Information methods
     /**
