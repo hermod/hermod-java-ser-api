@@ -21,7 +21,7 @@ public class TypesTest {
      */
     @Test
     public void test() {
-        assertThat(Types.STRING_UTF_16_TYPE).isEqualTo(Types.STRING_UTF_16_TYPE);
+        assertThat(Types.STRING_UTF_8_TYPE).isEqualTo(Types.STRING_UTF_8_TYPE);
     }
 
     /**

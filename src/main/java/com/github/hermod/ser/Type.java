@@ -66,7 +66,7 @@ public enum Type {
             return Type.DECIMAL;
         } else if (String.class.equals(clazz)) {
             // TODO change on Type.STRING_UTF8
-            return Type.STRING_ISO_8859_1;
+            return Type.STRING_UTF8;
         } else if (Msg.class.equals(clazz)) {
             return Type.MSG;
         } else if (int[].class.equals(clazz) || long[].class.equals(clazz) || short[].class.equals(clazz) || byte[].class.equals(clazz) || boolean[].class.equals(clazz) || double[].class.equals(clazz) || float[].class.equals(clazz)) {

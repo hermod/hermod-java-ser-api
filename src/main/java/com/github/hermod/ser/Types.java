@@ -26,7 +26,7 @@ public final class Types {
     /**
      * SKIPPED_KEYS_TYPE
      */
-    public static final byte SKIPPED_KEYS_TYPE = 0b0010_0000;
+    public static final byte SKIPPED_KEYS_TYPE = 0b0000_0000; //TODO to change to 0b0010_0000;
     
     /**
      * INTEGER_TYPE (long / int / short / byte / boolean / Enum)
@@ -57,8 +57,7 @@ public final class Types {
     /**
      * MSG_TYPE
      */
-    // TODO to change
-    public static final byte MSG_TYPE = (byte) 0b1010_0000; // should be 0b1010_0000
+    public static final byte MSG_TYPE = (byte) 0b1010_0000;
     
     /**
      * ARRAY_FIXED_VALUE_TYPE Array with fixde length value like byte[] ...
