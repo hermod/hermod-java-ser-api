@@ -6,12 +6,12 @@ import static org.assertj.core.api.Assertions.failBecauseExceptionWasNotThrown;
 import org.junit.Test;
 
 /**
- * <p>EPrecisionTest. </p>
+ * <p>PrecisionTest. </p>
  * 
  * @author anavarro - Apr 13, 2013
  * 
  */
-public class EPrecisionTest {
+public class PrecisionTest {
 
     /**
      * testCalculateIntegerMantissa.

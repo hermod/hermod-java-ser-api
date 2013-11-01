@@ -7,12 +7,12 @@ import static org.assertj.core.api.Assertions.failBecauseExceptionWasNotThrown;
 import org.junit.Test;
 
 /**
- * <p>ETypeTest. </p>
+ * <p>TypeTest. </p>
  *
  * @author anavarro - Apr 13, 2013
  *
  */
-public class ETypeTest {
+public class TypeTest {
 
     /**
      * testValueOf.
