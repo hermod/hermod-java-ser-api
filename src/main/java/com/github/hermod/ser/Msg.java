@@ -1,6 +1,5 @@
 package com.github.hermod.ser;
 
-import java.math.BigDecimal;
 
 /**
  * <p>Msg interface.</p>
@@ -482,7 +481,7 @@ public interface Msg {
     /**
      * getAll.
      * 
-     * @return
+     * @return a Msg
      */
     
     Msg getAllAsMsg();
@@ -492,7 +491,7 @@ public interface Msg {
      * 
      * Each key is representing with the index of the array and each value is representing with the values of the array return.
      *
-     * @return
+     * @return Object[]
      */
     Object[] getAllAsObjects();
     
@@ -744,6 +743,15 @@ public interface Msg {
      */
     void set(final int aKey, final Double aDouble, final int aScale);
 
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey an unsigned int.
+     * @param aDouble a double.
+     * @param aScale a int.
+     */
+    void set(final int aKey, final double aDouble, final int aScale, final boolean optimizeLength);
+    
     /**
      * <p>set.</p>
      * 
