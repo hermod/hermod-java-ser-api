@@ -36,6 +36,15 @@ public enum Type {
     public final byte getId() {
         return this.id;
     }
+    
+    /**
+     * get5ShiftId.
+     *
+     * @return
+     */
+    public final byte getShiftId() {
+        return (byte) (this.id >> 5);
+    }
 
     /**
      * valueOf.
