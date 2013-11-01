@@ -1,5 +1,8 @@
 package com.github.hermod.ser;
 
+import java.math.BigDecimal;
+import java.text.Bidi;
+
 /**
  * <p>Msg interface.</p>
  * 
@@ -270,6 +273,13 @@ public interface Msg {
     
     Double getAsNullableDouble(final int aKey);
     
+    /**
+     * getAsBigDecimal.
+     *
+     * @param aKey an unsigned int.
+     * @return
+     */
+    BigDecimal getAsBigDecimal(final int aKey);
       
     /**
      * <p>getAsString.</p>
@@ -416,6 +426,15 @@ public interface Msg {
     
     Double[] getAsNullableDoubles(final int aKey);
 
+    
+    /**
+     * <p>getAsBigDecimals.</p>
+     * 
+     * @param aKey an unsigned int.
+     * @return
+     */
+    BigDecimal[] getAsBigDecimals(final int aKey);
+    
     /**
      * <p>getAsStrings.</p>
      * 
@@ -733,6 +752,24 @@ public interface Msg {
      */
     void set(final int aKey, final Double aDouble, final int aScale, final boolean optimizeLength);
 
+    
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey an unsigned int.
+     * @param aBigDecimal a BigDecimal.
+     */
+    void set(final int aKey, final BigDecimal aBigDecimal);
+
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey an unsigned int.
+     * @param aBigDecimal a BigDecimal.
+     * @param optimizeLength .
+     */
+    void set(final int aKey, final BigDecimal aBigDecimal, final boolean optimizeLength);
+    
     /**
      * <p>set.</p>
      * 
@@ -868,6 +905,14 @@ public interface Msg {
      * @param anArray a double[]
      */
     void set(final int aKey, final Double... aDoubles);
+    
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey an unsigned int.
+     * @param anArray a double[]
+     */
+    void set(final int aKey, final BigDecimal... aBigDecimal);
 
     /**
      * <p>set.</p>
