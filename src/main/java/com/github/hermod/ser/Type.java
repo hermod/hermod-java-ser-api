@@ -1,5 +1,6 @@
 package com.github.hermod.ser;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 
 /**
@@ -65,14 +66,12 @@ public enum Type {
      * @return
      */
     public static <T> Type valueOf(final Class<T> clazz) {
-        // TODO to optimize Type valueOf(final String className) and a switch
         if (Integer.class.equals(clazz) || Long.class.equals(clazz) || Short.class.equals(clazz) || Byte.class.equals(clazz)
                 || Boolean.class.equals(clazz)) {
             return Type.INTEGER;
-        } else if (Double.class.equals(clazz) || Float.class.equals(clazz)) {
+        } else if (Double.class.equals(clazz) || Float.class.equals(clazz) || BigDecimal.class.equals(clazz)) {
             return Type.DECIMAL;
         } else if (String.class.equals(clazz)) {
-            // TODO change on Type.STRING_UTF8
             return Type.STRING_UTF8;
         } else if (Msg.class.equals(clazz)) {
             return Type.MSG;
@@ -86,5 +85,6 @@ public enum Type {
         }
         throw new IllegalArgumentException("The type with class=" + clazz + " not found in EType.values()=" + Arrays.asList(Type.values()));
     }
+    
 
 }

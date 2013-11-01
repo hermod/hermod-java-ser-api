@@ -1,7 +1,6 @@
 package com.github.hermod.ser;
 
 import java.math.BigDecimal;
-import java.text.Bidi;
 
 /**
  * <p>Msg interface.</p>
