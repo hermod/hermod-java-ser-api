@@ -303,7 +303,7 @@ public interface Msg {
      * @param aKey an unsigned int.
      * @return
      */
-    /* */boolean[] getAsBooleans(final int aKey);
+    boolean[] getAsBooleans(final int aKey);
 
     /**
      * getAsNullableBooleans.
@@ -320,7 +320,7 @@ public interface Msg {
      * @param aKey an unsigned int.
      * @return
      */
-    /* */byte[] getAsBytes(final int aKey);
+    byte[] getAsBytes(final int aKey);
 
     /**
      * getAsNullableBytes.
@@ -337,7 +337,7 @@ public interface Msg {
      * @param aKey an unsigned int.
      * @return
      */
-    /* */short[] getAsShorts(final int aKey);
+    short[] getAsShorts(final int aKey);
 
     /**
      * getAsNullableShorts.
@@ -354,7 +354,7 @@ public interface Msg {
      * @param aKey an unsigned int.
      * @return
      */
-    /* */int[] getAsInts(final int aKey);
+    int[] getAsInts(final int aKey);
 
     /**
      * getAsNullableIntegers.
@@ -371,7 +371,7 @@ public interface Msg {
      * @param aKey an unsigned int.
      * @return
      */
-    /* */long[] getAsLongs(final int aKey);
+    long[] getAsLongs(final int aKey);
 
     /**
      * getAsNullableLongs.
@@ -388,7 +388,7 @@ public interface Msg {
      * @param aKey an unsigned int.
      * @return
      */
-    /* */float[] getAsFloats(final int aKey);
+    float[] getAsFloats(final int aKey);
 
     /**
      * getAsNullableFloats.
@@ -405,7 +405,7 @@ public interface Msg {
      * @param aKey an unsigned int.
      * @return
      */
-    /* */double[] getAsDoubles(final int aKey);
+    double[] getAsDoubles(final int aKey);
 
     /**
      * getAsNullableDoubles.
@@ -474,7 +474,6 @@ public interface Msg {
      *
      * @return
      */
-    
     Object[] getAllAsObjects();
     
     /**
@@ -712,27 +711,27 @@ public interface Msg {
      * 
      * @param aKey an unsigned int.
      * @param aDouble a double.
-     * @param nbDigit a int.
+     * @param aScale a int.
      */
-    void set(final int aKey, final double aDouble, final int nbDigit);
+    void set(final int aKey, final double aDouble, final int aScale);
 
     /**
      * <p>set.</p>
      * 
      * @param aKey an unsigned int.
      * @param aDouble a double.
-     * @param nbDigit a int.
+     * @param aScale a int.
      */
-    void set(final int aKey, final Double aDouble, final int nbDigit);
+    void set(final int aKey, final Double aDouble, final int aScale);
 
     /**
      * <p>set.</p>
      * 
      * @param aKey an unsigned int.
      * @param aDouble a double.
-     * @param nbDigit a int.
+     * @param aScale a int.
      */
-    void set(final int aKey, final Double aDouble, final int nbDigit, final boolean optimizeLength);
+    void set(final int aKey, final Double aDouble, final int aScale, final boolean optimizeLength);
 
     /**
      * <p>set.</p>
