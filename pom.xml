@@ -8,6 +8,7 @@
 	</parent>
 	<artifactId>hermod-java-ser-api</artifactId>
 	<version>0.0.3-SNAPSHOT</version>
+
 	<packaging>jar</packaging>
 	<scm>
 		<connection>scm:git:git://github.com/hermod/${project.artifactId}.git</connection>
