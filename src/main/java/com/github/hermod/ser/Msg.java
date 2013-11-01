@@ -45,21 +45,21 @@ public interface Msg {
      * 
      * @return an array of int.
      */
-    int[] retrieveKeys();
+    int[] getKeysArray();
     
     /**
      * retrieveKeyMax.
      *
      * @return
      */
-    int retrieveKeyMax();
+    int getKeyMax();
 
     /**
-     * size.
+     * retrieveKeysLength.
      * 
      * @return the number of keys
      */
-    int countKeys();
+    int getKeysLength();
 
     
     // Value Information methods
@@ -80,11 +80,6 @@ public interface Msg {
      * @return
      */
     byte getTypeAsByte(final int key);
-
-    // TODO
-    // Add it or not?
-    // with lenghtOfLenght / type
-    // int getLength(final int key)
 
 
     /**
@@ -131,7 +126,6 @@ public interface Msg {
      * @return a {@link java.lang.Object} object.
      */
     
-    //TODO to modify get
     <T> T get(final int aKey, final Class<T> clazz);
     
     /**
@@ -236,23 +230,6 @@ public interface Msg {
     Long getAsNullableLong(final int aKey);
     
     
-    // TODO to add
-    /**
-     * getAsVarInteger.
-     *
-     * @param aKey an unsigned int.
-     * @return
-     */
-    //long getAsVarInteger(final int aKey);
-    
-    /**
-     * getAsInteger.
-     *
-     * @param aKey an unsigned int.
-     * @return
-     */
-    //Long getAsNullableVarInteger(final int aKey);
-
     /**
      * <p>getAsFloat.</p>
      * 
@@ -293,23 +270,7 @@ public interface Msg {
     
     Double getAsNullableDouble(final int aKey);
     
-    //TODO to add
-    /**
-     * getAsDecimal.
-     *
-     * @param aKey an unsigned int.
-     * @return
-     */
-    //double getAsVarDecimal(final int aKey);
-    
-    /**
-     * getAsNullableDecimal.
-     *
-     * @param aKey an unsigned int.
-     * @return
-     */
-    //Double getAsNullableVarDecimal(final int aKey);
-    
+      
     /**
      * <p>getAsString.</p>
      * 
@@ -528,7 +489,14 @@ public interface Msg {
 
 
 
+    
     //  Write Value Methods
+    /**
+     * setNull.
+     *
+     * @param aKey an unsigned int.
+     */
+    void set(final int aKey, final Null aNull);
     
     /**
      * <p>set.</p>
@@ -577,6 +545,15 @@ public interface Msg {
      * @param aShort a short.
      */
     void set(final int aKey, final short aShort);
+    
+  //TODO to add
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey an unsigned int.
+     * @param aShort a short.
+     */
+    //void set(final int aKey, final short aShort, final boolean optimizeLength);
 
     /**
      * <p>set.</p>
@@ -586,6 +563,15 @@ public interface Msg {
      */
     void set(final int aKey, final Short aShort);
 
+    //TODO to add
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey an unsigned int.
+     * @param aShort a short.
+     */
+    //void set(final int aKey, final Short aShort, final boolean optimizeLength);
+    
     /**
      * <p>set.</p>
      * 
@@ -594,6 +580,15 @@ public interface Msg {
      */
     void set(final int aKey, final int aInt);
 
+    //TODO to add
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey an unsigned int.
+     * @param aInt a int.
+     */
+    //void set(final int aKey, final int aInt, final boolean optimizeLength);
+    
     /**
      * <p>set.</p>
      * 
@@ -601,6 +596,15 @@ public interface Msg {
      * @param aInt a int.
      */
     void set(final int aKey, final Integer aInt);
+    
+    //TODO to add
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey an unsigned int.
+     * @param aInt a int.
+     */
+    //void set(final int aKey, final Integer aInt, final boolean optimizeLength);
 
     /**
      * <p>set.</p>
@@ -616,8 +620,27 @@ public interface Msg {
      * @param aKey an unsigned int.
      * @param aLong a long.
      */
+    //TODO to add
+    //void set(final int aKey, final long aLong, final boolean optimizeLength);
+    
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey an unsigned int.
+     * @param aLong a long.
+     */
     void set(final int aKey, final Long aLong);
 
+    //TODO to add
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey an unsigned int.
+     * @param aLong a long.
+     */
+    //void set(final int aKey, final Long aLong, final boolean optimizeLength);
+    
+    
     /**
      * <p>set.</p>
      * 
@@ -641,6 +664,15 @@ public interface Msg {
      * @param aDouble a double.
      */
     void set(final int aKey, final double aDouble);
+    
+    //TODO to add
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey an unsigned int.
+     * @param aDouble a double.
+     */
+    //void set(final int aKey, final double aDouble, final boolean optimizeLength);
 
     /**
      * <p>set.</p>
@@ -649,7 +681,16 @@ public interface Msg {
      * @param aDouble a double.
      */
     void set(final int aKey, final Double aDouble);
-
+    
+    //TO add
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey an unsigned int.
+     * @param aDouble a double.
+     */
+    //void set(final int aKey, final Double aDouble, final boolean optimizeLength);
+    
     /**
      * <p>set.</p>
      * 
@@ -660,15 +701,6 @@ public interface Msg {
     void set(final int aKey, final double aDouble, final int nbDigit);
 
     /**
-     * set.
-     * 
-     * @param aKey
-     * @param aDouble
-     * @param aPrecision
-     */
-    void set(final int aKey, final double aDouble,  final Precision aPrecision);
-
-    /**
      * <p>set.</p>
      * 
      * @param aKey an unsigned int.
@@ -677,14 +709,6 @@ public interface Msg {
      */
     void set(final int aKey, final Double aDouble, final int nbDigit);
 
-    /**
-     * set.
-     * 
-     * @param aKey an unsigned int.
-     * @param aDouble
-     * @param aPrecision
-     */
-    void set(final int aKey, final Double aDouble,  final Precision aPrecision);
 
     /**
      * <p>set.</p>
@@ -694,6 +718,14 @@ public interface Msg {
      */
     void set(final int aKey, final String aString);
     
+    //TODO maybe to add
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey an unsigned int.
+     * @param aString a {@link java.lang.String} object.
+     */
+    //void set(final int aKey, final String aString, final boolean forceAsciiEncoding);
 
     /**
      * <p>set.</p>
@@ -823,7 +855,15 @@ public interface Msg {
      */
     void set(final int aKey, final String... aStrings);
 
-
+    //TODO Maybe to add 
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey an unsigned int.
+     * @param anArray a string[]
+     */
+    //void set(final int aKey, final String[] aStrings, final boolean forceAsciiEncoding);
+    
     /**
      * <p>set.</p>
      * 
@@ -831,193 +871,6 @@ public interface Msg {
      * @param anArray a IMsg[]
      */
     void set(final int aKey, final Msg... aMsgs);
-
-    
-    // TODO add it
-    /**
-     * setNull.
-     *
-     * @param aKey an unsigned int.
-     */
-    //void setNull(final int aKey);
-    
-    /**
-     * set.
-     *
-     * @param aKey an unsigned int.
-     * @param aLength
-     */
-    //void setNull(final int aKey, final int aLength);
-    
-    
-    // TODO add it
-    /**
-     * <p>set.</p>
-     * 
-     * @param aKey an unsigned int.
-     * @param aBoolean a aBoolean.
-     */
-    //void setAsVarInteger(final int aKey, final boolean aBoolean);
-
-    /**
-     * set.
-     * 
-     * @param aKey an unsigned int.
-     * @param aBoolean
-     */
-    //void setAsVarInteger(final int aKey, final Boolean aBoolean);
-    
-    /**
-     * <p>set.</p>
-     * 
-     * @param aKey an unsigned int.
-     * @param aByte a byte.
-     */
-    //void setAsVarInteger(final int aKey, final byte aByte);
-
-    /**
-     * <p>set.</p>
-     * 
-     * @param aKey an unsigned int.
-     * @param aByte a byte.
-     */
-    //void setAsVarInteger(final int aKey, final Byte aByte);
-
-    /**
-     * <p>set.</p>
-     * 
-     * @param aKey an unsigned int.
-     * @param aShort a short.
-     */
-    //void setAsVarInteger(final int aKey, final short aShort);
-
-    /**
-     * <p>set.</p>
-     * 
-     * @param aKey an unsigned int.
-     * @param aShort a short.
-     */
-    //void setAsVarInteger(final int aKey, final Short aShort);
-
-    /**
-     * <p>set.</p>
-     * 
-     * @param aKey an unsigned int.
-     * @param aInt a int.
-     */
-    //void setAsVarInteger(final int aKey, final int aInt);
-
-    /**
-     * <p>set.</p>
-     * 
-     * @param aKey an unsigned int.
-     * @param aInt a int.
-     */
-    //void setAsVarInteger(final int aKey, final Integer aInt);
-
-    /**
-     * <p>set.</p>
-     * 
-     * @param aKey an unsigned int.
-     * @param aLong a long.
-     */
-    //void setAsVarInteger(final int aKey, final long aLong);
-
-    /**
-     * <p>set.</p>
-     * 
-     * @param aKey an unsigned int.
-     * @param aLong a long.
-     */
-    //void setAsVarInteger(final int aKey, final Long aLong);
-    
-    
-    
-    //TODO add it
-    /**
-     * <p>set.</p>
-     * 
-     * @param aKey an unsigned int.
-     * @param aFloat a float.
-     */
-    //void setAsVarDecimal(final int aKey, final float aFloat);
-
-    /**
-     * <p>set.</p>
-     * 
-     * @param aKey an unsigned int.
-     * @param aFloat a float.
-     */
-    //void setAsVarDecimal(final int aKey, final Float aFloat);
-
-    /**
-     * <p>set.</p>
-     * 
-     * @param aKey an unsigned int.
-     * @param aDouble a double.
-     */
-    //void setAsVarDecimal(final int aKey, final double aDouble);
-
-    /**
-     * <p>set.</p>
-     * 
-     * @param aKey an unsigned int.
-     * @param aDouble a double.
-     */
-    //void setAsVarDecimal(final int aKey, final Double aDouble);
-
-    /**
-     * <p>set.</p>
-     * 
-     * @param aKey an unsigned int.
-     * @param aDouble a double.
-     * @param nbDigit a int.
-     */
-    //void setAsVarDecimal(final int aKey, final double aDouble, final int nbDigit);
-
-    /**
-     * set.
-     * 
-     * @param aKey an unsigned int.
-     * @param aDouble
-     * @param aPrecision
-     */
-    //void setAsVarDecimal(final int aKey, final double aDouble,  final Precision aPrecision);
-
-    /**
-     * <p>set.</p>
-     * 
-     * @param aKey an unsigned int.
-     * @param aDouble a double.
-     * @param nbDigit a int.
-     */
-    //void setAsVarDecimal(final int aKey, final Double aDouble, final int nbDigit);
-
-    /**
-     * set.
-     * 
-     * @param aKey an unsigned int.
-     * @param aDouble
-     * @param aPrecision
-     */
-    //void setAsVarDecimal(final int aKey, final Double aDouble,  final Precision aPrecision);
-
-    //TODO maybe to add it if necessary
-    /**
-     * setAsciiString.
-     *
-     * @param aKey an unsigned int.
-     * @param aString
-     */
-    //void setAsAsciiString(final int aKey, final String aString);
-    
-    /**
-     * setAsAsciiString.
-     *
-     * @param aKey an unsigned int.
-     * @param aStrings
-     */
-    //void setAsAsciiString(final int aKey, final String... aStrings);
     
     /**
      * <p>setAll.</p>
