@@ -39,23 +39,24 @@ public interface Msg {
      */
     boolean isByteBufSerializable();
     
+    
     // Keys Information methods
     /**
-     * <p>retrieveKeys.</p>
+     * <p>getKeysArray.</p>
      * 
      * @return an array of int.
      */
     int[] getKeysArray();
     
     /**
-     * retrieveKeyMax.
+     * getKeyMax.
      *
      * @return
      */
     int getKeyMax();
 
     /**
-     * retrieveKeysLength.
+     * getKeysLength.
      * 
      * @return the number of keys
      */
@@ -70,7 +71,6 @@ public interface Msg {
      * @param key
      * @return
      */
-    
     Type getType(final int key);
 
     /**
@@ -492,7 +492,7 @@ public interface Msg {
     
     //  Write Value Methods
     /**
-     * setNull.
+     * set .
      *
      * @param aKey an unsigned int.
      */
@@ -521,6 +521,14 @@ public interface Msg {
      * @param aBoolean
      */
     void set(final int aKey, final Boolean aBoolean);
+    
+    /**
+     * set.
+     * 
+     * @param aKey an unsigned int.
+     * @param aBoolean
+     */
+    void set(final int aKey, final Boolean aBoolean, final boolean optimizeLength);
 
     /**
      * <p>set.</p>
@@ -537,6 +545,14 @@ public interface Msg {
      * @param aByte a byte.
      */
     void set(final int aKey, final Byte aByte);
+    
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey an unsigned int.
+     * @param aByte a byte.
+     */
+    void set(final int aKey, final Byte aByte, final boolean optimizeLength);
 
     /**
      * <p>set.</p>
@@ -546,14 +562,13 @@ public interface Msg {
      */
     void set(final int aKey, final short aShort);
     
-  //TODO to add
     /**
      * <p>set.</p>
      * 
      * @param aKey an unsigned int.
      * @param aShort a short.
      */
-    //void set(final int aKey, final short aShort, final boolean optimizeLength);
+    void set(final int aKey, final short aShort, final boolean optimizeLength);
 
     /**
      * <p>set.</p>
@@ -563,14 +578,13 @@ public interface Msg {
      */
     void set(final int aKey, final Short aShort);
 
-    //TODO to add
     /**
      * <p>set.</p>
      * 
      * @param aKey an unsigned int.
      * @param aShort a short.
      */
-    //void set(final int aKey, final Short aShort, final boolean optimizeLength);
+    void set(final int aKey, final Short aShort, final boolean optimizeLength);
     
     /**
      * <p>set.</p>
@@ -580,14 +594,13 @@ public interface Msg {
      */
     void set(final int aKey, final int aInt);
 
-    //TODO to add
     /**
      * <p>set.</p>
      * 
      * @param aKey an unsigned int.
      * @param aInt a int.
      */
-    //void set(final int aKey, final int aInt, final boolean optimizeLength);
+    void set(final int aKey, final int aInt, final boolean optimizeLength);
     
     /**
      * <p>set.</p>
@@ -597,14 +610,13 @@ public interface Msg {
      */
     void set(final int aKey, final Integer aInt);
     
-    //TODO to add
     /**
      * <p>set.</p>
      * 
      * @param aKey an unsigned int.
      * @param aInt a int.
      */
-    //void set(final int aKey, final Integer aInt, final boolean optimizeLength);
+    void set(final int aKey, final Integer aInt, final boolean optimizeLength);
 
     /**
      * <p>set.</p>
@@ -620,8 +632,7 @@ public interface Msg {
      * @param aKey an unsigned int.
      * @param aLong a long.
      */
-    //TODO to add
-    //void set(final int aKey, final long aLong, final boolean optimizeLength);
+    void set(final int aKey, final long aLong, final boolean optimizeLength);
     
     /**
      * <p>set.</p>
@@ -631,14 +642,13 @@ public interface Msg {
      */
     void set(final int aKey, final Long aLong);
 
-    //TODO to add
     /**
      * <p>set.</p>
      * 
      * @param aKey an unsigned int.
      * @param aLong a long.
      */
-    //void set(final int aKey, final Long aLong, final boolean optimizeLength);
+    void set(final int aKey, final Long aLong, final boolean optimizeLength);
     
     
     /**
@@ -656,6 +666,14 @@ public interface Msg {
      * @param aFloat a float.
      */
     void set(final int aKey, final Float aFloat);
+    
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey an unsigned int.
+     * @param aFloat a float.
+     */
+    void set(final int aKey, final Float aFloat, final boolean optimizeLength);
 
     /**
      * <p>set.</p>
@@ -665,14 +683,13 @@ public interface Msg {
      */
     void set(final int aKey, final double aDouble);
     
-    //TODO to add
     /**
      * <p>set.</p>
      * 
      * @param aKey an unsigned int.
      * @param aDouble a double.
      */
-    //void set(final int aKey, final double aDouble, final boolean optimizeLength);
+    void set(final int aKey, final double aDouble, final boolean optimizeLength);
 
     /**
      * <p>set.</p>
@@ -682,14 +699,13 @@ public interface Msg {
      */
     void set(final int aKey, final Double aDouble);
     
-    //TO add
     /**
      * <p>set.</p>
      * 
      * @param aKey an unsigned int.
      * @param aDouble a double.
      */
-    //void set(final int aKey, final Double aDouble, final boolean optimizeLength);
+    void set(final int aKey, final Double aDouble, final boolean optimizeLength);
     
     /**
      * <p>set.</p>
@@ -709,6 +725,14 @@ public interface Msg {
      */
     void set(final int aKey, final Double aDouble, final int nbDigit);
 
+    /**
+     * <p>set.</p>
+     * 
+     * @param aKey an unsigned int.
+     * @param aDouble a double.
+     * @param nbDigit a int.
+     */
+    void set(final int aKey, final Double aDouble, final int nbDigit, final boolean optimizeLength);
 
     /**
      * <p>set.</p>
@@ -718,14 +742,13 @@ public interface Msg {
      */
     void set(final int aKey, final String aString);
     
-    //TODO maybe to add
     /**
      * <p>set.</p>
      * 
      * @param aKey an unsigned int.
      * @param aString a {@link java.lang.String} object.
      */
-    //void set(final int aKey, final String aString, final boolean forceAsciiEncoding);
+    void set(final int aKey, final String aString, final boolean forceAsciiEncoding);
 
     /**
      * <p>set.</p>
@@ -855,14 +878,13 @@ public interface Msg {
      */
     void set(final int aKey, final String... aStrings);
 
-    //TODO Maybe to add 
     /**
      * <p>set.</p>
      * 
      * @param aKey an unsigned int.
      * @param anArray a string[]
      */
-    //void set(final int aKey, final String[] aStrings, final boolean forceAsciiEncoding);
+    void set(final int aKey, final String[] aStrings, final boolean forceAsciiEncoding);
     
     /**
      * <p>set.</p>
