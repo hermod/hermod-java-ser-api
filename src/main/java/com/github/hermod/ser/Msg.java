@@ -278,7 +278,8 @@ public interface Msg {
      * @param aKey an unsigned int.
      * @return
      */
-    BigDecimal getAsBigDecimal(final int aKey);
+    //TODO to add?
+    //BigDecimal getAsBigDecimal(final int aKey);
       
     /**
      * <p>getAsString.</p>
@@ -432,7 +433,8 @@ public interface Msg {
      * @param aKey an unsigned int.
      * @return
      */
-    BigDecimal[] getAsBigDecimals(final int aKey);
+    //TODO to add
+    //BigDecimal[] getAsBigDecimals(final int aKey);
     
     /**
      * <p>getAsStrings.</p>
@@ -758,7 +760,8 @@ public interface Msg {
      * @param aKey an unsigned int.
      * @param aBigDecimal a BigDecimal.
      */
-    void set(final int aKey, final BigDecimal aBigDecimal);
+    //TODO to add ?
+    //void set(final int aKey, final BigDecimal aBigDecimal);
 
     /**
      * <p>set.</p>
@@ -767,7 +770,8 @@ public interface Msg {
      * @param aBigDecimal a BigDecimal.
      * @param optimizeLength .
      */
-    void set(final int aKey, final BigDecimal aBigDecimal, final boolean optimizeLength);
+    //TODO to add
+    //void set(final int aKey, final BigDecimal aBigDecimal, final boolean optimizeLength);
     
     /**
      * <p>set.</p>
@@ -911,7 +915,8 @@ public interface Msg {
      * @param aKey an unsigned int.
      * @param anArray a double[]
      */
-    void set(final int aKey, final BigDecimal... aBigDecimal);
+    //TODO to add ?
+    //void set(final int aKey, final BigDecimal... aBigDecimal);
 
     /**
      * <p>set.</p>
