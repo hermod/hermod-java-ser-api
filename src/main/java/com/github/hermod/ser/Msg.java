@@ -750,7 +750,7 @@ public interface Msg {
      * @param aDouble a double.
      * @param aScale a int.
      */
-    void set(final int aKey, final double aDouble, final int aScale, final boolean optimizeLength);
+    //void set(final int aKey, final double aDouble, final int aScale, final boolean optimizeLength);
     
     /**
      * <p>set.</p>
