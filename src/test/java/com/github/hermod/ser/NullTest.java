@@ -5,7 +5,6 @@ package com.github.hermod.ser;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Test;
-import org.junit.experimental.categories.Categories.ExcludeCategory;
 
 /**
  * <p>NullTest. </p>
@@ -50,7 +49,7 @@ public class NullTest {
      */
     @Test(expected = IllegalArgumentException.class)
     public void testValueOfWithNegativeLength() {
-            final Null nul = Null.valueOf(-1);
+            Null.valueOf(-1);
     }
 
 }
