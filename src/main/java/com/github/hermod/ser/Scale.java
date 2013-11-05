@@ -8,6 +8,7 @@ import java.util.Arrays;
  * @author anavarro - Apr 13, 2013
  *
  */
+@Deprecated
 public enum Scale {
 
     UNITS(1), TENTHS(0.1), HUNDREDTHS(0.01), THOUSANDTHS(0.001), TEN_THOUSANDTHS(0.0001), HUNDRED_THOUSANDTHS(0.00001), MILLIONTHS(0.000001), TEN_MILLIONTHS(
