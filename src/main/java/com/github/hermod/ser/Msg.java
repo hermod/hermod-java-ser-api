@@ -730,18 +730,18 @@ public interface Msg {
      * 
      * @param aKey an unsigned int.
      * @param aDouble a double.
-     * @param aScale a byte.
+     * @param aScale a int.
      */
-    void set(final int aKey, final double aDouble, final byte aScale);
+    void set(final int aKey, final double aDouble, final int aScale);
 
     /**
      * <p>set.</p>
      * 
      * @param aKey an unsigned int.
      * @param aDouble a double.
-     * @param aScale a byte.
+     * @param aScale a int.
      */
-    void set(final int aKey, final Double aDouble, final byte aScale);
+    void set(final int aKey, final Double aDouble, final int aScale);
 
     /**
      * <p>set.</p>
@@ -759,7 +759,7 @@ public interface Msg {
      * @param aDouble a double.
      * @param aScale a int.
      */
-    void set(final int aKey, final Double aDouble, final byte aScale, final boolean optimizeLength);
+    void set(final int aKey, final Double aDouble, final int aScale, final boolean optimizeLength);
 
     
     /**
