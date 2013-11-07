@@ -476,7 +476,7 @@ public interface Msg {
      * @param aKey an unsigned int.
      * @param destObjects
      */
-    void getAsObjects(final int aKey, Object... destObjects);
+    //void getAsObjects(final int aKey, Object... destObjects);
 
     /**
      * getAll.
