@@ -17,7 +17,6 @@ public final class Types {
     private Types() {
     }
 
-    
     /**
      * NULL_TYPE
      */
@@ -26,7 +25,7 @@ public final class Types {
     /**
      * SKIPPED_KEYS_TYPE
      */
-    public static final byte SKIPPED_KEYS_TYPE = 0x0;//0b0000_0000; //TODO to change to 0b0010_0000;
+    public static final byte SKIPPED_KEYS_TYPE = 0x20;//0b0000_0000; //TODO to change to 0b0010_0000;
     
     /**
      * INTEGER_TYPE (long / int / short / byte / boolean / Enum)
@@ -38,7 +37,6 @@ public final class Types {
      */
     public static final byte DECIMAL_TYPE = (byte) 0x60; //0b0110_0000;
 
-    
     /**
      * STRING_TYPE (UTF8 by default as it is in a String)
      */
