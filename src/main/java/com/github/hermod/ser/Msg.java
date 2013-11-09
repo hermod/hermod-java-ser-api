@@ -130,6 +130,14 @@ public interface Msg {
     <T> T get(final int aKey, final Class<T> clazz);
     
     /**
+     * getAsNull.
+     *
+     * @param aKey
+     * @return
+     */
+    Null getAsNull(final int aKey);
+    
+    /**
      * <p>getAsBoolean.</p>
      * 
      * Can throw new IllegalArgumentException if the key is not present in the Msg (can return null for a primitive type). Use <T> T
