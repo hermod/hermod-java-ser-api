@@ -82,8 +82,10 @@ public enum Type {
                 || Boolean[].class.equals(clazz) || Double[].class.equals(clazz) || Float[].class.equals(clazz) || String[].class.equals(clazz)
                 || Msg[].class.equals(clazz)) {
             return Type.ARRAY_VARIABLE_VALUE;
+        } else if (Null.class.equals(clazz)) {
+            return Type.NULL;
         }
-        throw new IllegalArgumentException("The type with class=" + clazz + " not found in EType.values()=" + Arrays.asList(Type.values()));
+        throw new IllegalArgumentException("The type with class=" + clazz + " not found in Type.values()=" + Arrays.asList(Type.values()));
     }
     
 

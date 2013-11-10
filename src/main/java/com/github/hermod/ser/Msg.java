@@ -19,6 +19,14 @@ public interface Msg {
      */
     boolean isEmpty();
     
+    
+    /**
+     * isSerializable.
+     *
+     * @return
+     */
+    boolean isSerializable();
+    
     /**
      * isBytesSerializable.
      *
