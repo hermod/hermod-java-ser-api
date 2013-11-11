@@ -37,6 +37,7 @@ public class TypeTest {
         assertThat(Type.valueOf(Msg.class)).isEqualTo(Type.MSG);
         assertThat(Type.valueOf(byte[].class)).isEqualTo(Type.ARRAY_FIXED_VALUE);
         assertThat(Type.valueOf(Long[].class)).isEqualTo(Type.ARRAY_VARIABLE_VALUE);
+        assertThat(Type.valueOf(Null.class)).isEqualTo(Type.NULL);
         try {
             assertThat(Type.valueOf((byte) 1));
             failBecauseExceptionWasNotThrown(IllegalArgumentException.class);
