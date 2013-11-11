@@ -11,7 +11,7 @@ import java.util.Arrays;
  */
 public enum Type {
 
-    NULL(Types.NULL_TYPE), SKIPPED_KEYS_TYPE(Types.SKIPPED_KEYS_TYPE), INTEGER(Types.INTEGER_TYPE), DECIMAL(Types.DECIMAL_TYPE), STRING_UTF8(
+    NULL(Types.NULL_TYPE), SKIPPED_KEYS_TYPE(Types.SKIPPED_KEYS_TYPE), INTEGER(Types.INTEGER_TYPE),  BYTE(Types.BYTE_TYPE), SHORT(Types.SHORT_TYPE), INT(Types.INT_TYPE), LONG(Types.LONG_TYPE), DECIMAL(Types.DECIMAL_TYPE), FLOAT(Types.FLOAT_TYPE), DOUBLE(Types.DOUBLE_TYPE), FIVE(Types.FIVE_BITS_DECIMAL_TYPE), STRING_UTF8(
             Types.STRING_UTF_8_TYPE), MSG(Types.MSG_TYPE), ARRAY_FIXED_VALUE(Types.ARRAY_FIXED_VALUE_TYPE), ARRAY_VARIABLE_VALUE(
             Types.ARRAY_VARIABLE_VALUE_TYPE);
 
@@ -66,11 +66,18 @@ public enum Type {
      * @return
      */
     public static <T> Type valueOf(final Class<T> clazz) {
-        if (Integer.class.equals(clazz) || Long.class.equals(clazz) || Short.class.equals(clazz) || Byte.class.equals(clazz)
-                || Boolean.class.equals(clazz)) {
-            return Type.INTEGER;
-        } else if (Double.class.equals(clazz) || Float.class.equals(clazz) || BigDecimal.class.equals(clazz)) {
-            return Type.DECIMAL;
+        if (Byte.class.equals(clazz) || Boolean.class.equals(clazz)) {
+            return Type.BYTE;
+        } else if (Short.class.equals(clazz) ) {
+            return Type.SHORT;
+        } else if (Integer.class.equals(clazz)) {
+            return Type.INT;
+        } else if (Long.class.equals(clazz)) {
+            return Type.LONG;
+        } else if (Float.class.equals(clazz)) {
+            return Type.FLOAT;
+        } else if (Double.class.equals(clazz)) {
+            return Type.DOUBLE;
         } else if (String.class.equals(clazz)) {
             return Type.STRING_UTF8;
         } else if (Msg.class.equals(clazz)) {

@@ -108,6 +108,15 @@ public interface Msg {
     int getArrayLength(final int aKey);
     
     /**
+     * getLength.
+     *
+     * @param aKey
+     * @return
+     */
+    //TODO to add?
+    //int getLength(final int aKey);
+    
+    /**
      * <p>contains.</p>
      * 
      * @param aKey an unsigned int.
@@ -539,6 +548,15 @@ public interface Msg {
      * @param anObject
      */
     void set(final int aKey, final Object anObject);
+    
+    /**
+     * set.
+     *
+     * @param aKey
+     * @param aObject
+     * @param optimizeLength
+     */
+    void set(final int aKey, final Object aObject, final boolean optimizeLength);
     
     /**
      * <p>set.</p>

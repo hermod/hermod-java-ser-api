@@ -16,6 +16,42 @@ public final class Types {
      */
     private Types() {
     }
+    
+    /**
+     * ZERO
+     */
+    static final int ZERO = 0;
+
+    /**
+     * ONE
+     */
+    static final int ONE = 1;
+
+    /**
+     * TWO
+     */
+    static final int TWO = 2;
+
+    /**
+     * THREE
+     */
+    static final int THREE = 3;
+
+    /**
+     * FOUR
+     */
+    static final int FOUR = 4;
+
+    /**
+     * FIVE
+     */
+    static final int FIVE = 5;
+
+    /**
+     * EIGHT
+     */
+    static final int EIGHT = 8;
+    
 
     /**
      * NULL_TYPE
@@ -31,6 +67,30 @@ public final class Types {
      * INTEGER_TYPE (long / int / short / byte / boolean / Enum)
      */
     public static final byte INTEGER_TYPE = (byte) 0x40;//0b0100_0000;
+    
+    // byte / boolean
+    public static final byte BYTE_TYPE = (byte) (Types.INTEGER_TYPE | ONE);
+
+    // short
+    public static final byte SHORT_TYPE = (byte) (Types.INTEGER_TYPE | TWO);
+
+    // int
+    public static final byte INT_TYPE = (byte) (Types.INTEGER_TYPE | FOUR);
+
+    // long
+    public static final byte LONG_TYPE = (byte) (Types.INTEGER_TYPE | EIGHT);
+
+    // float / double or double encoded on 5 bits
+    public static final byte TYPE_DECIMAL = Type.DECIMAL.getId();
+
+    // float
+    public static final byte FLOAT_TYPE = (byte) (Types.DECIMAL_TYPE | FOUR);
+
+    // double
+    public static final byte DOUBLE_TYPE = (byte) (Types.DECIMAL_TYPE | EIGHT);
+
+    // double (encoded on 5 bits)
+    public static final byte FIVE_BITS_DECIMAL_TYPE = (byte) (Types.DECIMAL_TYPE | FIVE);
     
     /**
      * DECIMAL_TYPE (float / double or double encoded on 3/5 bits)
