@@ -10,23 +10,24 @@ public final class Null {
 
     private static final Null[] LENGTH_NULLS = new Null[30];
 
-    private static final Null NULL = new Null(Type.NULL);
-    private static final Null INTEGER_NULL = new Null(Type.INTEGER);
-    private static final Null BYTE_NULL = new Null(Type.BYTE);
-    private static final Null SHORT_NULL = new Null(Type.SHORT);
-    private static final Null INT_NULL = new Null(Type.INT);
-    private static final Null LONG_NULL = new Null(Type.LONG);
-    private static final Null DECIMAL_NULL = new Null(Type.DECIMAL);
-    private static final Null FLOAT_NULL = new Null(Type.FLOAT);
-    private static final Null DOUBLE_NULL = new Null(Type.DOUBLE);
-    private static final Null FIVE_BITS_DECIMAL_NULL = new Null(Type.FIVE_BITS_DECIMAL);
-    private static final Null STRING_UTF8_NULL = new Null(Type.STRING_UTF8);
-    private static final Null MSG_NULL = new Null(Type.MSG);
-    private static final Null ARRAY_FIXED_VALUE_NULL = new Null(Type.ARRAY_FIXED_VALUE);
-    private static final Null ARRAY_VARIABLE_VALUE_NULL = new Null(Type.ARRAY_VARIABLE_VALUE);
+    public static final Null NULL = new Null(Type.NULL);
+    public static final Null INTEGER_NULL = new Null(Type.INTEGER);
+    public static final Null BYTE_NULL = new Null(Type.BYTE);
+    public static final Null SHORT_NULL = new Null(Type.SHORT);
+    public static final Null INT_NULL = new Null(Type.INT);
+    public static final Null LONG_NULL = new Null(Type.LONG);
+    public static final Null DECIMAL_NULL = new Null(Type.DECIMAL);
+    public static final Null FLOAT_NULL = new Null(Type.FLOAT);
+    public static final Null DOUBLE_NULL = new Null(Type.DOUBLE);
+    public static final Null FIVE_BITS_DECIMAL_NULL = new Null(Type.FIVE_BITS_DECIMAL);
+    public static final Null STRING_UTF8_NULL = new Null(Type.STRING_UTF8);
+    public static final Null MSG_NULL = new Null(Type.MSG);
+    public static final Null ARRAY_FIXED_VALUE_NULL = new Null(Type.ARRAY_FIXED_VALUE);
+    public static final Null ARRAY_VARIABLE_VALUE_NULL = new Null(Type.ARRAY_VARIABLE_VALUE);
 
     static {
-        for (int i = 0; i < LENGTH_NULLS.length; i++) {
+        LENGTH_NULLS[0] = NULL;
+        for (int i = 1; i < LENGTH_NULLS.length; i++) {
             LENGTH_NULLS[i] = new Null(i);
         }
     }
@@ -162,7 +163,7 @@ public final class Null {
 
     /**
      * (non-Javadoc)
-     * 
+     *
      * @see java.lang.Object#hashCode()
      */
     @Override
@@ -170,12 +171,13 @@ public final class Null {
         final int prime = 31;
         int result = 1;
         result = prime * result + this.length;
+        result = prime * result + ((this.type == null) ? 0 : this.type.hashCode());
         return result;
     }
 
     /**
      * (non-Javadoc)
-     * 
+     *
      * @see java.lang.Object#equals(java.lang.Object)
      */
     @Override
@@ -189,7 +191,24 @@ public final class Null {
         Null other = (Null) obj;
         if (this.length != other.length)
             return false;
+        if (this.type != other.type)
+            return false;
         return true;
     }
 
+    /**
+     * (non-Javadoc)
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        return "Null [length=" + this.length + ", type=" + this.type + ", toString()=" + super.toString() + "]";
+    }
+
+
+    
+    
+
+    
 }
