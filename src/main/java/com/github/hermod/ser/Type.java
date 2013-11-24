@@ -11,7 +11,7 @@ import java.util.Arrays;
  */
 public enum Type {
 
-    NULL(Types.NULL_TYPE), SKIPPED_KEYS_TYPE(Types.SKIPPED_KEYS_TYPE), INTEGER(Types.INTEGER_TYPE), BYTE(Types.BYTE_TYPE), SHORT(Types.SHORT_TYPE), INT(
+    NULL(Types.NULL_TYPE), SKIPPED_KEYS(Types.SKIPPED_KEYS_TYPE), INTEGER(Types.INTEGER_TYPE), BYTE(Types.BYTE_TYPE), SHORT(Types.SHORT_TYPE), INT(
             Types.INT_TYPE), LONG(Types.LONG_TYPE), DECIMAL(Types.DECIMAL_TYPE), FLOAT(Types.FLOAT_TYPE), DOUBLE(Types.DOUBLE_TYPE), FIVE_BITS_DECIMAL(
             Types.FIVE_BITS_DECIMAL_TYPE), STRING_UTF8(Types.STRING_UTF_8_TYPE), MSG(Types.MSG_TYPE), ARRAY_FIXED_VALUE(Types.ARRAY_FIXED_VALUE_TYPE), ARRAY_VARIABLE_VALUE(
             Types.ARRAY_VARIABLE_VALUE_TYPE);
@@ -81,8 +81,6 @@ public enum Type {
             return Type.DOUBLE;
         } else if (String.class.equals(clazz)) {
             return Type.STRING_UTF8;
-        } else if (Msg.class.equals(clazz)) {
-            return Type.MSG;
         } else if (int[].class.equals(clazz) || long[].class.equals(clazz) || short[].class.equals(clazz) || byte[].class.equals(clazz)
                 || boolean[].class.equals(clazz) || double[].class.equals(clazz) || float[].class.equals(clazz)) {
             return Type.ARRAY_FIXED_VALUE;
@@ -92,9 +90,21 @@ public enum Type {
             return Type.ARRAY_VARIABLE_VALUE;
         } else if (Null.class.equals(clazz)) {
             return Type.NULL;
+        } else if (Msg.class.equals(clazz)) {
+            return Type.MSG;
+        } else {
+            final Class[] interfaces = clazz.getInterfaces();
+            for (Class msgInterface : interfaces) {
+                if (Msg.class.equals(msgInterface)) {
+                    return Type.MSG;
+                }
+            }
         }
         throw new IllegalArgumentException("The type with class=" + clazz + " not found in Type.values()=" + Arrays.asList(Type.values()));
     }
+    
+
+    
     
 
 }
