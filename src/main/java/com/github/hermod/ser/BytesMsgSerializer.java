@@ -2,15 +2,15 @@ package com.github.hermod.ser;
 
 /**
  * <p>BytesMsgSerializer. </p>
- * 
+ *
  * @author anavarro - Apr 13, 2013
- * 
+ *
  */
 public interface BytesMsgSerializer extends MsgSerializer {
 
     /**
      * serializeToBytes.
-     * 
+     *
      * @param aSrcMsg
      * @return
      */
@@ -18,7 +18,7 @@ public interface BytesMsgSerializer extends MsgSerializer {
 
     /**
      * serializeToBytes.
-     * 
+     *
      * @param aDestBytes
      * @param aDestOffset
      * @param aSrcMsg
@@ -28,7 +28,7 @@ public interface BytesMsgSerializer extends MsgSerializer {
 
     /**
      * deserializeFrom.
-     * 
+     *
      * @param aSrcBytes
      * @param aSrcOffset
      * @param aSrcLength

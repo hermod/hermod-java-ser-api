@@ -2,62 +2,59 @@ package com.github.hermod.ser;
 
 import io.netty.buffer.ByteBuf;
 
-
-
-
 /**
- * <p>ByteBufClassSerializer. </p>
+ * <p>ByteBufClassSerializer.</p>
  *
- * @author anavarro - Sep 22, 2013
+ * @author anavarro - Dec 29, 2013
  * @param <T>
  *
  */
 public interface ByteBufClassSerializer<T> {
 
     /**
-     * serializeToByteBuffer.
+     * <p>serializeToByteBuffer.</p>
      *
-     * @param aSrcObjet
-     * @return
+     * @param aSrcObject a src object T to serialize
+     * @return a ByteBuf to serialize
      */
-    ByteBuf serializeToByteBuf(final T aSrcObjet);
-    
+    ByteBuf serializeToByteBuf(final T aSrcObject);
+
     /**
-     * serializeToByteBuffer.
+     * <p>serializeToByteBuffer.</p>
      *
-     * @param aSrcObjet
-     * @param aDestByteBuffer
+     * @param aSrcObject a src object T to serialize
+     * @param aDestByteBuf a ByteBuf to serialize
      */
-    void serializeToByteBuf(final T aSrcObjet, final ByteBuf aDestByteBuf);
-    
+    void serializeToByteBuf(final T aSrcObject, final ByteBuf aDestByteBuf);
+
     /**
-     * deserializeFrom.
+     * <p>deserializeFrom.</p>
      *
-     * @param aSrcByteBuffer
-     * @param offset
-     * @param aSrcLength
-     * @param aDestObject
+     * @param aSrcByteBuf a src ByteBuf to deserialize
+     * @param aSrcLength a src length to deserialize
+     * @param aDestObject a object T to serialize
      */
     void deserializeFromByteBuf(final ByteBuf aSrcByteBuf, final int aSrcLength, T aDestObject);
-   
+
     /**
-     * deserializeFrom.
+     * <p>deserializeFrom.</p>
      *
-     * @param srcByteBuffer
-     * @param srcLength
-     * @return
+     * @param srcByteBuf a src ByteBuf to deserialize
+     * @param srcLength a src length to deserialize
+     * @return a object T to serialize
      */
+
     T deserializeFromByteBuf(final ByteBuf srcByteBuf, final int srcLength);
-    
+
     /**
-     * deserializeFrom.
+     * <p>deserializeFrom.</p>
      *
-     * @param srcByteBuffer
-     * @param srcLength
-     * @param aClass
-     * @return
+     * @param srcByteBuf a src ByteBuf to deserialize
+     * @param srcLength a src length to deserialize
+     * @param aClass a class to serialize
+     * @param <S> the type of aClass
+     * @return a S to serialize
      */
     <S> S deserializeFromByteBuf(final ByteBuf srcByteBuf, final int srcLength, final Class<S> aClass);
-    
-    
+
 }

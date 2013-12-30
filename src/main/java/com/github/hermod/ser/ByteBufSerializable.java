@@ -3,37 +3,33 @@ package com.github.hermod.ser;
 import io.netty.buffer.ByteBuf;
 
 /**
- * <p>ByteBufSerializable. </p>
- * 
+ * <p>ByteBufSerializable.</p>
+ *
+ * Interface ByteBufSerializable is used to serialize/deserialize from/to a Msg to/from ByteBuf.
+ *
  * @author anavarro - Apr 13, 2013
- * @param <T>
- * 
+ *
  */
 public interface ByteBufSerializable extends Serializable {
 
     /**
-     * serializeToByteBuffer.
-     * 
-     * @param aSrcObjet
-     * @return
+     * serializeToByteBuf.
+     *
+     * @return the serialized ByteBuf of the Msg.
      */
     ByteBuf serializeToByteBuf();
 
     /**
-     * serializeToByteBuffer.
-     * 
-     * @param aSrcObjet
-     * @param aDestByteBuffer
+     * serializeToByteBuf.
+     *
+     * @param aDestByteBuf the aDestByteBuf to serialize.
      */
     void serializeToByteBuf(final ByteBuf aDestByteBuf);
 
     /**
-     * deserializeFrom.
-     * 
-     * @param aSrcByteBuffer
-     * @param offset
-     * @param aSrcLength
-     * @param aDestObject
+     * deserializeFromByteBuf.
+     *
+     * @param aSrcByteBuf the aSrcByteBuf to deserialize.
      */
     void deserializeFromByteBuf(final ByteBuf aSrcByteBuf);
 

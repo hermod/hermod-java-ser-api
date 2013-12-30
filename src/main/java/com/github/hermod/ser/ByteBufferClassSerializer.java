@@ -2,10 +2,8 @@ package com.github.hermod.ser;
 
 import java.nio.ByteBuffer;
 
-
-
 /**
- * <p>ByteBufferClassSerializer. </p>
+ * <p>ByteBufferClassSerializer.</p>
  *
  * @author anavarro - Sep 22, 2013
  * @param <T>
@@ -14,49 +12,48 @@ import java.nio.ByteBuffer;
 public interface ByteBufferClassSerializer<T> {
 
     /**
-     * serializeToByteBuffer.
+     * <p>serializeToByteBuffer.</p>
      *
      * @param aSrcObjet
      * @return
      */
     ByteBuffer serializeToByteBuffer(final T aSrcObjet);
-    
+
     /**
-     * serializeToByteBuffer.
+     * <p>serializeToByteBuffer.</p>
      *
      * @param aSrcObjet
      * @param aDestByteBuffer
      */
     void serializeToByteBuffer(final T aSrcObjet, final ByteBuffer aDestByteBuffer);
-    
+
     /**
-     * deserializeFrom.
+     * <p>deserializeFromByteBuffer.</p>
      *
      * @param aSrcByteBuffer
-     * @param offset
      * @param aSrcLength
      * @param aDestObject
      */
     void deserializeFromByteBuffer(final ByteBuffer aSrcByteBuffer, final int aSrcLength, T aDestObject);
-   
+
     /**
-     * deserializeFrom.
+     * <p>deserializeFromByteBuffer.</p>
      *
      * @param srcByteBuffer
      * @param srcLength
      * @return
      */
     T deserializeFromByteBuffer(final ByteBuffer srcByteBuffer, final int srcLength);
-    
+
     /**
-     * deserializeFrom.
+     * <p>deserializeFromByteBuffer.</p>
      *
      * @param srcByteBuffer
      * @param srcLength
      * @param aClass
+     * @param <S>
      * @return
      */
     <S> S deserializeFromByteBuffer(final ByteBuffer srcByteBuffer, final int srcLength, final Class<S> aClass);
-    
-    
+
 }

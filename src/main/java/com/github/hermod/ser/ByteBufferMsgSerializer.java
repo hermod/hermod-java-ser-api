@@ -2,8 +2,6 @@ package com.github.hermod.ser;
 
 import java.nio.ByteBuffer;
 
-
-
 /**
  * <p>ByteBufferMsgSerializer. </p>
  *
@@ -11,14 +9,14 @@ import java.nio.ByteBuffer;
  *
  */
 public interface ByteBufferMsgSerializer extends MsgSerializer {
-    
+
     /**
      * serializeToByteBuffer.
      *
      * @param aSrcMsg
      */
     ByteBuffer serializeToByteBuffer(final Msg aSrcMsg);
-    
+
     /**
      * serializeToByteBuffer.
      *
@@ -26,8 +24,7 @@ public interface ByteBufferMsgSerializer extends MsgSerializer {
      * @param aDestByteBuffer
      */
     int serializeToByteBuffer(final Msg aSrcMsg, ByteBuffer aDestByteBuffer);
-    
-    
+
     /**
      * deserializeFrom.
      *
@@ -35,6 +32,5 @@ public interface ByteBufferMsgSerializer extends MsgSerializer {
      * @param aDestMsg
      */
     void deserializeFromByteBuffer(final ByteBuffer aSrcByteBuffer, Msg aDestMsg);
-    
-    
+
 }

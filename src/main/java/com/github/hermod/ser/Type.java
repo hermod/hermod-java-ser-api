@@ -1,36 +1,111 @@
 package com.github.hermod.ser;
 
-import java.math.BigDecimal;
 import java.util.Arrays;
 
 /**
  * <p>Type.</p>
- * 
+ *
+ * Enum Type representing the different potential types of the field of the Msg : Null, SkippedKeys (technical), Integer, Decimal, String, Msg, Array
+ * with Fixed Values, Array with Variable Values.
+ *
  * @author anavarro - Apr 4, 2013
- * 
+ *
  */
 public enum Type {
 
-    NULL(Types.NULL_TYPE), SKIPPED_KEYS(Types.SKIPPED_KEYS_TYPE), INTEGER(Types.INTEGER_TYPE), BYTE(Types.BYTE_TYPE), SHORT(Types.SHORT_TYPE), INT(
-            Types.INT_TYPE), LONG(Types.LONG_TYPE), DECIMAL(Types.DECIMAL_TYPE), FLOAT(Types.FLOAT_TYPE), DOUBLE(Types.DOUBLE_TYPE), FIVE_BITS_DECIMAL(
-            Types.FIVE_BITS_DECIMAL_TYPE), STRING_UTF8(Types.STRING_UTF_8_TYPE), MSG(Types.MSG_TYPE), ARRAY_FIXED_VALUE(Types.ARRAY_FIXED_VALUE_TYPE), ARRAY_VARIABLE_VALUE(
-            Types.ARRAY_VARIABLE_VALUE_TYPE);
+    /**
+     * NULL.
+     */
+    NULL(Types.NULL_TYPE),
 
+    /**
+     * SKIPPED_KEYS.
+     */
+    SKIPPED_KEYS(Types.SKIPPED_KEYS_TYPE),
+
+    /**
+     * INTEGER.
+     */
+    INTEGER(Types.INTEGER_TYPE),
+
+    /**
+     * BYTE.
+     */
+    BYTE(Types.BYTE_TYPE),
+
+    /**
+     * SHORT.
+     */
+    SHORT(Types.SHORT_TYPE),
+
+    /**
+     * INT.
+     */
+    INT(Types.INT_TYPE),
+
+    /**
+     * LONG.
+     */
+    LONG(Types.LONG_TYPE),
+
+    /**
+     * DECIMAL.
+     */
+    DECIMAL(Types.DECIMAL_TYPE),
+
+    /**
+     * FLOAT.
+     */
+    FLOAT(Types.FLOAT_TYPE),
+
+    /**
+     * DOUBLE.
+     */
+    DOUBLE(Types.DOUBLE_TYPE),
+
+    /**
+     * FIVE_BITS_DECIMAL.
+     */
+    FIVE_BITS_DECIMAL(Types.FIVE_BITS_DECIMAL_TYPE),
+
+    /**
+     * STRING_UTF8.
+     */
+    STRING_UTF8(Types.STRING_UTF_8_TYPE),
+
+    /**
+     * MSG.
+     */
+    MSG(Types.MSG_TYPE),
+
+    /**
+     * ARRAY_FIXED_VALUE.
+     */
+    ARRAY_FIXED_VALUE(Types.ARRAY_FIXED_VALUE_TYPE),
+
+    /**
+     * ARRAY_VARIABLE_VALUE.
+     */
+    ARRAY_VARIABLE_VALUE(Types.ARRAY_VARIABLE_VALUE_TYPE);
+
+    /**
+     * id.
+     */
     private final byte id;
 
     /**
      * Constructor.
-     * 
-     * @param aId
+     *
+     * @param aId the id of the type.
      */
-    private Type(byte aId) {
+    private Type(final byte aId) {
         this.id = aId;
     }
 
     /**
      * getId.
-     * 
-     * @return
+     *
+     * @return a byte representing the id of the type.
      */
     public final byte getId() {
         return this.id;
@@ -38,18 +113,18 @@ public enum Type {
 
     /**
      * get5ShiftId.
-     * 
-     * @return
+     *
+     * @return a byte representing the type shifted by 5 (only type, no length)
      */
     public final byte getShiftId() {
-        return (byte) (this.id >> 5);
+        return (byte) (this.id >> Types.FIVE);
     }
 
     /**
-     * valueOf.
-     * 
-     * @param aId
-     * @return
+     * valueOf (creation/retrieve of a Type).
+     *
+     * @param aId a byte representing the id of the Type which wants to retrieve.
+     * @return a Type
      */
     public static Type valueOf(final byte aId) {
         for (final Type type : Type.values()) {
@@ -61,15 +136,16 @@ public enum Type {
     }
 
     /**
-     * valueOf.
-     * 
-     * @param clazz
-     * @return
+     * valueOf (creation/retrieve of a Type).
+     *
+     * @param clazz representing the Type which wants to retrieve the Type.
+     * @param <T> type of class
+     * @return a Type
      */
     public static <T> Type valueOf(final Class<T> clazz) {
         if (Byte.class.equals(clazz) || Boolean.class.equals(clazz)) {
             return Type.BYTE;
-        } else if (Short.class.equals(clazz) ) {
+        } else if (Short.class.equals(clazz)) {
             return Type.SHORT;
         } else if (Integer.class.equals(clazz)) {
             return Type.INT;
@@ -102,9 +178,5 @@ public enum Type {
         }
         throw new IllegalArgumentException("The type with class=" + clazz + " not found in Type.values()=" + Arrays.asList(Type.values()));
     }
-    
-
-    
-    
 
 }

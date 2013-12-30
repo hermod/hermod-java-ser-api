@@ -2,9 +2,6 @@ package com.github.hermod.ser;
 
 import io.netty.buffer.ByteBuf;
 
-
-
-
 /**
  * <p>ByteBufferMsgSerializer. </p>
  *
@@ -12,14 +9,14 @@ import io.netty.buffer.ByteBuf;
  *
  */
 public interface ByteBufMsgSerializer extends MsgSerializer {
-    
+
     /**
      * serializeToByteBuffer.
      *
      * @param aSrcMsg
      */
     ByteBuf serializeToByteBuf(final Msg aSrcMsg);
-    
+
     /**
      * serializeToByteBuffer.
      *
@@ -27,8 +24,7 @@ public interface ByteBufMsgSerializer extends MsgSerializer {
      * @param aDestByteBuffer
      */
     int serializeToByteBuf(final Msg aSrcMsg, ByteBuf aDestByteBuf);
-    
-    
+
     /**
      * deserializeFrom.
      *
@@ -36,6 +32,5 @@ public interface ByteBufMsgSerializer extends MsgSerializer {
      * @param aDestMsg
      */
     void deserializeFromByteBuf(final ByteBuf aSrcByteBuf, Msg aDestMsg);
-    
-    
+
 }

@@ -1,15 +1,11 @@
 package com.github.hermod.ser;
 
-
 import java.nio.ByteBuffer;
 
-import com.github.hermod.ser.Serializable;
-
-
-
-
 /**
- * <p>ByteBufferSerializable. </p>
+ * <p>ByteBufferSerializable.</p>
+ *
+ * Interface ByteBufferSerializable is used to serialize/deserialize from/to a Msg to/from ByteBuffer.
  *
  * @author anavarro - Sep 22, 2013
  *
@@ -19,39 +15,22 @@ public interface ByteBufferSerializable extends Serializable {
     /**
      * serializeToByteBuffer.
      *
-     * @param aSrcObjet
-     * @return
+     * @return the serialized ByteBuffer of the Msg.
      */
     ByteBuffer serializeToByteBuffer();
-    
+
     /**
      * serializeToByteBuffer.
      *
-     * @param aSrcObjet
-     * @param aDestByteBuffer
+     * @param aDestByteBuffer the aDestByteBuffer to serialize.
      */
     void serializeToByteBuffer(final ByteBuffer aDestByteBuffer);
-    
+
     /**
-     * deserializeFrom.
+     * deserializeFromByteBuffer.
      *
-     * @param aSrcByteBuffer
-     * @param offset
-     * @param aSrcLength
-     * @param aDestObject
+     * @param aSrcByteBuffer  the aSrcByteBuffer to deserialize.
      */
     void deserializeFromByteBuffer(final ByteBuffer aSrcByteBuffer);
-   
-    
-    /**
-     * deserializeFrom.
-     *
-     * @param srcByteBuffer
-     * @param srcLength
-     * @param aClass
-     * @return
-     */
-    //<S> S deserializeFromByteBuffer(final ByteBuffer srcByteBuffer, final Class<S> aClass);
-    
-    
+
 }

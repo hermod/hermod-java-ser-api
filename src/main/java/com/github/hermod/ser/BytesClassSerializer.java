@@ -2,16 +2,16 @@ package com.github.hermod.ser;
 
 /**
  * <p>BytesClassSerializer. </p>
- * 
+ *
  * @author anavarro - Apr 13, 2013
  * @param <T>
- * 
+ *
  */
 public interface BytesClassSerializer<T> {
 
     /**
      * serializeToBytes.
-     * 
+     *
      * @param aSrcObject
      * @return
      */
@@ -19,7 +19,7 @@ public interface BytesClassSerializer<T> {
 
     /**
      * serializeToBytes.
-     * 
+     *
      * @param aSrcObject
      * @param aDestBytes
      * @param aDestOffset
@@ -29,7 +29,7 @@ public interface BytesClassSerializer<T> {
 
     /**
      * deserializeFrom.
-     * 
+     *
      * @param aSrcBytes
      * @param aSrcOffset
      * @param aSrcLength
@@ -39,7 +39,7 @@ public interface BytesClassSerializer<T> {
 
     /**
      * deserializeFrom.
-     * 
+     *
      * @param srcBytes
      * @param srcOffset
      * @param srcLength
@@ -49,7 +49,7 @@ public interface BytesClassSerializer<T> {
 
     /**
      * deserializeFrom.
-     * 
+     *
      * @param srcBytes
      * @param srcOffset
      * @param srcLength

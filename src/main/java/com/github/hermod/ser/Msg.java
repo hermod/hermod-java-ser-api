@@ -1,82 +1,77 @@
 package com.github.hermod.ser;
 
-
 /**
  * <p>Msg interface.</p>
- * 
+ *
  * @author anavarro
  */
 public interface Msg {
 
-    
     // Read methods
-    
+
     // Msg Inforation methods
     /**
      * isEmpty.
-     * 
+     *
      * @return
      */
     boolean isEmpty();
-    
-    
+
     /**
      * isSerializable.
      *
-     * @return
+     * @return a boolean
      */
     boolean isSerializable();
-    
+
     /**
      * isBytesSerializable.
      *
-     * @return
+     * @return a boolean
      */
     boolean isBytesSerializable();
-    
+
     /**
      * isByteBufferSerializable.
      *
-     * @return
+     * @return a boolean
      */
     boolean isByteBufferSerializable();
-    
+
     /**
      * isByteBufSerializable.
      *
-     * @return
+     * @return a boolean
      */
     boolean isByteBufSerializable();
-    
-    
+
     // Keys Information methods
     /**
      * <p>getKeysArray.</p>
-     * 
+     *
      * @return an array of int.
      */
     int[] getKeysArray();
-    
+
     /**
      * getKeyMax.
      *
-     * @return
+     * @return the key Max of the Msg
      */
     int getKeyMax();
 
     /**
      * getKeysLength.
-     * 
+     *
      * @return the number of keys
      */
     int getKeysLength();
 
-    
     // Value Information methods
-    
+
     /**
      * getType.
-     * 
+     *
      * @param key
      * @return
      */
@@ -84,16 +79,15 @@ public interface Msg {
 
     /**
      * getTypeAsByte.
-     * 
+     *
      * @param key
      * @return
      */
     byte getTypeAsByte(final int key);
 
-
     /**
      * isArray.
-     * 
+     *
      * @param aKey an unsigned int.
      * @return
      */
@@ -101,51 +95,50 @@ public interface Msg {
 
     /**
      * getArrayLength.
-     * 
+     *
      * @param aKey an unsigned int.
      * @return
      */
     int getArrayLength(final int aKey);
-    
+
     /**
      * getLength.
      *
      * @param aKey
      * @return
      */
-    //TODO to add?
-    //int getLength(final int aKey);
-    
+    // TODO to add?
+    // int getLength(final int aKey);
+
     /**
      * <p>contains.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @return a boolean.
      */
     boolean contains(final int aKey);
 
-
     // Read Value Operations
-    
+
     /**
      * <p>get.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @return a {@link java.lang.Object} object.
      */
-    
+
     Object get(final int aKey);
 
     /**
      * <p>get.</p>
-     * 
+     *
      * @param aKey an unsigned int
      * @param clazz
      * @return a {@link java.lang.Object} object.
      */
-    
+
     <T> T get(final int aKey, final Class<T> clazz);
-    
+
     /**
      * getAsNull.
      *
@@ -153,13 +146,13 @@ public interface Msg {
      * @return
      */
     Null getAsNull(final int aKey);
-    
+
     /**
      * <p>getAsBoolean.</p>
-     * 
+     *
      * Can throw new IllegalArgumentException if the key is not present in the Msg (can return null for a primitive type). Use <T> T
      * getAsNullableBoolean(final int aKey); if you want to have directy null
-     * 
+     *
      * @param aKey an unsigned int.
      * @return a boolean.
      */
@@ -167,19 +160,19 @@ public interface Msg {
 
     /**
      * getAsNullableBoolean.
-     * 
+     *
      * @param aKey an unsigned int.
      * @return
      */
-    
+
     Boolean getAsNullableBoolean(final int aKey);
 
     /**
      * <p>getAsByte.</p>
-     * 
+     *
      * Can throw new IllegalArgumentException if the key is not present in the Msg (can return null for a primitive type). Use <T> T
      * getAsNullableByte(final int aKey, final Class<T> clazz); if you want to have directy null.
-     * 
+     *
      * @param aKey an unsigned int.
      * @return a byte.
      */
@@ -187,19 +180,19 @@ public interface Msg {
 
     /**
      * getAsNullableByte.
-     * 
+     *
      * @param aKey an unsigned int.
      * @return
      */
-    
+
     Byte getAsNullableByte(final int aKey);
 
     /**
      * <p>getAsShort.</p>
-     * 
+     *
      * Can throw new IllegalArgumentException if the key is not present in the Msg (can return null for a primitive type). Use <T> T
      * getAsNullableShort(final int aKey); if you want to have directy null
-     * 
+     *
      * @param aKey an unsigned int.
      * @return a short.
      */
@@ -207,19 +200,19 @@ public interface Msg {
 
     /**
      * getAsNullableShort.
-     * 
+     *
      * @param aKey an unsigned int.
      * @return
      */
-    
+
     Short getAsNullableShort(final int aKey);
 
     /**
      * <p>getAsInt.</p>
-     * 
+     *
      * Can throw new IllegalArgumentException if the key is not present in the Msg (can return null for a primitive type). Use <T> T
      * getAsNullableInteger(final int aKey); if you want to have directy null
-     * 
+     *
      * @param aKey an unsigned int.
      * @param defaultValue
      * @return a int.
@@ -228,19 +221,19 @@ public interface Msg {
 
     /**
      * getAsNullableInt.
-     * 
+     *
      * @param aKey an unsigned int.
      * @return
      */
-    
+
     Integer getAsNullableInteger(final int aKey);
 
     /**
      * <p>getAsLong.</p>
-     * 
+     *
      * Can throw new IllegalArgumentException if the key is not present in the Msg (can return null for a primitive type). Use <T> T
      * getAsNullableLong(final int aKey); if you want to have directy null
-     * 
+     *
      * @param aKey an unsigned int.
      * @return a long.
      */
@@ -248,20 +241,19 @@ public interface Msg {
 
     /**
      * getAsNullableLong.
-     * 
+     *
      * @param aKey an unsigned int.
      * @return
      */
-    
+
     Long getAsNullableLong(final int aKey);
-    
-    
+
     /**
      * <p>getAsFloat.</p>
-     * 
+     *
      * Can throw new IllegalArgumentException if the key is not present in the Msg (can return null for a primitive type). Use <T> T
      * getAsNullableFloat(final int aKey); if you want to have directy null
-     * 
+     *
      * @param aKey an unsigned int.
      * @return a float.
      */
@@ -269,19 +261,19 @@ public interface Msg {
 
     /**
      * getAsNullableFloat.
-     * 
+     *
      * @param aKey an unsigned int.
      * @return
      */
-    
+
     Float getAsNullableFloat(final int aKey);
 
     /**
      * <p>getAsDouble.</p>
-     * 
+     *
      * Can throw new IllegalArgumentException if the key is not present in the Msg (can return null for a primitive type). Use <T> T
      * getAsNullableDouble(final int aKey); if you want to have directy null
-     * 
+     *
      * @param aKey an unsigned int.
      * @return a double.
      */
@@ -289,43 +281,43 @@ public interface Msg {
 
     /**
      * getAsNullableDouble.
-     * 
+     *
      * @param aKey an unsigned int.
      * @return
      */
-    
+
     Double getAsNullableDouble(final int aKey);
-    
+
     /**
      * getAsBigDecimal.
      *
      * @param aKey an unsigned int.
      * @return
      */
-    //TODO to add?
-    //BigDecimal getAsBigDecimal(final int aKey);
-      
+    // TODO to add?
+    // BigDecimal getAsBigDecimal(final int aKey);
+
     /**
      * <p>getAsString.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @return a {@link java.lang.String} object.
      */
-    
+
     String getAsString(final int aKey);
 
     /**
      * <p>getAsMsg.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @return a {@link com.github.hermod.ser.Msg} object.
      */
-    
+
     Msg getAsMsg(final int aKey);
 
     /**
      * <p>getAsMsg.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @return a {@link com.github.hermod.ser.Msg} object.
      */
@@ -333,7 +325,7 @@ public interface Msg {
 
     /**
      * <p>getAsBooleans.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @return
      */
@@ -341,16 +333,16 @@ public interface Msg {
 
     /**
      * getAsNullableBooleans.
-     * 
+     *
      * @param aKey an unsigned int.
      * @return
      */
-    
+
     Boolean[] getAsNullableBooleans(final int aKey);
 
     /**
      * <p>getAsBytes.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @return
      */
@@ -358,16 +350,16 @@ public interface Msg {
 
     /**
      * getAsNullableBytes.
-     * 
+     *
      * @param aKey an unsigned int.
      * @return
      */
-    
+
     Byte[] getAsNullableBytes(final int aKey);
 
     /**
      * <p>getAsShorts.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @return
      */
@@ -375,16 +367,16 @@ public interface Msg {
 
     /**
      * getAsNullableShorts.
-     * 
+     *
      * @param aKey an unsigned int.
      * @return
      */
-    
+
     Short[] getAsNullableShorts(final int aKey);
 
     /**
      * <p>getAsInts.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @return
      */
@@ -392,16 +384,16 @@ public interface Msg {
 
     /**
      * getAsNullableIntegers.
-     * 
+     *
      * @param aKey an unsigned int.
      * @return
      */
-    
+
     Integer[] getAsNullableIntegers(final int aKey);
 
     /**
      * <p>getAsLongs.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @return
      */
@@ -409,16 +401,16 @@ public interface Msg {
 
     /**
      * getAsNullableLongs.
-     * 
+     *
      * @param aKey an unsigned int.
      * @return
      */
-    
+
     Long[] getAsNullableLongs(final int aKey);
 
     /**
      * <p>getAsFloats.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @return
      */
@@ -426,16 +418,16 @@ public interface Msg {
 
     /**
      * getAsNullableFloats.
-     * 
+     *
      * @param aKey an unsigned int.
      * @return
      */
-    
+
     Float[] getAsNullableFloats(final int aKey);
 
     /**
      * <p>getAsDoubles.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @return
      */
@@ -443,96 +435,92 @@ public interface Msg {
 
     /**
      * getAsNullableDoubles.
-     * 
+     *
      * @param aKey an unsigned int.
      * @return
      */
-    
+
     Double[] getAsNullableDoubles(final int aKey);
 
-    
     /**
      * <p>getAsBigDecimals.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @return
      */
-    //TODO to add
-    //BigDecimal[] getAsBigDecimals(final int aKey);
-    
+    // TODO to add
+    // BigDecimal[] getAsBigDecimals(final int aKey);
+
     /**
      * <p>getAsStrings.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @return
      */
-    
+
     String[] getAsStrings(final int aKey);
 
     /**
      * <p>getAsMsgs.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @return
      */
-    
+
     Msg[] getAsMsgs(final int aKey);
 
     /**
      * getAsMsgs.
-     * 
+     *
      * @param aKey an unsigned int.
      * @param destMsgs
      */
     void getAsMsgs(final int aKey, Msg... destMsgs);
-    
+
     /**
      * <p>getAsObjects.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @return
      */
-    
+
     Object[] getAsObjects(final int aKey);
 
     /**
      * getAsObjects.
-     * 
+     *
      * @param aKey an unsigned int.
      * @param destObjects
      */
-    //void getAsObjects(final int aKey, Object... destObjects);
+    // void getAsObjects(final int aKey, Object... destObjects);
 
     /**
      * getAll.
-     * 
+     *
      * @return a Msg
      */
-    
+
     Msg getAllAsMsg();
-    
+
     /**
      * getAllAsObjects.
-     * 
+     *
      * Each key is representing with the index of the array and each value is representing with the values of the array return.
      *
      * @return Object[]
      */
     Object[] getAllAsObjects();
-    
+
     /**
      * getAllAsObjects.
-     * 
-     * Each key is representing with the index of the array and each value is representing with the values of the array return.
-     * Use retrieveKeyMax before to allocate before the right number in the anObjects
+     *
+     * Each key is representing with the index of the array and each value is representing with the values of the array return. Use retrieveKeyMax
+     * before to allocate before the right number in the anObjects
      *
      * @return
      */
-    void getAllAsObjects( final Object... aObjects);
+    void getAllAsObjects(final Object... aObjects);
 
-
-
-    
     //  Write Value Methods
     /**
      * set .
@@ -540,15 +528,15 @@ public interface Msg {
      * @param aKey an unsigned int.
      */
     void set(final int aKey, final Null aNull);
-    
+
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param anObject
      */
     void set(final int aKey, final Object anObject);
-    
+
     /**
      * set.
      *
@@ -557,10 +545,10 @@ public interface Msg {
      * @param optimizeLength
      */
     void set(final int aKey, final Object aObject, final boolean optimizeLength);
-    
+
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aBoolean a aBoolean.
      */
@@ -568,15 +556,15 @@ public interface Msg {
 
     /**
      * set.
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aBoolean
      */
     void set(final int aKey, final Boolean aBoolean);
-    
+
     /**
      * set.
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aBoolean
      */
@@ -584,7 +572,7 @@ public interface Msg {
 
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aByte a byte.
      */
@@ -592,15 +580,15 @@ public interface Msg {
 
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aByte a byte.
      */
     void set(final int aKey, final Byte aByte);
-    
+
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aByte a byte.
      */
@@ -608,15 +596,15 @@ public interface Msg {
 
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aShort a short.
      */
     void set(final int aKey, final short aShort);
-    
+
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aShort a short.
      */
@@ -624,7 +612,7 @@ public interface Msg {
 
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aShort a short.
      */
@@ -632,15 +620,15 @@ public interface Msg {
 
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aShort a short.
      */
     void set(final int aKey, final Short aShort, final boolean optimizeLength);
-    
+
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aInt a int.
      */
@@ -648,23 +636,23 @@ public interface Msg {
 
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aInt a int.
      */
     void set(final int aKey, final int aInt, final boolean optimizeLength);
-    
+
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aInt a int.
      */
     void set(final int aKey, final Integer aInt);
-    
+
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aInt a int.
      */
@@ -672,7 +660,7 @@ public interface Msg {
 
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aLong a long.
      */
@@ -680,15 +668,15 @@ public interface Msg {
 
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aLong a long.
      */
     void set(final int aKey, final long aLong, final boolean optimizeLength);
-    
+
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aLong a long.
      */
@@ -696,16 +684,15 @@ public interface Msg {
 
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aLong a long.
      */
     void set(final int aKey, final Long aLong, final boolean optimizeLength);
-    
-    
+
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aFloat a float.
      */
@@ -713,15 +700,15 @@ public interface Msg {
 
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aFloat a float.
      */
     void set(final int aKey, final Float aFloat);
-    
+
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aFloat a float.
      */
@@ -729,15 +716,15 @@ public interface Msg {
 
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aDouble a double.
      */
     void set(final int aKey, final double aDouble);
-    
+
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aDouble a double.
      */
@@ -745,23 +732,23 @@ public interface Msg {
 
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aDouble a double.
      */
     void set(final int aKey, final Double aDouble);
-    
+
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aDouble a double.
      */
     void set(final int aKey, final Double aDouble, final boolean optimizeLength);
-    
+
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aDouble a double.
      * @param aScale a int.
@@ -770,7 +757,7 @@ public interface Msg {
 
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aDouble a double.
      * @param aScale a int.
@@ -779,53 +766,52 @@ public interface Msg {
 
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aDouble a double.
      * @param aScale a int.
      */
-    //void set(final int aKey, final double aDouble, final int aScale, final boolean optimizeLength);
-    
+    // void set(final int aKey, final double aDouble, final int aScale, final boolean optimizeLength);
+
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aDouble a double.
      * @param aScale a int.
      */
     void set(final int aKey, final Double aDouble, final int aScale, final boolean optimizeLength);
 
-    
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aBigDecimal a BigDecimal.
      */
-    //TODO to add ?
-    //void set(final int aKey, final BigDecimal aBigDecimal);
+    // TODO to add ?
+    // void set(final int aKey, final BigDecimal aBigDecimal);
 
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aBigDecimal a BigDecimal.
      * @param optimizeLength .
      */
-    //TODO to add
-    //void set(final int aKey, final BigDecimal aBigDecimal, final boolean optimizeLength);
-    
+    // TODO to add
+    // void set(final int aKey, final BigDecimal aBigDecimal, final boolean optimizeLength);
+
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aString a {@link java.lang.String} object.
      */
     void set(final int aKey, final String aString);
-    
+
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aString a {@link java.lang.String} object.
      */
@@ -833,7 +819,7 @@ public interface Msg {
 
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param aMsg a {@link com.github.hermod.ser.Msg} object.
      */
@@ -841,7 +827,7 @@ public interface Msg {
 
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param anArray a boolean[]
      */
@@ -849,7 +835,7 @@ public interface Msg {
 
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param anArray a boolean[]
      */
@@ -857,7 +843,7 @@ public interface Msg {
 
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param anArray a byte[]
      */
@@ -865,7 +851,7 @@ public interface Msg {
 
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param anArray a byte[]
      */
@@ -873,7 +859,7 @@ public interface Msg {
 
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param anArray a short[]
      */
@@ -881,7 +867,7 @@ public interface Msg {
 
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param anArray a short[]
      */
@@ -889,7 +875,7 @@ public interface Msg {
 
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param anArray a int[]
      */
@@ -897,7 +883,7 @@ public interface Msg {
 
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param anArray a int[]
      */
@@ -905,7 +891,7 @@ public interface Msg {
 
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param anArray a long[]
      */
@@ -913,7 +899,7 @@ public interface Msg {
 
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param anArray a long[]
      */
@@ -921,7 +907,7 @@ public interface Msg {
 
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param anArray a float[]
      */
@@ -929,7 +915,7 @@ public interface Msg {
 
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param anArray a float[]
      */
@@ -937,7 +923,7 @@ public interface Msg {
 
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param anArray a double[]
      */
@@ -945,24 +931,24 @@ public interface Msg {
 
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param anArray a double[]
      */
     void set(final int aKey, final Double... aDoubles);
-    
-    /**
-     * <p>set.</p>
-     * 
-     * @param aKey an unsigned int.
-     * @param anArray a double[]
-     */
-    //TODO to add ?
-    //void set(final int aKey, final BigDecimal... aBigDecimal);
 
     /**
      * <p>set.</p>
-     * 
+     *
+     * @param aKey an unsigned int.
+     * @param anArray a double[]
+     */
+    // TODO to add ?
+    // void set(final int aKey, final BigDecimal... aBigDecimal);
+
+    /**
+     * <p>set.</p>
+     *
      * @param aKey an unsigned int.
      * @param anArray a string[]
      */
@@ -970,30 +956,30 @@ public interface Msg {
 
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param anArray a string[]
      */
     void set(final int aKey, final String[] aStrings, final boolean forceAsciiEncoding);
-    
+
     /**
      * <p>set.</p>
-     * 
+     *
      * @param aKey an unsigned int.
      * @param anArray a IMsg[]
      */
     void set(final int aKey, final Msg... aMsgs);
-    
+
     /**
      * <p>setAll.</p>
-     * 
+     *
      * @param aMsg a {@link com.github.hermod.ser.Msg} object.
      */
     void setAll(final Msg aMsg);
-    
+
     /**
      * setAll.
-     * 
+     *
      * Each key is representing with the index of the array and each value is representing with the value of the array in argument.
      *
      * @param anObjects
@@ -1002,14 +988,14 @@ public interface Msg {
 
     /**
      * <p>remove.</p>
-     * 
-     * @param aKey an unsigned int... 
+     *
+     * @param aKey an unsigned int...
      */
     void remove(final int... aKeys);
 
     /**
      * <p>removeAll.</p>
-     * 
+     *
      */
     void removeAll();
 
