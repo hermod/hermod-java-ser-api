@@ -26,7 +26,7 @@ public class TypesTest {
 
     /**
      * testValidatesThatClassFooIsNotInstantiable2.
-     *
+     * 
      * @throws Exception
      */
     @Test

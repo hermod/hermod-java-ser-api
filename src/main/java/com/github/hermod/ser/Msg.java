@@ -2,7 +2,9 @@ package com.github.hermod.ser;
 
 /**
  * <p>Msg interface.</p>
- *
+ * 
+ * The interface Msg is used to set/get field in a message which you can serialize/deserialize through a Serializer.
+ * 
  * @author anavarro
  */
 public interface Msg {
@@ -11,110 +13,101 @@ public interface Msg {
 
     // Msg Inforation methods
     /**
-     * isEmpty.
-     *
-     * @return
+     * <p>isEmpty.</p>
+     * 
+     * @return true if the msg contains no key.
      */
     boolean isEmpty();
 
     /**
-     * isSerializable.
-     *
-     * @return a boolean
+     * <p>isSerializable.</p>
+     * 
+     * @return true if the class implements Serializable.
      */
     boolean isSerializable();
 
     /**
-     * isBytesSerializable.
-     *
-     * @return a boolean
+     * <p>isBytesSerializable.</p>
+     * 
+     * @return true if the class implements BytesSerializable.
      */
     boolean isBytesSerializable();
 
     /**
-     * isByteBufferSerializable.
-     *
-     * @return a boolean
+     * <p>isByteBufferSerializable.</p>
+     * 
+     * @return true if the class implements ByteBufferSerializable.
      */
     boolean isByteBufferSerializable();
 
     /**
-     * isByteBufSerializable.
-     *
-     * @return a boolean
+     * <p>isByteBufSerializable.</p>
+     * 
+     * @return true if the class implements ByteBufSerializable.
      */
     boolean isByteBufSerializable();
 
     // Keys Information methods
     /**
      * <p>getKeysArray.</p>
-     *
-     * @return an array of int.
+     * 
+     * @return the array of keys of the msg.
      */
     int[] getKeysArray();
 
     /**
-     * getKeyMax.
-     *
-     * @return the key Max of the Msg
+     * <p>getKeyMax.</p>
+     * 
+     * @return the key max of the msg.
      */
     int getKeyMax();
 
     /**
-     * getKeysLength.
-     *
-     * @return the number of keys
+     * <p>getKeysLength.</p>
+     * 
+     * @return the number of keys of the msg.
      */
     int getKeysLength();
 
     // Value Information methods
 
     /**
-     * getType.
-     *
-     * @param key
-     * @return
+     * <p>getType.</p>
+     * 
+     * @param aKey a unsigned int.
+     * @return the Type of the field of aKey.
      */
-    Type getType(final int key);
+    Type getType(final int aKey);
 
     /**
-     * getTypeAsByte.
-     *
-     * @param key
-     * @return
+     * <p>getTypeAsByte.</p>
+     * 
+     * @param aKey a unsigned int.
+     * @return the Type as byte of the field of aKey.
      */
-    byte getTypeAsByte(final int key);
+    byte getTypeAsByte(final int aKey);
 
     /**
-     * isArray.
-     *
+     * <p>isArray.</p>
+     * 
      * @param aKey an unsigned int.
-     * @return
+     * @return true if the field of aKey is an array.
      */
     boolean isArray(final int aKey);
 
     /**
-     * getArrayLength.
-     *
+     * <p>getArrayLength.</p>
+     * 
      * @param aKey an unsigned int.
-     * @return
+     * @return the length of the array of the field of aKey.
      */
     int getArrayLength(final int aKey);
 
     /**
-     * getLength.
-     *
-     * @param aKey
-     * @return
-     */
-    // TODO to add?
-    // int getLength(final int aKey);
-
-    /**
      * <p>contains.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @return a boolean.
+     * @return true if the field of aKey is set.
      */
     boolean contains(final int aKey);
 
@@ -122,880 +115,824 @@ public interface Msg {
 
     /**
      * <p>get.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @return a {@link java.lang.Object} object.
+     * @return the object of the field of aKey (a copy).
      */
-
     Object get(final int aKey);
 
     /**
      * <p>get.</p>
-     *
-     * @param aKey an unsigned int
-     * @param clazz
-     * @return a {@link java.lang.Object} object.
+     * 
+     * @param aKey an unsigned int.
+     * @param clazz a class you want to get.
+     * @param <T> the type you want to get.
+     * @return the object of the field of aKey with clazz type (a copy).
      */
-
     <T> T get(final int aKey, final Class<T> clazz);
 
     /**
-     * getAsNull.
-     *
-     * @param aKey
-     * @return
+     * <p>getAsNull.</p>
+     * 
+     * @param aKey an unsigned int.
+     * @return the Null object of the field of aKey (a copy).
      */
     Null getAsNull(final int aKey);
 
     /**
      * <p>getAsBoolean.</p>
-     *
+     * 
      * Can throw new IllegalArgumentException if the key is not present in the Msg (can return null for a primitive type). Use <T> T
-     * getAsNullableBoolean(final int aKey); if you want to have directy null
-     *
+     * getAsNullableBoolean(final int aKey); if you want to have directy null.
+     * 
      * @param aKey an unsigned int.
-     * @return a boolean.
+     * @return the boolean of the field of aKey.
      */
     boolean getAsBoolean(final int aKey);
 
     /**
-     * getAsNullableBoolean.
-     *
+     * <p>getAsNullableBoolean.</p>
+     * 
      * @param aKey an unsigned int.
-     * @return
+     * @return the Boolean of the field of aKey (a copy).
      */
-
     Boolean getAsNullableBoolean(final int aKey);
 
     /**
      * <p>getAsByte.</p>
-     *
+     * 
      * Can throw new IllegalArgumentException if the key is not present in the Msg (can return null for a primitive type). Use <T> T
      * getAsNullableByte(final int aKey, final Class<T> clazz); if you want to have directy null.
-     *
-     * @param aKey an unsigned int.
-     * @return a byte.
+     * 
+     * @param aKey an unsigned int aKey.
+     * @return the byte of the field of aKey.
      */
     byte getAsByte(final int aKey);
 
     /**
-     * getAsNullableByte.
-     *
+     * <p>getAsNullableByte.</p>
+     * 
      * @param aKey an unsigned int.
-     * @return
+     * @return the Byte of the field of aKey (a copy).
      */
-
     Byte getAsNullableByte(final int aKey);
 
     /**
      * <p>getAsShort.</p>
-     *
+     * 
      * Can throw new IllegalArgumentException if the key is not present in the Msg (can return null for a primitive type). Use <T> T
-     * getAsNullableShort(final int aKey); if you want to have directy null
-     *
+     * getAsNullableShort(final int aKey); if you want to have directy null.
+     * 
      * @param aKey an unsigned int.
-     * @return a short.
+     * @return the short of the field of aKey.
      */
     short getAsShort(final int aKey);
 
     /**
-     * getAsNullableShort.
-     *
+     * <p>getAsNullableShort.</p>
+     * 
      * @param aKey an unsigned int.
-     * @return
+     * @return the Short of the field of aKey (a copy).
      */
-
     Short getAsNullableShort(final int aKey);
 
     /**
      * <p>getAsInt.</p>
-     *
+     * 
      * Can throw new IllegalArgumentException if the key is not present in the Msg (can return null for a primitive type). Use <T> T
-     * getAsNullableInteger(final int aKey); if you want to have directy null
-     *
+     * getAsNullableInteger(final int aKey); if you want to have directy null.
+     * 
      * @param aKey an unsigned int.
-     * @param defaultValue
-     * @return a int.
+     * @return the int of the field of aKey.
      */
     int getAsInt(final int aKey);
 
     /**
-     * getAsNullableInt.
-     *
+     * <p>getAsNullableInt.</p>
+     * 
      * @param aKey an unsigned int.
-     * @return
+     * @return the Integer of the field of aKey (a copy).
      */
-
     Integer getAsNullableInteger(final int aKey);
 
     /**
      * <p>getAsLong.</p>
-     *
+     * 
      * Can throw new IllegalArgumentException if the key is not present in the Msg (can return null for a primitive type). Use <T> T
-     * getAsNullableLong(final int aKey); if you want to have directy null
-     *
+     * getAsNullableLong(final int aKey); if you want to have directy null.
+     * 
      * @param aKey an unsigned int.
-     * @return a long.
+     * @return the long of the field of aKey.
      */
     long getAsLong(final int aKey);
 
     /**
      * getAsNullableLong.
-     *
+     * 
      * @param aKey an unsigned int.
-     * @return
+     * @return the Long of the field of aKey (a copy).
      */
-
     Long getAsNullableLong(final int aKey);
 
     /**
      * <p>getAsFloat.</p>
-     *
+     * 
      * Can throw new IllegalArgumentException if the key is not present in the Msg (can return null for a primitive type). Use <T> T
-     * getAsNullableFloat(final int aKey); if you want to have directy null
-     *
+     * getAsNullableFloat(final int aKey); if you want to have directy null.
+     * 
      * @param aKey an unsigned int.
-     * @return a float.
+     * @return the float of the field of aKey.
      */
     float getAsFloat(final int aKey);
 
     /**
-     * getAsNullableFloat.
-     *
+     * <p>getAsNullableFloat.</p>
+     * 
      * @param aKey an unsigned int.
-     * @return
+     * @return the Float of the field of aKey (a copy).
      */
 
     Float getAsNullableFloat(final int aKey);
 
     /**
      * <p>getAsDouble.</p>
-     *
+     * 
      * Can throw new IllegalArgumentException if the key is not present in the Msg (can return null for a primitive type). Use <T> T
-     * getAsNullableDouble(final int aKey); if you want to have directy null
-     *
+     * getAsNullableDouble(final int aKey); if you want to have directy null.
+     * 
      * @param aKey an unsigned int.
-     * @return a double.
+     * @return the double of the field of aKey.
      */
     double getAsDouble(final int aKey);
 
     /**
-     * getAsNullableDouble.
-     *
+     * <p>getAsNullableDouble.</p>
+     * 
      * @param aKey an unsigned int.
-     * @return
+     * @return the Double of the field of aKey (a copy).
      */
-
     Double getAsNullableDouble(final int aKey);
 
     /**
-     * getAsBigDecimal.
-     *
-     * @param aKey an unsigned int.
-     * @return
-     */
-    // TODO to add?
-    // BigDecimal getAsBigDecimal(final int aKey);
-
-    /**
      * <p>getAsString.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @return a {@link java.lang.String} object.
+     * @return the String of the field of aKey (a copy).
      */
-
     String getAsString(final int aKey);
 
     /**
      * <p>getAsMsg.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @return a {@link com.github.hermod.ser.Msg} object.
+     * @return the Msg of the field of aKey (a copy).
      */
-
     Msg getAsMsg(final int aKey);
 
     /**
      * <p>getAsMsg.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @return a {@link com.github.hermod.ser.Msg} object.
+     * @param destMsg the msg to set the field of aKey.
      */
     void getAsMsg(final int aKey, final Msg destMsg);
 
     /**
      * <p>getAsBooleans.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @return
+     * @return the boolean[] of the field of aKey (a copy).
      */
     boolean[] getAsBooleans(final int aKey);
 
     /**
-     * getAsNullableBooleans.
-     *
+     * <p>getAsNullableBooleans.</p>
+     * 
      * @param aKey an unsigned int.
-     * @return
+     * @return the Boolean[] of the field of aKey (a copy).
      */
-
     Boolean[] getAsNullableBooleans(final int aKey);
 
     /**
      * <p>getAsBytes.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @return
+     * @return the byte[] of the field of aKey (a copy).
      */
     byte[] getAsBytes(final int aKey);
 
     /**
-     * getAsNullableBytes.
-     *
+     * <p>getAsNullableBytes.</p>
+     * 
      * @param aKey an unsigned int.
-     * @return
+     * @return the Byte[] of the field of aKey (a copy).
      */
-
     Byte[] getAsNullableBytes(final int aKey);
 
     /**
      * <p>getAsShorts.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @return
+     * @return the short[] of the field of aKey (a copy).
      */
     short[] getAsShorts(final int aKey);
 
     /**
-     * getAsNullableShorts.
-     *
+     * <p>getAsNullableShorts.</p>
+     * 
      * @param aKey an unsigned int.
-     * @return
+     * @return the Short[] of the field of aKey (a copy).
      */
-
     Short[] getAsNullableShorts(final int aKey);
 
     /**
      * <p>getAsInts.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @return
+     * @return the int[] of the field of aKey (a copy).
      */
     int[] getAsInts(final int aKey);
 
     /**
-     * getAsNullableIntegers.
-     *
+     * <p>getAsNullableIntegers.</p>
+     * 
      * @param aKey an unsigned int.
-     * @return
+     * @return the Integer[] of the field of aKey (a copy).
      */
-
     Integer[] getAsNullableIntegers(final int aKey);
 
     /**
      * <p>getAsLongs.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @return
+     * @return the long[] of the field of aKey (a copy).
      */
     long[] getAsLongs(final int aKey);
 
     /**
-     * getAsNullableLongs.
-     *
+     * <p>getAsNullableLongs.</p>
+     * 
      * @param aKey an unsigned int.
-     * @return
+     * @return the Long[] of the field of aKey (a copy).
      */
-
     Long[] getAsNullableLongs(final int aKey);
 
     /**
      * <p>getAsFloats.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @return
+     * @return the float[] of the field of aKey (a copy).
      */
     float[] getAsFloats(final int aKey);
 
     /**
-     * getAsNullableFloats.
-     *
+     * <p>getAsNullableFloats.</p>
+     * 
      * @param aKey an unsigned int.
-     * @return
+     * @return the Float[] of the field of aKey (a copy).
      */
-
     Float[] getAsNullableFloats(final int aKey);
 
     /**
      * <p>getAsDoubles.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @return
+     * @return the double[] of the field of aKey (a copy).
      */
     double[] getAsDoubles(final int aKey);
 
     /**
-     * getAsNullableDoubles.
-     *
+     * <p>getAsNullableDoubles.</p>
+     * 
      * @param aKey an unsigned int.
-     * @return
+     * @return the Double[] of the field of aKey (a copy).
      */
-
     Double[] getAsNullableDoubles(final int aKey);
 
     /**
-     * <p>getAsBigDecimals.</p>
-     *
-     * @param aKey an unsigned int.
-     * @return
-     */
-    // TODO to add
-    // BigDecimal[] getAsBigDecimals(final int aKey);
-
-    /**
      * <p>getAsStrings.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @return
+     * @return the String[] of the field of aKey (a copy).
      */
-
     String[] getAsStrings(final int aKey);
 
     /**
      * <p>getAsMsgs.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @return
+     * @return the Msg[] of the field of aKey (a copy).
      */
-
     Msg[] getAsMsgs(final int aKey);
 
     /**
-     * getAsMsgs.
-     *
+     * <p>getAsMsgs.</p>
+     * 
      * @param aKey an unsigned int.
-     * @param destMsgs
+     * @param destMsgs a Msg... to set the field of aKey (a copy).
      */
     void getAsMsgs(final int aKey, Msg... destMsgs);
 
     /**
      * <p>getAsObjects.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @return
+     * @return the Object[] of the field of aKey (a copy).
      */
-
     Object[] getAsObjects(final int aKey);
 
     /**
-     * getAsObjects.
-     *
-     * @param aKey an unsigned int.
-     * @param destObjects
+     * <p>getAll</p>.
+     * 
+     * @return a Msg (a copy).
      */
-    // void getAsObjects(final int aKey, Object... destObjects);
-
-    /**
-     * getAll.
-     *
-     * @return a Msg
-     */
-
     Msg getAllAsMsg();
 
     /**
-     * getAllAsObjects.
-     *
+     * <p>getAllAsObjects.</p>
+     * 
      * Each key is representing with the index of the array and each value is representing with the values of the array return.
-     *
-     * @return Object[]
+     * 
+     * @return the Object[] representing the msg (a copy).
      */
     Object[] getAllAsObjects();
 
     /**
-     * getAllAsObjects.
-     *
+     * <p>getAllAsObjects.</p>
+     * 
      * Each key is representing with the index of the array and each value is representing with the values of the array return. Use retrieveKeyMax
-     * before to allocate before the right number in the anObjects
-     *
-     * @return
+     * before to allocate before the right number in the anObjects.
+     * 
+     * @param aObjects objects representing the msg to set.
      */
     void getAllAsObjects(final Object... aObjects);
 
     //  Write Value Methods
     /**
-     * set .
-     *
+     * <p>set.</p>
+     * 
      * @param aKey an unsigned int.
+     * @param aNull a Null object to set in the field of aKey (a reference, not a copy).
      */
     void set(final int aKey, final Null aNull);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param anObject
+     * @param anObject a Object object to set in the field of aKey (a reference, not a copy).
      */
     void set(final int aKey, final Object anObject);
 
     /**
      * set.
-     *
-     * @param aKey
-     * @param aObject
-     * @param optimizeLength
+     * 
+     * @param aKey an unsigned int.
+     * @param aObject a Object object to set in the field of aKey (a reference, not a copy).
+     * @param optimizeLength an boolean to force/unforce optimization of length notably of null object or when the value of the object permits it (the
+     *            default is true).
      */
     void set(final int aKey, final Object aObject, final boolean optimizeLength);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param aBoolean a aBoolean.
+     * @param aBoolean a boolean to set in the field of aKey.
      */
     void set(final int aKey, final boolean aBoolean);
 
     /**
-     * set.
-     *
+     * <p>set.</p>
+     * 
      * @param aKey an unsigned int.
-     * @param aBoolean
+     * @param aBoolean a Boolean object to set in the field of aKey (a reference, not a copy).
      */
     void set(final int aKey, final Boolean aBoolean);
 
     /**
-     * set.
-     *
+     * <p>set.</p>
+     * 
      * @param aKey an unsigned int.
-     * @param aBoolean
+     * @param aBoolean a Boolean object to set in the field of aKey (a reference, not a copy).
+     * @param optimizeLength a boolean to force/unforce optimization of length notably of null object or when the value of the object permits it (the
+     *            default is true).
      */
     void set(final int aKey, final Boolean aBoolean, final boolean optimizeLength);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param aByte a byte.
+     * @param aByte a byte to set in the field of aKey.
      */
     void set(final int aKey, final byte aByte);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param aByte a byte.
+     * @param aByte a Byte object to set in the field of aKey (a reference, not a copy).
      */
     void set(final int aKey, final Byte aByte);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
      * @param aByte a byte.
+     * @param optimizeLength a boolean to force/unforce optimization of length notably of null object or when the value of the object permits it (the
+     *            default is true).
      */
     void set(final int aKey, final Byte aByte, final boolean optimizeLength);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param aShort a short.
+     * @param aShort a short to set in the field of aKey.
      */
     void set(final int aKey, final short aShort);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param aShort a short.
+     * @param aShort a short to set in the field of aKey.
+     * @param optimizeLength a boolean to force/unforce optimization of length notably of null object or when the value of the object permits it (the
+     *            default is true).
      */
     void set(final int aKey, final short aShort, final boolean optimizeLength);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param aShort a short.
+     * @param aShort a Short object to set in the field of aKey (a reference, not a copy).
      */
     void set(final int aKey, final Short aShort);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param aShort a short.
+     * @param aShort a Short object to set in the field of aKey (a reference, not a copy).
+     * @param optimizeLength a boolean to force/unforce optimization of length notably of null object or when the value of the object permits it (the
+     *            default is true).
      */
     void set(final int aKey, final Short aShort, final boolean optimizeLength);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param aInt a int.
+     * @param aInt an int to set in the field of aKey.
      */
     void set(final int aKey, final int aInt);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param aInt a int.
+     * @param aInt an int to set in the field of aKey.
+     * @param optimizeLength a boolean to force/unforce optimization of length notably of null object or when the value of the object permits it (the
+     *            default is true).
      */
     void set(final int aKey, final int aInt, final boolean optimizeLength);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param aInt a int.
+     * @param aInt a Integer object to set in the field of aKey (a reference, not a copy).
      */
     void set(final int aKey, final Integer aInt);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param aInt a int.
+     * @param aInt the Integer object to set in the field of aKey (a reference, not a copy).
+     * @param optimizeLength a boolean to force/unforce optimization of length notably of null object or when the value of the object permits it (the
+     *            default is true).
      */
     void set(final int aKey, final Integer aInt, final boolean optimizeLength);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param aLong a long.
+     * @param aLong a long to set in the field of aKey.
      */
     void set(final int aKey, final long aLong);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param aLong a long.
+     * @param aLong a long to set in the field of aKey.
+     * @param optimizeLength a boolean to force/unforce optimization of length notably of null object or when the value of the object permits it (the
+     *            default is true).
      */
     void set(final int aKey, final long aLong, final boolean optimizeLength);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param aLong a long.
+     * @param aLong a Long object to set in the field of aKey (a reference, not a copy).
      */
     void set(final int aKey, final Long aLong);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param aLong a long.
+     * @param aLong a Long object to set in the field of aKey (a reference, not a copy).
+     * @param optimizeLength a boolean to force/unforce optimization of length notably of null object or when the value of the object permits it (the
+     *            default is true).
      */
     void set(final int aKey, final Long aLong, final boolean optimizeLength);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param aFloat a float.
+     * @param aFloat a float to set in the field of aKey.
      */
     void set(final int aKey, final float aFloat);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param aFloat a float.
+     * @param aFloat a Float object to set in the field of aKey (a reference, not a copy).
      */
     void set(final int aKey, final Float aFloat);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param aFloat a float.
+     * @param aFloat a Float object to set in the field of aKey (a reference, not a copy).
+     * @param optimizeLength a boolean to force/unforce optimization of length notably of null object or when the value of the object permits it (the
+     *            default is true).
      */
     void set(final int aKey, final Float aFloat, final boolean optimizeLength);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param aDouble a double.
+     * @param aDouble a double to set in the field of aKey.
      */
     void set(final int aKey, final double aDouble);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param aDouble a double.
+     * @param aDouble a short to set in the field of aKey.
+     * @param optimizeLength a boolean to force/unforce optimization of length notably of null object or when the value of the object permits it (the
+     *            default is true).
      */
     void set(final int aKey, final double aDouble, final boolean optimizeLength);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param aDouble a double.
+     * @param aDouble a Double object to set in the field of aKey (a reference, not a copy).
      */
     void set(final int aKey, final Double aDouble);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param aDouble a double.
+     * @param aDouble a Double object to set in the field of aKey (a reference, not a copy).
+     * @param optimizeLength a boolean to force/unforce optimization of length notably of null object or when the value of the object permits it (the
+     *            default is true).
      */
     void set(final int aKey, final Double aDouble, final boolean optimizeLength);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param aDouble a double.
-     * @param aScale a int.
+     * @param aDouble a double to set in the field of aKey.
+     * @param aScale a int which represents the number after the dot if positive and before the dot if negative.
      */
     void set(final int aKey, final double aDouble, final int aScale);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param aDouble a double.
-     * @param aScale a int.
+     * @param aDouble a Double object to set in the field of aKey (a reference, not a copy).
+     * @param aScale a int which represents the number after the dot if positive and before the dot if negative.
      */
     void set(final int aKey, final Double aDouble, final int aScale);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param aDouble a double.
-     * @param aScale a int.
-     */
-    // void set(final int aKey, final double aDouble, final int aScale, final boolean optimizeLength);
-
-    /**
-     * <p>set.</p>
-     *
-     * @param aKey an unsigned int.
-     * @param aDouble a double.
-     * @param aScale a int.
+     * @param aDouble a Double object to set in the field of aKey (a reference, not a copy).
+     * @param aScale a int which represents the number after the dot if positive and before the dot if negative.
+     * @param optimizeLength a boolean to force/unforce optimization of length notably of null object or when the value of the object permits it (the
+     *            default is true).
      */
     void set(final int aKey, final Double aDouble, final int aScale, final boolean optimizeLength);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param aBigDecimal a BigDecimal.
-     */
-    // TODO to add ?
-    // void set(final int aKey, final BigDecimal aBigDecimal);
-
-    /**
-     * <p>set.</p>
-     *
-     * @param aKey an unsigned int.
-     * @param aBigDecimal a BigDecimal.
-     * @param optimizeLength .
-     */
-    // TODO to add
-    // void set(final int aKey, final BigDecimal aBigDecimal, final boolean optimizeLength);
-
-    /**
-     * <p>set.</p>
-     *
-     * @param aKey an unsigned int.
-     * @param aString a {@link java.lang.String} object.
+     * @param aString a String object to set in the field of aKey (a reference, not a copy).
      */
     void set(final int aKey, final String aString);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param aString a {@link java.lang.String} object.
+     * @param aString a String object to set in the field of aKey (a reference, not a copy).
+     * @param forceAsciiEncoding boolean to consider the aString is encoded in ASCII (default is false, UTF8 is used).
      */
     void set(final int aKey, final String aString, final boolean forceAsciiEncoding);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param aMsg a {@link com.github.hermod.ser.Msg} object.
+     * @param aMsg a Msg object to set in the field of aKey (a reference, not a copy).
      */
     void set(final int aKey, final Msg aMsg);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param anArray a boolean[]
+     * @param aBooleans a boolean... object to set in the field of aKey (a reference, not a copy).
      */
     void set(final int aKey, final boolean... aBooleans);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param anArray a boolean[]
+     * @param aBooleans a Boolean[] object to set in the field of aKey (a reference, not a copy).
      */
     void set(final int aKey, final Boolean... aBooleans);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param anArray a byte[]
+     * @param aBytes a byte... object to set in the field of aKey (a reference, not a copy).
      */
     void set(final int aKey, final byte... aBytes);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param anArray a byte[]
+     * @param aBytes a Byte... object to set in the field of aKey (a reference, not a copy).
      */
     void set(final int aKey, final Byte... aBytes);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param anArray a short[]
+     * @param aShorts a short... object to set in the field of aKey (a reference, not a copy).
      */
     void set(final int aKey, final short... aShorts);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param anArray a short[]
+     * @param aShorts a Short... object to set in the field of aKey (a reference, not a copy).
      */
     void set(final int aKey, final Short... aShorts);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param anArray a int[]
+     * @param aInts a int... object to set in the field of aKey (a reference, not a copy).
      */
     void set(final int aKey, final int... aInts);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param anArray a int[]
+     * @param aInts a Integer... object to set in the field of aKey (a reference, not a copy).
      */
     void set(final int aKey, final Integer... aInts);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param anArray a long[]
+     * @param aLongs a long... object to set in the field of aKey (a reference, not a copy).
      */
     void set(final int aKey, final long... aLongs);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param anArray a long[]
+     * @param aLongs a Long... object to set in the field of aKey (a reference, not a copy).
      */
     void set(final int aKey, final Long... aLongs);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param anArray a float[]
+     * @param aFloats a float... object to set in the field of aKey (a reference, not a copy).
      */
     void set(final int aKey, final float... aFloats);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param anArray a float[]
+     * @param aFloats a Float... object to set in the field of aKey (a reference, not a copy).
      */
     void set(final int aKey, final Float... aFloats);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param anArray a double[]
+     * @param aDoubles a double... object to set in the field of aKey (a reference, not a copy).
      */
     void set(final int aKey, final double... aDoubles);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param anArray a double[]
+     * @param aDoubles a Double... object to set in the field of aKey (a reference, not a copy).
      */
     void set(final int aKey, final Double... aDoubles);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param anArray a double[]
-     */
-    // TODO to add ?
-    // void set(final int aKey, final BigDecimal... aBigDecimal);
-
-    /**
-     * <p>set.</p>
-     *
-     * @param aKey an unsigned int.
-     * @param anArray a string[]
+     * @param aStrings a String... object to set in the field of aKey (a reference, not a copy).
      */
     void set(final int aKey, final String... aStrings);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param anArray a string[]
+     * @param aStrings a String... object to set in the field of aKey (a reference, not a copy).
+     * @param forceAsciiEncoding boolean to consider the aString is encoded in ASCII (default is false, UTF8 is used).
      */
     void set(final int aKey, final String[] aStrings, final boolean forceAsciiEncoding);
 
     /**
      * <p>set.</p>
-     *
+     * 
      * @param aKey an unsigned int.
-     * @param anArray a IMsg[]
+     * @param aMsgs a Msg... object to set in the field of aKey (a reference, not a copy).
      */
     void set(final int aKey, final Msg... aMsgs);
 
     /**
      * <p>setAll.</p>
-     *
-     * @param aMsg a {@link com.github.hermod.ser.Msg} object.
+     * 
+     * @param aMsg the fields of aMsg to set in the msg.
      */
     void setAll(final Msg aMsg);
 
     /**
-     * setAll.
-     *
+     * <p>setAll.</p>
+     * 
      * Each key is representing with the index of the array and each value is representing with the value of the array in argument.
-     *
-     * @param anObjects
+     * 
+     * @param aObjects the fields to set in the msg.
      */
-    void setAll(final Object... anObjects);
+    void setAll(final Object... aObjects);
 
     /**
      * <p>remove.</p>
-     *
-     * @param aKey an unsigned int...
+     * 
+     * @param aKeys an unsigned int...
      */
     void remove(final int... aKeys);
 
     /**
      * <p>removeAll.</p>
-     *
+     * 
      */
     void removeAll();
 

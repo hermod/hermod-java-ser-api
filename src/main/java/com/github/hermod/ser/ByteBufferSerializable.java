@@ -4,32 +4,33 @@ import java.nio.ByteBuffer;
 
 /**
  * <p>ByteBufferSerializable.</p>
- *
- * Interface ByteBufferSerializable is used to serialize/deserialize from/to a Msg to/from ByteBuffer.
- *
+ * 
+ * The interface ByteBufferSerializable when it is implemented in a msg implementation is used to serialize/deserialize from/to a Msg to/from
+ * ByteBuffer.
+ * 
  * @author anavarro - Sep 22, 2013
- *
+ * 
  */
 public interface ByteBufferSerializable extends Serializable {
 
     /**
-     * serializeToByteBuffer.
-     *
+     * <p>serializeToByteBuffer.</p>
+     * 
      * @return the serialized ByteBuffer of the Msg.
      */
     ByteBuffer serializeToByteBuffer();
 
     /**
-     * serializeToByteBuffer.
-     *
+     * <p>serializeToByteBuffer.</p>
+     * 
      * @param aDestByteBuffer the aDestByteBuffer to serialize.
      */
     void serializeToByteBuffer(final ByteBuffer aDestByteBuffer);
 
     /**
-     * deserializeFromByteBuffer.
-     *
-     * @param aSrcByteBuffer  the aSrcByteBuffer to deserialize.
+     * <p>deserializeFromByteBuffer.</p>
+     * 
+     * @param aSrcByteBuffer the aSrcByteBuffer to deserialize.
      */
     void deserializeFromByteBuffer(final ByteBuffer aSrcByteBuffer);
 

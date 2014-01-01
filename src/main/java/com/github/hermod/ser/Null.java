@@ -2,11 +2,11 @@ package com.github.hermod.ser;
 
 /**
  * <p>Null.</p>
- *
- * Class Null represents a Null field for a Msg with potential different length.
- *
+ * 
+ * The Class Null represents a Null field for a Msg with potential different length value.
+ * 
  * @author anavarro - Oct 29, 2013
- *
+ * 
  */
 public final class Null {
 
@@ -108,8 +108,13 @@ public final class Null {
     private final Type          type;
 
     /**
+     * hashcode.
+     */
+    private final int           hashcode;
+
+    /**
      * Constructor.
-     *
+     * 
      * @param aLength the length of the Null field.
      */
     private Null(final int aLength) {
@@ -119,15 +124,19 @@ public final class Null {
         }
         this.type = Type.NULL;
         this.length = aLength;
+        this.hashcode = computeHashCode();
     }
 
     /**
      * Constructor.
-     *
+     * 
      * @param aType the Type of the Null field.
      */
     private Null(final Type aType) {
         super();
+        if (aType == null) {
+            throw new IllegalArgumentException("The type must not be null.");
+        }
         this.type = aType;
         switch (aType) {
             case BYTE:
@@ -155,11 +164,12 @@ public final class Null {
                 this.length = Types.ZERO;
                 break;
         }
+        this.hashcode = computeHashCode();
     }
 
     /**
-     * getLength.
-     *
+     * <p>getLength.</p>
+     * 
      * @return the length of the Null Field.
      */
     public int getLength() {
@@ -167,8 +177,8 @@ public final class Null {
     }
 
     /**
-     * getType.
-     *
+     * <p>getType.</p>
+     * 
      * @return the Type
      */
     public Type getType() {
@@ -176,11 +186,12 @@ public final class Null {
     }
 
     /**
-     * valueOf (creation/retrieve of a Null).
-     *
+     * <p>valueOf (creation/retrieve of a Null).</p>
+     * 
      * @param aLength The length of the Null Type.
-     * @return Null
+     * @return the Null with a aLength.
      */
+    @SuppressWarnings("all")
     public static Null valueOf(final int aLength) {
         try {
             return LENGTH_NULLS[aLength];
@@ -190,10 +201,10 @@ public final class Null {
     }
 
     /**
-     * valueOf (creation/retrieve of a Null).
-     *
-     * @param aType the Type of Null
-     * @return Null the Null object created/retrived.
+     * <p>valueOf (creation/retrieve of a Null).<p>
+     * 
+     * @param aType the Type of Null.
+     * @return the Null object created/retrived.
      */
     public static Null valueOf(final Type aType) {
         if (aType == null) {
@@ -235,27 +246,31 @@ public final class Null {
 
     /**
      * {@inheritDoc}
-     *
+     * 
      * @see java.lang.Object#hashCode()
      */
     @Override
     public int hashCode() {
-      //TODO to change with Objects.hashcode when we will be in jdk 1.7
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + this.length;
-        result = prime * result + ((this.type == null) ? 0 : this.type.hashCode());
-        return result;
+        return this.hashcode;
+    }
+
+    /**
+     * <p>computeHashCode.</p>
+     * 
+     * @return a hashcode
+     */
+    public int computeHashCode() {
+        return (this.length << Types.EIGHT) | type.getId();
     }
 
     /**
      * {@inheritDoc}
-     *
+     * 
      * @see java.lang.Object#equals(java.lang.Object)
      */
     @Override
     public boolean equals(final Object obj) {
-        //TODO to change with Objects.equals when we will be in jdk 1.7
+        // TODO to change with Objects.equals when we will be in jdk 1.7
         if (this == obj) {
             return true;
         }
@@ -277,7 +292,7 @@ public final class Null {
 
     /**
      * {@inheritDoc}
-     *
+     * 
      * @see java.lang.Object#toString()
      */
     @Override

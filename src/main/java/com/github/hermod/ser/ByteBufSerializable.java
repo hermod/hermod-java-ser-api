@@ -4,31 +4,31 @@ import io.netty.buffer.ByteBuf;
 
 /**
  * <p>ByteBufSerializable.</p>
- *
- * Interface ByteBufSerializable is used to serialize/deserialize from/to a Msg to/from ByteBuf.
- *
+ * 
+ * The interface ByteBufSerializable when it is implemented in a msg implementation is used to serialize/deserialize from/to a Msg to/from ByteBuf.
+ * 
  * @author anavarro - Apr 13, 2013
- *
+ * 
  */
 public interface ByteBufSerializable extends Serializable {
 
     /**
-     * serializeToByteBuf.
-     *
+     * <p>serializeToByteBuf.</p>
+     * 
      * @return the serialized ByteBuf of the Msg.
      */
     ByteBuf serializeToByteBuf();
 
     /**
-     * serializeToByteBuf.
-     *
+     * <p>serializeToByteBuf.</p>
+     * 
      * @param aDestByteBuf the aDestByteBuf to serialize.
      */
     void serializeToByteBuf(final ByteBuf aDestByteBuf);
 
     /**
-     * deserializeFromByteBuf.
-     *
+     * <p>deserializeFromByteBuf.</p>
+     * 
      * @param aSrcByteBuf the aSrcByteBuf to deserialize.
      */
     void deserializeFromByteBuf(final ByteBuf aSrcByteBuf);

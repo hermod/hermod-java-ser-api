@@ -4,57 +4,37 @@ import io.netty.buffer.ByteBuf;
 
 /**
  * <p>ByteBufClassSerializer.</p>
- *
+ * 
+ * The interface ByteBufSerializable is used to serialize/deserialize from/to an object to/from ByteBuf.
+ * 
  * @author anavarro - Dec 29, 2013
  * @param <T>
- *
+ * 
  */
 public interface ByteBufClassSerializer<T> {
 
     /**
-     * <p>serializeToByteBuffer.</p>
-     *
-     * @param aSrcObject a src object T to serialize
-     * @return a ByteBuf to serialize
+     * <p>serializeToByteBuf.</p>
+     * 
+     * @param aSrcObject an object to serialize.
+     * @return the serialized ByteBuf of the Msg.
      */
     ByteBuf serializeToByteBuf(final T aSrcObject);
 
     /**
-     * <p>serializeToByteBuffer.</p>
-     *
-     * @param aSrcObject a src object T to serialize
-     * @param aDestByteBuf a ByteBuf to serialize
+     * <p>serializeToByteBuf.</p>
+     * 
+     * @param aSrcObject an object to serialize.
+     * @param aDestByteBuf the aDestByteBuf to serialize.
      */
     void serializeToByteBuf(final T aSrcObject, final ByteBuf aDestByteBuf);
 
     /**
-     * <p>deserializeFrom.</p>
-     *
-     * @param aSrcByteBuf a src ByteBuf to deserialize
-     * @param aSrcLength a src length to deserialize
-     * @param aDestObject a object T to serialize
+     * <p>deserializeFromByteBuf.</p>
+     * 
+     * @param aSrcByteBuf the aSrcByteBuf to deserialize.
+     * @param aDestObject an object to deserialize.
      */
-    void deserializeFromByteBuf(final ByteBuf aSrcByteBuf, final int aSrcLength, T aDestObject);
-
-    /**
-     * <p>deserializeFrom.</p>
-     *
-     * @param srcByteBuf a src ByteBuf to deserialize
-     * @param srcLength a src length to deserialize
-     * @return a object T to serialize
-     */
-
-    T deserializeFromByteBuf(final ByteBuf srcByteBuf, final int srcLength);
-
-    /**
-     * <p>deserializeFrom.</p>
-     *
-     * @param srcByteBuf a src ByteBuf to deserialize
-     * @param srcLength a src length to deserialize
-     * @param aClass a class to serialize
-     * @param <S> the type of aClass
-     * @return a S to serialize
-     */
-    <S> S deserializeFromByteBuf(final ByteBuf srcByteBuf, final int srcLength, final Class<S> aClass);
+    void deserializeFromByteBuf(final ByteBuf aSrcByteBuf, T aDestObject);
 
 }

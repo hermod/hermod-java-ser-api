@@ -4,12 +4,13 @@ import java.util.Arrays;
 
 /**
  * <p>Type.</p>
- *
- * Enum Type representing the different potential types of the field of the Msg : Null, SkippedKeys (technical), Integer, Decimal, String, Msg, Array
- * with Fixed Values, Array with Variable Values.
- *
+ * 
+ * The enum Type represents the different potential types of a field of the Msg : Null, SkippedKeys (technical type), Integer(boolean, byte,
+ * short, int, long), Decimal (float, double), String (UTF8), Msg (a unsigned int/Value Map), Array with fixed size Values, Array with variable size
+ * Values.
+ * 
  * @author anavarro - Apr 4, 2013
- *
+ * 
  */
 public enum Type {
 
@@ -95,7 +96,7 @@ public enum Type {
 
     /**
      * Constructor.
-     *
+     * 
      * @param aId the id of the type.
      */
     private Type(final byte aId) {
@@ -103,28 +104,28 @@ public enum Type {
     }
 
     /**
-     * getId.
-     *
-     * @return a byte representing the id of the type.
+     * <p>getId.</p>
+     * 
+     * @return the byte representing the id of the type.
      */
     public final byte getId() {
         return this.id;
     }
 
     /**
-     * get5ShiftId.
-     *
-     * @return a byte representing the type shifted by 5 (only type, no length)
+     * <p>get5ShiftId.</p>
+     * 
+     * @return the byte representing the type shifted by 5 (only type, no length)
      */
     public final byte getShiftId() {
         return (byte) (this.id >> Types.FIVE);
     }
 
     /**
-     * valueOf (creation/retrieve of a Type).
-     *
+     * <p>valueOf</p> (creation/retrieve of a Type).
+     * 
      * @param aId a byte representing the id of the Type which wants to retrieve.
-     * @return a Type
+     * @return the Type
      */
     public static Type valueOf(final byte aId) {
         for (final Type type : Type.values()) {
@@ -136,11 +137,11 @@ public enum Type {
     }
 
     /**
-     * valueOf (creation/retrieve of a Type).
-     *
+     * <p>valueOf</p> (creation/retrieve of a Type).
+     * 
      * @param clazz representing the Type which wants to retrieve the Type.
      * @param <T> type of class
-     * @return a Type
+     * @return the Type
      */
     public static <T> Type valueOf(final Class<T> clazz) {
         if (Byte.class.equals(clazz) || Boolean.class.equals(clazz)) {
@@ -158,11 +159,11 @@ public enum Type {
         } else if (String.class.equals(clazz)) {
             return Type.STRING_UTF8;
         } else if (int[].class.equals(clazz) || long[].class.equals(clazz) || short[].class.equals(clazz) || byte[].class.equals(clazz)
-                || boolean[].class.equals(clazz) || double[].class.equals(clazz) || float[].class.equals(clazz)) {
+        || boolean[].class.equals(clazz) || double[].class.equals(clazz) || float[].class.equals(clazz)) {
             return Type.ARRAY_FIXED_VALUE;
         } else if (Integer[].class.equals(clazz) || Long[].class.equals(clazz) || Short[].class.equals(clazz) || Byte[].class.equals(clazz)
-                || Boolean[].class.equals(clazz) || Double[].class.equals(clazz) || Float[].class.equals(clazz) || String[].class.equals(clazz)
-                || Msg[].class.equals(clazz)) {
+        || Boolean[].class.equals(clazz) || Double[].class.equals(clazz) || Float[].class.equals(clazz) || String[].class.equals(clazz)
+        || Msg[].class.equals(clazz)) {
             return Type.ARRAY_VARIABLE_VALUE;
         } else if (Null.class.equals(clazz)) {
             return Type.NULL;

@@ -2,60 +2,41 @@ package com.github.hermod.ser;
 
 /**
  * <p>BytesClassSerializer. </p>
+ * 
+ * The interface BytesClassSerializer is used to serialize/deserialize from/to an abject <T> to/from byte[].
  *
  * @author anavarro - Apr 13, 2013
  * @param <T>
- *
+ * 
  */
 public interface BytesClassSerializer<T> {
 
     /**
-     * serializeToBytes.
-     *
-     * @param aSrcObject
-     * @return
+     * <p>serializeToBytes.</p>
+     * 
+     * @param aSrcObject an object to serialize.
+     * @return the serialized byte[] of the Msg.
      */
     byte[] serializeToBytes(final T aSrcObject);
 
     /**
-     * serializeToBytes.
-     *
-     * @param aSrcObject
-     * @param aDestBytes
-     * @param aDestOffset
-     * @return
+     * <p>serializeToBytes.</p>
+     * 
+     * @param aSrcObject an object to serialize.
+     * @param aDestBytes a destBytes to serialize.
+     * @param aDestOffset a destOffset to serialize.
+     * @return the end position of the Msg in the destBytes.
      */
     int serializeToBytes(final T aSrcObject, byte[] aDestBytes, int aDestOffset);
 
     /**
-     * deserializeFrom.
-     *
-     * @param aSrcBytes
-     * @param aSrcOffset
-     * @param aSrcLength
-     * @param aDestObject
+     * <p>deserializeFrom.</p>
+     * 
+     * @param aDestObject a object to deserialize.
+     * @param aSrcBytes a srcBytes to deserialize.
+     * @param aSrcOffset a srcOffset to deserialize.
+     * @param aSrcLength the srcLength to deserialize.
      */
     void deserializeFromBytes(final byte[] aSrcBytes, final int aSrcOffset, final int aSrcLength, T aDestObject);
-
-    /**
-     * deserializeFrom.
-     *
-     * @param srcBytes
-     * @param srcOffset
-     * @param srcLength
-     * @return
-     */
-    T deserializeFromBytes(final byte[] srcBytes, final int srcOffset, final int srcLength);
-
-    /**
-     * deserializeFrom.
-     *
-     * @param srcBytes
-     * @param srcOffset
-     * @param srcLength
-     * @param aClass
-     * @return
-     */
-    <S> S deserializeFromBytes(final byte[] srcBytes, final int srcOffset, final int srcLength, final Class<S> aClass);
 
 }
