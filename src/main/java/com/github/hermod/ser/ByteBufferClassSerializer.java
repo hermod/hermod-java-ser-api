@@ -6,7 +6,7 @@ import java.nio.ByteBuffer;
  * <p>ByteBufferClassSerializer.</p>
  * 
  * The interface ByteBufferClassSerializer is used to serialize/deserialize from/to an Object to/from ByteBuffer.
- *
+ * 
  * @author anavarro - Sep 22, 2013
  * @param <T>
  * 

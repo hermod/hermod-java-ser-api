@@ -5,9 +5,8 @@ import java.util.Arrays;
 /**
  * <p>Type.</p>
  * 
- * The enum Type represents the different potential types of a field of the Msg : Null, SkippedKeys (technical type), Integer(boolean, byte,
- * short, int, long), Decimal (float, double), String (UTF8), Msg (a unsigned int/Value Map), Array with fixed size Values, Array with variable size
- * Values.
+ * The enum Type represents the different potential types of a field of the Msg : Null, SkippedKeys (technical type), Integer(boolean, byte, short,
+ * int, long), Decimal (float, double), String (UTF8), Msg (a unsigned int/Value Map), Array with fixed size Values, Array with variable size Values.
  * 
  * @author anavarro - Apr 4, 2013
  * 
@@ -170,10 +169,12 @@ public enum Type {
         } else if (Msg.class.equals(clazz)) {
             return Type.MSG;
         } else {
-            final Class[] interfaces = clazz.getInterfaces();
+            final boolean isArray = (clazz.isArray());
+            final Class classToAnalyse = isArray ? clazz.getComponentType() : clazz;
+            final Class[] interfaces = classToAnalyse.getInterfaces();
             for (Class msgInterface : interfaces) {
                 if (Msg.class.equals(msgInterface)) {
-                    return Type.MSG;
+                    return (isArray) ? Type.ARRAY_VARIABLE_VALUE : Type.MSG;
                 }
             }
         }

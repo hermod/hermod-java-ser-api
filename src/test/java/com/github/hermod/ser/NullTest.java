@@ -61,7 +61,6 @@ public class NullTest {
             assertThat(nul).isNotEqualTo(Null.valueOf(i + 1));
             assertThat(nul.equals(null)).isFalse();
             assertThat(nul.equals(Integer.valueOf(i))).isFalse();
-
         }
         for (final Type type : Type.values()) {
             if (type == Type.SKIPPED_KEYS) {
@@ -75,11 +74,13 @@ public class NullTest {
                 assertThat(nul.getType()).isEqualTo(type);
             }
         }
+        assertThat(Null.valueOf(Type.DOUBLE)).isNotEqualTo(Null.valueOf(Type.LONG));
         try {
             final Null nul = Null.valueOf(null);
         } catch (Exception e) {
             assertThat(e).isInstanceOf(IllegalArgumentException.class);
         }
+
     }
 
     /**
@@ -89,6 +90,24 @@ public class NullTest {
     @Test(expected = IllegalArgumentException.class)
     public void testValueOfWithNegativeLength() {
         Null.valueOf(-1);
+    }
+
+    /**
+     * <p>testValueOfWithTypeNull.</p>
+     * 
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testValueOfWithTypeNull() {
+        Null.valueOf(null);
+    }
+
+    /**
+     * <p>testToString.</p>
+     * 
+     */
+    @Test
+    public void testToString() {
+        assertThat(Null.valueOf(1).toString()).isEqualTo("Null [type=NULL, length=1]");
     }
 
 }

@@ -134,9 +134,6 @@ public final class Null {
      */
     private Null(final Type aType) {
         super();
-        if (aType == null) {
-            throw new IllegalArgumentException("The type must not be null.");
-        }
         this.type = aType;
         switch (aType) {
             case BYTE:
@@ -297,7 +294,7 @@ public final class Null {
      */
     @Override
     public String toString() {
-        return "Null [length=" + this.length + ", type=" + this.type + ", toString()=" + super.toString() + "]";
+        return "Null [type=" + this.type + ", length=" + this.length + "]";
     }
 
 }

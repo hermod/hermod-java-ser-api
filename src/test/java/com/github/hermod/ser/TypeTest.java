@@ -16,7 +16,7 @@ import org.junit.Test;
 public class TypeTest {
 
     /**
-     * testValueOf.
+     * j testValueOf.
      * 
      */
     @Test
@@ -25,6 +25,7 @@ public class TypeTest {
         assertThat(Type.valueOf(Types.INTEGER_TYPE)).isEqualTo(Type.INTEGER);
         assertThat(Type.valueOf(Types.MSG_TYPE)).isEqualTo(Type.MSG);
         assertThat(Type.valueOf(Boolean.class)).isEqualTo(Type.BYTE);
+        assertThat(Type.valueOf(Byte.class)).isEqualTo(Type.BYTE);
         assertThat(Type.valueOf(Short.class)).isEqualTo(Type.SHORT);
         assertThat(Type.valueOf(Integer.class)).isEqualTo(Type.INT);
         assertThat(Type.valueOf(Long.class)).isEqualTo(Type.LONG);
@@ -33,9 +34,29 @@ public class TypeTest {
         assertThat(Type.valueOf(String.class)).isEqualTo(Type.STRING_UTF8);
         assertThat(Type.valueOf(Msg.class)).isEqualTo(Type.MSG);
         assertThat(Type.valueOf(CustomMsg.class)).isEqualTo(Type.MSG);
+
+        assertThat(Type.valueOf(boolean[].class)).isEqualTo(Type.ARRAY_FIXED_VALUE);
         assertThat(Type.valueOf(byte[].class)).isEqualTo(Type.ARRAY_FIXED_VALUE);
+        assertThat(Type.valueOf(short[].class)).isEqualTo(Type.ARRAY_FIXED_VALUE);
+        assertThat(Type.valueOf(int[].class)).isEqualTo(Type.ARRAY_FIXED_VALUE);
+        assertThat(Type.valueOf(long[].class)).isEqualTo(Type.ARRAY_FIXED_VALUE);
+        assertThat(Type.valueOf(float[].class)).isEqualTo(Type.ARRAY_FIXED_VALUE);
+        assertThat(Type.valueOf(double[].class)).isEqualTo(Type.ARRAY_FIXED_VALUE);
+
+        assertThat(Type.valueOf(Boolean[].class)).isEqualTo(Type.ARRAY_VARIABLE_VALUE);
+        assertThat(Type.valueOf(Byte[].class)).isEqualTo(Type.ARRAY_VARIABLE_VALUE);
+        assertThat(Type.valueOf(Short[].class)).isEqualTo(Type.ARRAY_VARIABLE_VALUE);
+        assertThat(Type.valueOf(Integer[].class)).isEqualTo(Type.ARRAY_VARIABLE_VALUE);
         assertThat(Type.valueOf(Long[].class)).isEqualTo(Type.ARRAY_VARIABLE_VALUE);
+        assertThat(Type.valueOf(Float[].class)).isEqualTo(Type.ARRAY_VARIABLE_VALUE);
+        assertThat(Type.valueOf(Double[].class)).isEqualTo(Type.ARRAY_VARIABLE_VALUE);
+        assertThat(Type.valueOf(String[].class)).isEqualTo(Type.ARRAY_VARIABLE_VALUE);
+        assertThat(Type.valueOf(Msg[].class)).isEqualTo(Type.ARRAY_VARIABLE_VALUE);
+        assertThat(Type.valueOf(Long[].class)).isEqualTo(Type.ARRAY_VARIABLE_VALUE);
+        assertThat(Type.valueOf(CustomMsg[].class)).isEqualTo(Type.ARRAY_VARIABLE_VALUE);
+
         assertThat(Type.valueOf(Null.class)).isEqualTo(Type.NULL);
+
         try {
             assertThat(Type.valueOf((byte) 1));
             failBecauseExceptionWasNotThrown(IllegalArgumentException.class);

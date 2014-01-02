@@ -4,7 +4,7 @@ package com.github.hermod.ser;
  * <p>BytesClassSerializer. </p>
  * 
  * The interface BytesClassSerializer is used to serialize/deserialize from/to an abject <T> to/from byte[].
- *
+ * 
  * @author anavarro - Apr 13, 2013
  * @param <T>
  * 
