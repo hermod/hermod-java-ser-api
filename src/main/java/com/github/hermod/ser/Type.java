@@ -169,12 +169,12 @@ public enum Type {
         } else if (Msg.class.equals(clazz)) {
             return Type.MSG;
         } else {
-            final boolean isArray = (clazz.isArray());
+            final boolean isArray = clazz.isArray();
             final Class classToAnalyse = isArray ? clazz.getComponentType() : clazz;
             final Class[] interfaces = classToAnalyse.getInterfaces();
-            for (Class msgInterface : interfaces) {
+            for (final Class msgInterface : interfaces) {
                 if (Msg.class.equals(msgInterface)) {
-                    return (isArray) ? Type.ARRAY_VARIABLE_VALUE : Type.MSG;
+                    return isArray ? Type.ARRAY_VARIABLE_VALUE : Type.MSG;
                 }
             }
         }
