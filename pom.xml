@@ -6,13 +6,13 @@
 		<version>0.0.7</version>
 	</parent>
 	<artifactId>hermod-java-ser-api</artifactId>
-	<version>0.0.7</version>
+	<version>0.0.8-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<scm>
 		<connection>scm:git:git://github.com/hermod/${project.artifactId}.git</connection>
 		<developerConnection>scm:git:ssh://git@github.com/hermod/${project.artifactId}.git</developerConnection>
 		<url>https://github.com/hermod/${project.artifactId}.git</url>
-		<tag>hermod-java-ser-api-0.0.7</tag>
+		<tag>HEAD</tag>
 	</scm>
 	<properties>
 		<projectUrl>${parentUrl}</projectUrl>
